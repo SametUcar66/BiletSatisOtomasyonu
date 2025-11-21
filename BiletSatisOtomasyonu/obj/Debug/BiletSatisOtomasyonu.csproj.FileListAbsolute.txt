@@ -1,0 +1,15 @@
+C:\Users\yilma\OneDrive\Masaüstü\BiletSatisOtomasyonu\BiletSatisOtomasyonu\bin\Debug\BiletSatisOtomasyonu.exe.config
+C:\Users\yilma\OneDrive\Masaüstü\BiletSatisOtomasyonu\BiletSatisOtomasyonu\bin\Debug\BiletSatisOtomasyonu.exe
+C:\Users\yilma\OneDrive\Masaüstü\BiletSatisOtomasyonu\BiletSatisOtomasyonu\bin\Debug\BiletSatisOtomasyonu.pdb
+C:\Users\yilma\OneDrive\Masaüstü\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.csproj.AssemblyReference.cache
+C:\Users\yilma\OneDrive\Masaüstü\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.Properties.Resources.resources
+C:\Users\yilma\OneDrive\Masaüstü\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.csproj.GenerateResource.cache
+C:\Users\yilma\OneDrive\Masaüstü\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.csproj.CoreCompileInputs.cache
+C:\Users\yilma\OneDrive\Masaüstü\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.exe
+C:\Users\yilma\OneDrive\Masaüstü\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.pdb
+C:\Users\yilma\OneDrive\Masaüstü\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.Giris.resources
+C:\Users\yilma\OneDrive\Masaüstü\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.GirisControl.resources
+C:\Users\yilma\OneDrive\Masaüstü\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.KayitKontrol.resources
+C:\Users\yilma\OneDrive\Masaüstü\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.AnaSayfa.resources
+C:\Users\yilma\OneDrive\Masaüstü\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.UcakBileti.resources
+C:\Users\yilma\OneDrive\Masaüstü\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.OtobusBileti.resources
