@@ -110,6 +110,9 @@
     <EmbeddedResource Include="KayitKontrol.resx">
       <DependentUpon>KayitKontrol.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="kullaniciKayit.resx">
+      <DependentUpon>kullaniciKayit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OtobusBileti.resx">
       <DependentUpon>OtobusBileti.cs</DependentUpon>
     </EmbeddedResource>
