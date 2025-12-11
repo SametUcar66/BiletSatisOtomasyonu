@@ -52,11 +52,11 @@
             // 
             this.txtUsername2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.txtUsername2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsername2.Font = new System.Drawing.Font("Gilroy-Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtUsername2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtUsername2.ForeColor = System.Drawing.Color.DarkGray;
             this.txtUsername2.Location = new System.Drawing.Point(3, 61);
             this.txtUsername2.Name = "txtUsername2";
-            this.txtUsername2.Size = new System.Drawing.Size(344, 20);
+            this.txtUsername2.Size = new System.Drawing.Size(344, 19);
             this.txtUsername2.TabIndex = 14;
             this.txtUsername2.Enter += new System.EventHandler(this.txtUsername2_Enter);
             this.txtUsername2.Leave += new System.EventHandler(this.txtUsername2_Leave);
@@ -76,11 +76,11 @@
             // 
             this.txtEmail2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.txtEmail2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail2.Font = new System.Drawing.Font("Gilroy-Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtEmail2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtEmail2.ForeColor = System.Drawing.Color.DarkGray;
             this.txtEmail2.Location = new System.Drawing.Point(3, 3);
             this.txtEmail2.Name = "txtEmail2";
-            this.txtEmail2.Size = new System.Drawing.Size(344, 20);
+            this.txtEmail2.Size = new System.Drawing.Size(344, 19);
             this.txtEmail2.TabIndex = 12;
             this.txtEmail2.Enter += new System.EventHandler(this.txtEmail2_Enter);
             this.txtEmail2.Leave += new System.EventHandler(this.txtEmail2_Leave);
@@ -88,7 +88,7 @@
             // btnRegister
             // 
             this.btnRegister.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnRegister.Font = new System.Drawing.Font("Gilroy-Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnRegister.Location = new System.Drawing.Point(3, 177);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(344, 51);
@@ -111,11 +111,11 @@
             // 
             this.txtPassword2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.txtPassword2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword2.Font = new System.Drawing.Font("Gilroy-Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtPassword2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtPassword2.ForeColor = System.Drawing.Color.DarkGray;
             this.txtPassword2.Location = new System.Drawing.Point(3, 119);
             this.txtPassword2.Name = "txtPassword2";
-            this.txtPassword2.Size = new System.Drawing.Size(344, 20);
+            this.txtPassword2.Size = new System.Drawing.Size(344, 19);
             this.txtPassword2.TabIndex = 16;
             this.txtPassword2.Enter += new System.EventHandler(this.txtPassword2_Enter);
             this.txtPassword2.Leave += new System.EventHandler(this.txtPassword2_Leave);

@@ -62,5 +62,11 @@ namespace BiletSatisOtomasyonu
             btnRegister.ForeColor = Color.FromArgb(64, 64, 64);
             txtLine2.BackColor = Color.FromArgb(64, 64, 64);
         }
+
+        private void signup_Click(object sender, EventArgs e)
+        {
+            kullaniciKayit kForm= new kullaniciKayit();
+            kForm.Show();
+        }
     }
 }

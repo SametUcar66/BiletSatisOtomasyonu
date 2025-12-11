@@ -38,6 +38,7 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.txtLine1 = new System.Windows.Forms.TextBox();
             this.txtLine2 = new System.Windows.Forms.TextBox();
+            this.signup = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -155,12 +156,23 @@
             this.txtLine2.Size = new System.Drawing.Size(175, 3);
             this.txtLine2.TabIndex = 7;
             // 
+            // signup
+            // 
+            this.signup.Location = new System.Drawing.Point(67, 623);
+            this.signup.Name = "signup";
+            this.signup.Size = new System.Drawing.Size(75, 23);
+            this.signup.TabIndex = 8;
+            this.signup.Text = "Kayıt Ol";
+            this.signup.UseVisualStyleBackColor = true;
+            this.signup.Click += new System.EventHandler(this.signup_Click);
+            // 
             // Giris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(1024, 720);
+            this.Controls.Add(this.signup);
             this.Controls.Add(this.txtLine2);
             this.Controls.Add(this.txtLine1);
             this.Controls.Add(this.btnRegister);
@@ -191,6 +203,7 @@
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.TextBox txtLine1;
         private System.Windows.Forms.TextBox txtLine2;
+        private System.Windows.Forms.Button signup;
     }
 }
 
