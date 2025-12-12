@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminAnasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAnasayfa.Designer.cs">
+      <DependentUpon>AdminAnasayfa.cs</DependentUpon>
+    </Compile>
     <Compile Include="AnaSayfa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,17 +69,17 @@
     <Compile Include="Giris.Designer.cs">
       <DependentUpon>Giris.cs</DependentUpon>
     </Compile>
+    <Compile Include="hesabim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hesabim.Designer.cs">
+      <DependentUpon>hesabim.cs</DependentUpon>
+    </Compile>
     <Compile Include="KayitKontrol.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="KayitKontrol.Designer.cs">
       <DependentUpon>KayitKontrol.cs</DependentUpon>
-    </Compile>
-    <Compile Include="kullaniciKayit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="kullaniciKayit.Designer.cs">
-      <DependentUpon>kullaniciKayit.cs</DependentUpon>
     </Compile>
     <Compile Include="OtobusBileti.cs">
       <SubType>UserControl</SubType>
@@ -89,11 +95,17 @@
     <Compile Include="GirisControl.Designer.cs">
       <DependentUpon>GirisControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="SuperAdmin.cs">
+    <Compile Include="SPManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SuperAdmin.Designer.cs">
-      <DependentUpon>SuperAdmin.cs</DependentUpon>
+    <Compile Include="SPManager.Designer.cs">
+      <DependentUpon>SPManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuperAdminEkleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuperAdminEkleme.Designer.cs">
+      <DependentUpon>SuperAdminEkleme.cs</DependentUpon>
     </Compile>
     <Compile Include="UcakBileti.cs">
       <SubType>UserControl</SubType>
@@ -101,6 +113,9 @@
     <Compile Include="UcakBileti.Designer.cs">
       <DependentUpon>UcakBileti.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminAnasayfa.resx">
+      <DependentUpon>AdminAnasayfa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AnaSayfa.resx">
       <DependentUpon>AnaSayfa.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,9 +124,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KayitKontrol.resx">
       <DependentUpon>KayitKontrol.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="kullaniciKayit.resx">
-      <DependentUpon>kullaniciKayit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OtobusBileti.resx">
       <DependentUpon>OtobusBileti.cs</DependentUpon>
@@ -128,8 +140,11 @@
     <EmbeddedResource Include="GirisControl.resx">
       <DependentUpon>GirisControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SuperAdmin.resx">
-      <DependentUpon>SuperAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="SPManager.resx">
+      <DependentUpon>SPManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuperAdminEkleme.resx">
+      <DependentUpon>SuperAdminEkleme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcakBileti.resx">
       <DependentUpon>UcakBileti.cs</DependentUpon>

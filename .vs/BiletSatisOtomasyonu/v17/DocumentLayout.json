@@ -3,19 +3,31 @@
   "WorkspaceRootPath": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\kullanicikayit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\kullanicikayit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\hesabim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\hesabim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\biletsatisotomasyonu\\superadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\superadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\biletsatisotomasyonu\\giriscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\giriscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\biletsatisotomasyonu\\superadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\superadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\hesabim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\hesabim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\biletsatisotomasyonu\\giris.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\anasayfa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\anasayfa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\anasayfa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\anasayfa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\hesabim.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\hesabim.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\giris.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\giris.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -23,16 +35,56 @@
       "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\giris.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\anasayfa.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\anasayfa.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\otobusbileti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\otobusbileti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\biletsatisotomasyonu\\giriscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\giriscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\biletsatisotomasyonu\\giriscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\giriscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\kayitkontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\kayitkontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\biletsatisotomasyonu\\kayitkontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\kayitkontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\kayitkontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\kayitkontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\superadminekleme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\superadminekleme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\adminanasayfa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\adminanasayfa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\adminanasayfa.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\adminanasayfa.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\spmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\spmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\superadminekleme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\superadminekleme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\adminanasayfa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\adminanasayfa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|c:\\users\\samet\\onedrive\\desktop\\biletsatisotomasyonu\\biletsatisotomasyonu\\spmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C5F13445-5FD5-4D41-94ED-CF7C2A733F25}|BiletSatisOtomasyonu\\BiletSatisOtomasyonu.csproj|solutionrelative:biletsatisotomasyonu\\spmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,99 +94,271 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Giris.cs",
-              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\Giris.cs",
-              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\Giris.cs",
-              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\Giris.cs",
-              "RelativeToolTip": "BiletSatisOtomasyonu\\Giris.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAIwEQAAAAZAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "hesabim.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\hesabim.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\hesabim.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\hesabim.cs",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\hesabim.cs",
+              "ViewState": "AgIAAEICAAAAAAAAAAAswFQCAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T09:40:49.351Z"
+              "WhenOpened": "2025-12-12T21:03:31.188Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "kullaniciKayit.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\kullaniciKayit.cs",
-              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\kullaniciKayit.cs",
-              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\kullaniciKayit.cs [Design]",
-              "RelativeToolTip": "BiletSatisOtomasyonu\\kullaniciKayit.cs [Design]",
+              "DocumentIndex": 5,
+              "Title": "hesabim.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\hesabim.Designer.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\hesabim.Designer.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\hesabim.Designer.cs",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\hesabim.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T09:40:19.352Z",
+              "WhenOpened": "2025-12-12T21:02:52.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "hesabim.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\hesabim.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\hesabim.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\hesabim.cs [Design]",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\hesabim.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T20:59:09.986Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AnaSayfa.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\AnaSayfa.Designer.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\AnaSayfa.Designer.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\AnaSayfa.Designer.cs",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\AnaSayfa.Designer.cs",
+              "ViewState": "AgIAAE0BAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T19:29:09.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AnaSayfa.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\AnaSayfa.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\AnaSayfa.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\AnaSayfa.cs",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\AnaSayfa.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAAAwNIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T19:26:18.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AnaSayfa.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\AnaSayfa.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\AnaSayfa.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\AnaSayfa.cs [Design]",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\AnaSayfa.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T16:38:07.015Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "KayitKontrol.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\KayitKontrol.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\KayitKontrol.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\KayitKontrol.cs",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\KayitKontrol.cs",
+              "ViewState": "AgIAADEBAAAAAAAAAAAYwEgBAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T16:08:34.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AdminAnasayfa.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\AdminAnasayfa.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\AdminAnasayfa.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\AdminAnasayfa.cs [Design]",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\AdminAnasayfa.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T14:24:36.936Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SuperAdmin.cs",
-              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\SuperAdmin.cs",
-              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\SuperAdmin.cs",
-              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\SuperAdmin.cs",
-              "RelativeToolTip": "BiletSatisOtomasyonu\\SuperAdmin.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAewCEAAAAAAAAAAAAAAA==",
+              "Title": "GirisControl.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\GirisControl.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\GirisControl.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\GirisControl.cs",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\GirisControl.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAswG0AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T10:40:58.186Z"
+              "WhenOpened": "2025-12-10T08:22:39.311Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SuperAdmin.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\SuperAdmin.cs",
-              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\SuperAdmin.cs",
-              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\SuperAdmin.cs [Design]",
-              "RelativeToolTip": "BiletSatisOtomasyonu\\SuperAdmin.cs [Design]",
+              "DocumentIndex": 14,
+              "Title": "SuperAdminEkleme.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\SuperAdminEkleme.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\SuperAdminEkleme.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\SuperAdminEkleme.cs [Design]",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\SuperAdminEkleme.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T08:43:26.183Z"
+              "WhenOpened": "2025-12-12T14:09:55.353Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Giris.cs [Design]",
               "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\Giris.cs",
               "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\Giris.cs",
               "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\Giris.cs [Design]",
               "RelativeToolTip": "BiletSatisOtomasyonu\\Giris.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T09:56:39.909Z"
+              "WhenOpened": "2025-12-10T09:56:39.909Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
+              "Title": "Giris.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\Giris.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\Giris.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\Giris.cs",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\Giris.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAwEgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T15:34:32.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OtobusBileti.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\OtobusBileti.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\OtobusBileti.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\OtobusBileti.cs [Design]",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\OtobusBileti.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T16:38:11.272Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "KayitKontrol.cs [Design]",
               "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\KayitKontrol.cs",
               "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\KayitKontrol.cs",
               "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\KayitKontrol.cs [Design]",
               "RelativeToolTip": "BiletSatisOtomasyonu\\KayitKontrol.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T08:35:24.254Z"
+              "WhenOpened": "2025-12-10T08:35:24.254Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GirisControl.cs",
-              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\GirisControl.cs",
-              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\GirisControl.cs",
-              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\GirisControl.cs",
-              "RelativeToolTip": "BiletSatisOtomasyonu\\GirisControl.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAApwIYAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T08:22:39.311Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "GirisControl.cs [Design]",
               "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\GirisControl.cs",
               "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\GirisControl.cs",
               "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\GirisControl.cs [Design]",
               "RelativeToolTip": "BiletSatisOtomasyonu\\GirisControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T08:22:36.521Z"
+              "WhenOpened": "2025-12-10T08:22:36.521Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AdminAnasayfa.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\AdminAnasayfa.Designer.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\AdminAnasayfa.Designer.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\AdminAnasayfa.Designer.cs",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\AdminAnasayfa.Designer.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T15:45:14.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "KayitKontrol.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\KayitKontrol.Designer.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\KayitKontrol.Designer.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\KayitKontrol.Designer.cs",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\KayitKontrol.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T16:31:55.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SPManager.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\SPManager.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\SPManager.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\SPManager.cs",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\SPManager.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T15:49:18.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SuperAdminEkleme.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\SuperAdminEkleme.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\SuperAdminEkleme.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\SuperAdminEkleme.cs",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\SuperAdminEkleme.cs",
+              "ViewState": "AgIAAPIAAAAAAAAAAAAwwA0BAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T10:40:58.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AdminAnasayfa.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\AdminAnasayfa.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\AdminAnasayfa.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\AdminAnasayfa.cs",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\AdminAnasayfa.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAlwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T15:34:45.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "SPManager.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\SPManager.cs",
+              "RelativeDocumentMoniker": "BiletSatisOtomasyonu\\SPManager.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Desktop\\BiletSatisOtomasyonu\\BiletSatisOtomasyonu\\SPManager.cs [Design]",
+              "RelativeToolTip": "BiletSatisOtomasyonu\\SPManager.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T15:49:03.965Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

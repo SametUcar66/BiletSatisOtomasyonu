@@ -29,68 +29,58 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaSayfa));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnMin = new System.Windows.Forms.Button();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.txtLine1 = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.lineAccountSeparator = new System.Windows.Forms.TextBox();
+            this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.lineTravelsSeparator = new System.Windows.Forms.TextBox();
+            this.lineHelpSeparator = new System.Windows.Forms.TextBox();
+            this.btnHelp = new System.Windows.Forms.Button();
+            this.btnMyTravels = new System.Windows.Forms.Button();
+            this.btnMyAccount = new System.Windows.Forms.Button();
+            this.picProfilePhoto = new System.Windows.Forms.PictureBox();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.pnlTicketContent = new System.Windows.Forms.Panel();
+            this.btnBusTicket = new System.Windows.Forms.Button();
+            this.btnFlightTicket = new System.Windows.Forms.Button();
+            this.lblSlogan = new System.Windows.Forms.Label();
+            this.btnSidebarBorder = new System.Windows.Forms.Button();
+            this.pnlHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.pnlSidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfilePhoto)).BeginInit();
+            this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlHeader
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(66)))));
-            this.panel1.Controls.Add(this.btnMin);
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1024, 46);
-            this.panel1.TabIndex = 1;
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(66)))));
+            this.pnlHeader.Controls.Add(this.btnMinimize);
+            this.pnlHeader.Controls.Add(this.btnClose);
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(1024, 46);
+            this.pnlHeader.TabIndex = 1;
+            this.pnlHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHeader_Paint);
             // 
-            // pictureBox2
+            // btnMinimize
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(37, 88);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(142, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnMin
-            // 
-            this.btnMin.BackColor = System.Drawing.Color.Transparent;
-            this.btnMin.FlatAppearance.BorderSize = 0;
-            this.btnMin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMin.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
-            this.btnMin.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMin.Location = new System.Drawing.Point(928, 2);
-            this.btnMin.Name = "btnMin";
-            this.btnMin.Size = new System.Drawing.Size(42, 41);
-            this.btnMin.TabIndex = 1;
-            this.btnMin.UseVisualStyleBackColor = false;
-            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMinimize.Location = new System.Drawing.Point(928, 2);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(42, 41);
+            this.btnMinimize.TabIndex = 1;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // btnClose
             // 
@@ -108,44 +98,123 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // txtLine1
+            // picLogo
             // 
-            this.txtLine1.BackColor = System.Drawing.Color.White;
-            this.txtLine1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLine1.Location = new System.Drawing.Point(37, 364);
-            this.txtLine1.Multiline = true;
-            this.txtLine1.Name = "txtLine1";
-            this.txtLine1.ReadOnly = true;
-            this.txtLine1.Size = new System.Drawing.Size(142, 3);
-            this.txtLine1.TabIndex = 7;
+            this.picLogo.Location = new System.Drawing.Point(37, 88);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(142, 40);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 3;
+            this.picLogo.TabStop = false;
             // 
-            // panel2
+            // lineAccountSeparator
             // 
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.button6);
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.txtLine1);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.btnLogOut);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(224, 720);
-            this.panel2.TabIndex = 8;
+            this.lineAccountSeparator.BackColor = System.Drawing.Color.White;
+            this.lineAccountSeparator.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lineAccountSeparator.Location = new System.Drawing.Point(37, 364);
+            this.lineAccountSeparator.Multiline = true;
+            this.lineAccountSeparator.Name = "lineAccountSeparator";
+            this.lineAccountSeparator.ReadOnly = true;
+            this.lineAccountSeparator.Size = new System.Drawing.Size(142, 3);
+            this.lineAccountSeparator.TabIndex = 7;
             // 
-            // pictureBox1
+            // pnlSidebar
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(37, 171);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(142, 142);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            this.pnlSidebar.Controls.Add(this.lineTravelsSeparator);
+            this.pnlSidebar.Controls.Add(this.lineHelpSeparator);
+            this.pnlSidebar.Controls.Add(this.btnHelp);
+            this.pnlSidebar.Controls.Add(this.btnMyTravels);
+            this.pnlSidebar.Controls.Add(this.lineAccountSeparator);
+            this.pnlSidebar.Controls.Add(this.btnMyAccount);
+            this.pnlSidebar.Controls.Add(this.picLogo);
+            this.pnlSidebar.Controls.Add(this.picProfilePhoto);
+            this.pnlSidebar.Controls.Add(this.btnLogOut);
+            this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
+            this.pnlSidebar.Name = "pnlSidebar";
+            this.pnlSidebar.Size = new System.Drawing.Size(224, 720);
+            this.pnlSidebar.TabIndex = 8;
+            // 
+            // lineTravelsSeparator
+            // 
+            this.lineTravelsSeparator.BackColor = System.Drawing.Color.White;
+            this.lineTravelsSeparator.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lineTravelsSeparator.Location = new System.Drawing.Point(37, 415);
+            this.lineTravelsSeparator.Multiline = true;
+            this.lineTravelsSeparator.Name = "lineTravelsSeparator";
+            this.lineTravelsSeparator.ReadOnly = true;
+            this.lineTravelsSeparator.Size = new System.Drawing.Size(142, 3);
+            this.lineTravelsSeparator.TabIndex = 9;
+            // 
+            // lineHelpSeparator
+            // 
+            this.lineHelpSeparator.BackColor = System.Drawing.Color.White;
+            this.lineHelpSeparator.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lineHelpSeparator.Location = new System.Drawing.Point(37, 466);
+            this.lineHelpSeparator.Multiline = true;
+            this.lineHelpSeparator.Name = "lineHelpSeparator";
+            this.lineHelpSeparator.ReadOnly = true;
+            this.lineHelpSeparator.Size = new System.Drawing.Size(142, 3);
+            this.lineHelpSeparator.TabIndex = 11;
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.FlatAppearance.BorderSize = 0;
+            this.btnHelp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnHelp.ForeColor = System.Drawing.Color.White;
+            this.btnHelp.Location = new System.Drawing.Point(29, 432);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(142, 37);
+            this.btnHelp.TabIndex = 16;
+            this.btnHelp.Text = "Yardım";
+            this.btnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHelp.UseVisualStyleBackColor = true;
+            // 
+            // btnMyTravels
+            // 
+            this.btnMyTravels.FlatAppearance.BorderSize = 0;
+            this.btnMyTravels.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMyTravels.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnMyTravels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMyTravels.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMyTravels.ForeColor = System.Drawing.Color.White;
+            this.btnMyTravels.Location = new System.Drawing.Point(29, 381);
+            this.btnMyTravels.Name = "btnMyTravels";
+            this.btnMyTravels.Size = new System.Drawing.Size(158, 37);
+            this.btnMyTravels.TabIndex = 15;
+            this.btnMyTravels.Text = "Seyahatlerim";
+            this.btnMyTravels.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMyTravels.UseVisualStyleBackColor = true;
+            // 
+            // btnMyAccount
+            // 
+            this.btnMyAccount.FlatAppearance.BorderSize = 0;
+            this.btnMyAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMyAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnMyAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMyAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMyAccount.ForeColor = System.Drawing.Color.White;
+            this.btnMyAccount.Location = new System.Drawing.Point(29, 330);
+            this.btnMyAccount.Name = "btnMyAccount";
+            this.btnMyAccount.Size = new System.Drawing.Size(142, 37);
+            this.btnMyAccount.TabIndex = 14;
+            this.btnMyAccount.Text = "Hesabım";
+            this.btnMyAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMyAccount.UseVisualStyleBackColor = true;
+            this.btnMyAccount.Click += new System.EventHandler(this.btnMyAccount_Click);
+            // 
+            // picProfilePhoto
+            // 
+            this.picProfilePhoto.Location = new System.Drawing.Point(37, 171);
+            this.picProfilePhoto.Name = "picProfilePhoto";
+            this.picProfilePhoto.Size = new System.Drawing.Size(142, 142);
+            this.picProfilePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picProfilePhoto.TabIndex = 13;
+            this.picProfilePhoto.TabStop = false;
+            this.picProfilePhoto.Paint += new System.Windows.Forms.PaintEventHandler(this.picProfilePhoto_Paint);
             // 
             // btnLogOut
             // 
@@ -162,158 +231,86 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // textBox3
+            // pnlMain
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(37, 466);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(142, 3);
-            this.textBox3.TabIndex = 11;
+            this.pnlMain.Controls.Add(this.pnlTicketContent);
+            this.pnlMain.Controls.Add(this.btnBusTicket);
+            this.pnlMain.Controls.Add(this.btnFlightTicket);
+            this.pnlMain.Controls.Add(this.lblSlogan);
+            this.pnlMain.Controls.Add(this.btnSidebarBorder);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlMain.Location = new System.Drawing.Point(224, 0);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(800, 720);
+            this.pnlMain.TabIndex = 9;
             // 
-            // textBox1
+            // pnlTicketContent
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(37, 415);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(142, 3);
-            this.textBox1.TabIndex = 9;
+            this.pnlTicketContent.BackColor = System.Drawing.Color.White;
+            this.pnlTicketContent.ForeColor = System.Drawing.Color.Black;
+            this.pnlTicketContent.Location = new System.Drawing.Point(46, 276);
+            this.pnlTicketContent.Name = "pnlTicketContent";
+            this.pnlTicketContent.Size = new System.Drawing.Size(700, 269);
+            this.pnlTicketContent.TabIndex = 1;
+            this.pnlTicketContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTicketContent_Paint);
             // 
-            // panel3
+            // btnBusTicket
             // 
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(224, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(800, 720);
-            this.panel3.TabIndex = 9;
+            this.btnBusTicket.BackColor = System.Drawing.Color.DarkGray;
+            this.btnBusTicket.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBusTicket.FlatAppearance.BorderSize = 0;
+            this.btnBusTicket.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnBusTicket.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnBusTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnBusTicket.Location = new System.Drawing.Point(166, 241);
+            this.btnBusTicket.Name = "btnBusTicket";
+            this.btnBusTicket.Size = new System.Drawing.Size(120, 35);
+            this.btnBusTicket.TabIndex = 4;
+            this.btnBusTicket.Text = "Otobüs Bileti";
+            this.btnBusTicket.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBusTicket.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBusTicket.UseVisualStyleBackColor = false;
+            this.btnBusTicket.Click += new System.EventHandler(this.btnBusTicket_Click);
             // 
-            // button1
+            // btnFlightTicket
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(1, 47);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(1, 673);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnFlightTicket.BackColor = System.Drawing.Color.White;
+            this.btnFlightTicket.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnFlightTicket.FlatAppearance.BorderSize = 0;
+            this.btnFlightTicket.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnFlightTicket.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnFlightTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFlightTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnFlightTicket.Location = new System.Drawing.Point(46, 241);
+            this.btnFlightTicket.Name = "btnFlightTicket";
+            this.btnFlightTicket.Size = new System.Drawing.Size(120, 35);
+            this.btnFlightTicket.TabIndex = 3;
+            this.btnFlightTicket.Text = "Uçak Bileti";
+            this.btnFlightTicket.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFlightTicket.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFlightTicket.UseVisualStyleBackColor = false;
+            this.btnFlightTicket.Click += new System.EventHandler(this.btnFlightTicket_Click);
             // 
-            // panel4
+            // lblSlogan
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.ForeColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(46, 276);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(700, 269);
-            this.panel4.TabIndex = 1;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            this.lblSlogan.AutoSize = true;
+            this.lblSlogan.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSlogan.ForeColor = System.Drawing.Color.White;
+            this.lblSlogan.Location = new System.Drawing.Point(142, 168);
+            this.lblSlogan.Name = "lblSlogan";
+            this.lblSlogan.Size = new System.Drawing.Size(518, 31);
+            this.lblSlogan.TabIndex = 2;
+            this.lblSlogan.Text = "PIKAJET Aracılığıyla Uygun Fiyatlı Bilet Al";
             // 
-            // label1
+            // btnSidebarBorder
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Gilroy-Bold", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(142, 168);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(529, 34);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "PIKAJET Aracılığıyla Uygun Fiyatlı Bilet Al";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Gilroy-SemiBold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(46, 241);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 35);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Uçak Bileti";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.DarkGray;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Gilroy-SemiBold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(166, 241);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 35);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Otobüs Bileti";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Gilroy-Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(29, 330);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(142, 37);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Hesabım";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Gilroy-Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(29, 381);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(158, 37);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "Seyahatlerim";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Gilroy-Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(29, 432);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(142, 37);
-            this.button6.TabIndex = 16;
-            this.button6.Text = "Yardım";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnSidebarBorder.Enabled = false;
+            this.btnSidebarBorder.Location = new System.Drawing.Point(1, 47);
+            this.btnSidebarBorder.Name = "btnSidebarBorder";
+            this.btnSidebarBorder.Size = new System.Drawing.Size(1, 673);
+            this.btnSidebarBorder.TabIndex = 0;
+            this.btnSidebarBorder.UseVisualStyleBackColor = true;
             // 
             // AnaSayfa
             // 
@@ -321,44 +318,44 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(1024, 720);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pnlHeader);
+            this.Controls.Add(this.pnlSidebar);
+            this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AnaSayfa";
             this.Text = "AnaSayfa";
             this.Load += new System.EventHandler(this.AnaSayfa_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.pnlHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.pnlSidebar.ResumeLayout(false);
+            this.pnlSidebar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfilePhoto)).EndInit();
+            this.pnlMain.ResumeLayout(false);
+            this.pnlMain.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnMin;
+        private System.Windows.Forms.Panel pnlHeader;
+        private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox txtLine1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.TextBox lineAccountSeparator;
+        private System.Windows.Forms.Panel pnlSidebar;
+        private System.Windows.Forms.TextBox lineTravelsSeparator;
+        private System.Windows.Forms.TextBox lineHelpSeparator;
         private System.Windows.Forms.Button btnLogOut;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.PictureBox picProfilePhoto;
+        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Button btnSidebarBorder;
+        private System.Windows.Forms.Panel pnlTicketContent;
+        private System.Windows.Forms.Label lblSlogan;
+        private System.Windows.Forms.Button btnFlightTicket;
+        private System.Windows.Forms.Button btnBusTicket;
+        private System.Windows.Forms.Button btnMyAccount;
+        private System.Windows.Forms.Button btnMyTravels;
+        private System.Windows.Forms.Button btnHelp;
     }
 }

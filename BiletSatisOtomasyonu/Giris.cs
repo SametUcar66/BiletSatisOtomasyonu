@@ -65,8 +65,12 @@ namespace BiletSatisOtomasyonu
 
         private void signup_Click(object sender, EventArgs e)
         {
-            kullaniciKayit kForm= new kullaniciKayit();
-            kForm.Show();
+            //kullaniciKayit kForm= new kullaniciKayit();
+            //kForm.Show();
+            //SPManager spm = new SPManager();
+            //spm.Show();
+            AnaSayfa anaSayfa =new AnaSayfa();
+            anaSayfa.Show();
         }
     }
 }

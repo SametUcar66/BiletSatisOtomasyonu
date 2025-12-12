@@ -32,4 +32,6 @@ C:\Users\samet\OneDrive\Desktop\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\De
 C:\Users\samet\OneDrive\Desktop\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSat.2ADB7106.Up2Date
 C:\Users\samet\OneDrive\Desktop\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.exe
 C:\Users\samet\OneDrive\Desktop\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.pdb
-C:\Users\samet\OneDrive\Desktop\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.SuperAdmin.resources
+C:\Users\samet\OneDrive\Desktop\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.SuperAdminEkleme.resources
+C:\Users\samet\OneDrive\Desktop\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.AdminAnasayfa.resources
+C:\Users\samet\OneDrive\Desktop\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.SPManager.resources

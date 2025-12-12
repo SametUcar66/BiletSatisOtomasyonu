@@ -99,9 +99,9 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(337, 328);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(337, 297);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(350, 297);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(350, 349);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // btnSLogin
@@ -162,7 +162,7 @@
             this.signup.Name = "signup";
             this.signup.Size = new System.Drawing.Size(75, 23);
             this.signup.TabIndex = 8;
-            this.signup.Text = "Kayıt Ol";
+            this.signup.Text = "test";
             this.signup.UseVisualStyleBackColor = true;
             this.signup.Click += new System.EventHandler(this.signup_Click);
             // 

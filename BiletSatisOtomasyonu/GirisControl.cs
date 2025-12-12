@@ -99,7 +99,9 @@ namespace BiletSatisOtomasyonu
                         {
                             if (reader.Read())
                             {
-                                // Login successful
+                                // Login successful - Kullanıcı bilgilerini al
+                                int userId = Convert.ToInt32(reader["user_id"]);
+                                int agencyId = reader["agency_id"] != DBNull.Value ? Convert.ToInt32(reader["agency_id"]) : 0;
                                 string roleName = reader["role_name"] != DBNull.Value ? reader["role_name"].ToString() : "";
 
                                 MessageBox.Show("Giriş başarılı!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -113,14 +115,15 @@ namespace BiletSatisOtomasyonu
 
                                 if (roleName == "SuperAdmin")
                                 {
-                                    SuperAdmin superAdminForm = new SuperAdmin();
-                                    superAdminForm.StartPosition = FormStartPosition.CenterScreen;
-                                    superAdminForm.FormClosed += (s, args) => parentForm?.Close();
-                                    superAdminForm.Show();
+                                    AdminAnasayfa adminPanel = new AdminAnasayfa();
+                                    adminPanel.StartPosition = FormStartPosition.CenterScreen;
+                                    adminPanel.FormClosed += (s, args) => parentForm?.Close();
+                                    adminPanel.Show();
                                 }
                                 else
                                 {
-                                    AnaSayfa anaSayfa = new AnaSayfa();
+                                    // userId ve agencyId parametrelerini geçir
+                                    AnaSayfa anaSayfa = new AnaSayfa(userId, agencyId);
                                     anaSayfa.StartPosition = FormStartPosition.CenterScreen;
                                     anaSayfa.FormClosed += (s, args) => parentForm?.Close();
                                     anaSayfa.Show();
