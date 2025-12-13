@@ -2,15 +2,8 @@
 {
     partial class UcakBileti
     {
-        /// <summary> 
-        ///Gerekli tasarımcı değişkeni.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        ///Kullanılan tüm kaynakları temizleyin.
-        /// </summary>
-        ///<param name="disposing">yönetilen kaynaklar dispose edilmeliyse doğru; aksi halde yanlış.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,149 +13,273 @@
             base.Dispose(disposing);
         }
 
-        #region Bileşen Tasarımcısı üretimi kod
+                    #region Component Designer generated code
 
-        /// <summary> 
-        /// Tasarımcı desteği için gerekli metot - bu metodun 
-        ///içeriğini kod düzenleyici ile değiştirmeyin.
-        /// </summary>
         private void InitializeComponent()
         {
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.pnlArama = new System.Windows.Forms.Panel();
+            this.btnAra = new System.Windows.Forms.Button();
+            this.dtpTarih = new System.Windows.Forms.DateTimePicker();
+            this.cmbVaris = new System.Windows.Forms.ComboBox();
+            this.cmbKalkis = new System.Windows.Forms.ComboBox();
+            this.lblTarih = new System.Windows.Forms.Label();
+            this.lblVaris = new System.Windows.Forms.Label();
+            this.lblKalkis = new System.Windows.Forms.Label();
+            this.lblBaslik = new System.Windows.Forms.Label();
+            this.dgvSeferler = new System.Windows.Forms.DataGridView();
+            this.pnlKoltuk = new System.Windows.Forms.Panel();
+            this.lblKoltukSecimi = new System.Windows.Forms.Label();
+            this.flpKoltuklar = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlSatinAl = new System.Windows.Forms.Panel();
+            this.lblToplamFiyat = new System.Windows.Forms.Label();
+            this.lblSecilenKoltuk = new System.Windows.Forms.Label();
+            this.btnSatinAl = new System.Windows.Forms.Button();
+            this.pnlArama.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSeferler)).BeginInit();
+            this.pnlKoltuk.SuspendLayout();
+            this.pnlSatinAl.SuspendLayout();
             this.SuspendLayout();
             // 
-            // radioButton1
+            // pnlArama
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.FlatAppearance.BorderSize = 0;
-            this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton1.Font = new System.Drawing.Font("Gilroy-SemiBold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton1.Location = new System.Drawing.Point(25, 43);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 19);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Tek Yön";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.pnlArama.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.pnlArama.Controls.Add(this.btnAra);
+            this.pnlArama.Controls.Add(this.dtpTarih);
+            this.pnlArama.Controls.Add(this.cmbVaris);
+            this.pnlArama.Controls.Add(this.cmbKalkis);
+            this.pnlArama.Controls.Add(this.lblTarih);
+            this.pnlArama.Controls.Add(this.lblVaris);
+            this.pnlArama.Controls.Add(this.lblKalkis);
+            this.pnlArama.Controls.Add(this.lblBaslik);
+            this.pnlArama.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlArama.Location = new System.Drawing.Point(0, 0);
+            this.pnlArama.Name = "pnlArama";
+            this.pnlArama.Size = new System.Drawing.Size(900, 120);
+            this.pnlArama.TabIndex = 0;
             // 
-            // radioButton2
+            // btnAra
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.FlatAppearance.BorderSize = 0;
-            this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton2.Font = new System.Drawing.Font("Gilroy-SemiBold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton2.Location = new System.Drawing.Point(96, 43);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(95, 19);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Gidiş-Dönüş";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.btnAra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnAra.FlatAppearance.BorderSize = 0;
+            this.btnAra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAra.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAra.ForeColor = System.Drawing.Color.White;
+            this.btnAra.Location = new System.Drawing.Point(750, 55);
+            this.btnAra.Name = "btnAra";
+            this.btnAra.Size = new System.Drawing.Size(120, 40);
+            this.btnAra.TabIndex = 7;
+            this.btnAra.Text = "🔍 Ara";
+            this.btnAra.UseVisualStyleBackColor = false;
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
-            // textBox1
+            // dtpTarih
             // 
-            this.textBox1.Location = new System.Drawing.Point(25, 79);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(318, 40);
-            this.textBox1.TabIndex = 2;
+            this.dtpTarih.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.dtpTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpTarih.Location = new System.Drawing.Point(540, 60);
+            this.dtpTarih.MinDate = System.DateTime.Today;
+            this.dtpTarih.Name = "dtpTarih";
+            this.dtpTarih.Size = new System.Drawing.Size(180, 30);
+            this.dtpTarih.TabIndex = 6;
             // 
-            // textBox3
+            // cmbVaris
             // 
-            this.textBox3.Location = new System.Drawing.Point(25, 125);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(156, 40);
-            this.textBox3.TabIndex = 4;
+            this.cmbVaris.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVaris.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbVaris.FormattingEnabled = true;
+            this.cmbVaris.Location = new System.Drawing.Point(290, 60);
+            this.cmbVaris.Name = "cmbVaris";
+            this.cmbVaris.Size = new System.Drawing.Size(200, 31);
+            this.cmbVaris.TabIndex = 5;
             // 
-            // textBox5
+            // cmbKalkis
             // 
-            this.textBox5.Location = new System.Drawing.Point(359, 125);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(318, 40);
-            this.textBox5.TabIndex = 6;
+            this.cmbKalkis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbKalkis.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbKalkis.FormattingEnabled = true;
+            this.cmbKalkis.Location = new System.Drawing.Point(40, 60);
+            this.cmbKalkis.Name = "cmbKalkis";
+            this.cmbKalkis.Size = new System.Drawing.Size(200, 31);
+            this.cmbKalkis.TabIndex = 4;
             // 
-            // checkBox1
+            // lblTarih
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Gilroy-SemiBold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.checkBox1.Location = new System.Drawing.Point(587, 44);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(90, 19);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "Aktarmasız";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.lblTarih.AutoSize = true;
+            this.lblTarih.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTarih.ForeColor = System.Drawing.Color.White;
+            this.lblTarih.Location = new System.Drawing.Point(540, 35);
+            this.lblTarih.Name = "lblTarih";
+            this.lblTarih.Size = new System.Drawing.Size(47, 20);
+            this.lblTarih.TabIndex = 3;
+            this.lblTarih.Text = "Tarih";
             // 
-            // button1
+            // lblVaris
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Gilroy-SemiBold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(359, 196);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(318, 40);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Bilet Ara";
-            this.button1.UseVisualStyleBackColor = false;
+            this.lblVaris.AutoSize = true;
+            this.lblVaris.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblVaris.ForeColor = System.Drawing.Color.White;
+            this.lblVaris.Location = new System.Drawing.Point(290, 35);
+            this.lblVaris.Name = "lblVaris";
+            this.lblVaris.Size = new System.Drawing.Size(100, 20);
+            this.lblVaris.TabIndex = 2;
+            this.lblVaris.Text = "Varış Havalimanı";
             // 
-            // textBox2
+            // lblKalkis
             // 
-            this.textBox2.Location = new System.Drawing.Point(359, 79);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(318, 40);
-            this.textBox2.TabIndex = 10;
+            this.lblKalkis.AutoSize = true;
+            this.lblKalkis.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblKalkis.ForeColor = System.Drawing.Color.White;
+            this.lblKalkis.Location = new System.Drawing.Point(40, 35);
+            this.lblKalkis.Name = "lblKalkis";
+            this.lblKalkis.Size = new System.Drawing.Size(108, 20);
+            this.lblKalkis.TabIndex = 1;
+            this.lblKalkis.Text = "Kalkış Havalimanı";
             // 
-            // textBox4
+            // lblBaslik
             // 
-            this.textBox4.Location = new System.Drawing.Point(187, 125);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(156, 40);
-            this.textBox4.TabIndex = 11;
+            this.lblBaslik.AutoSize = true;
+            this.lblBaslik.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lblBaslik.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.lblBaslik.Location = new System.Drawing.Point(10, 5);
+            this.lblBaslik.Name = "lblBaslik";
+            this.lblBaslik.Size = new System.Drawing.Size(225, 32);
+            this.lblBaslik.TabIndex = 0;
+            this.lblBaslik.Text = "✈️ Uçak Bileti Ara";
+            // 
+            // dgvSeferler
+            // 
+            this.dgvSeferler.AllowUserToAddRows = false;
+            this.dgvSeferler.AllowUserToDeleteRows = false;
+            this.dgvSeferler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSeferler.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.dgvSeferler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSeferler.Location = new System.Drawing.Point(0, 120);
+            this.dgvSeferler.MultiSelect = false;
+            this.dgvSeferler.Name = "dgvSeferler";
+            this.dgvSeferler.ReadOnly = true;
+            this.dgvSeferler.RowHeadersWidth = 51;
+            this.dgvSeferler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSeferler.Size = new System.Drawing.Size(900, 200);
+            this.dgvSeferler.TabIndex = 1;
+            this.dgvSeferler.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSeferler_CellClick);
+            // 
+            // pnlKoltuk
+            // 
+            this.pnlKoltuk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.pnlKoltuk.Controls.Add(this.lblKoltukSecimi);
+            this.pnlKoltuk.Controls.Add(this.flpKoltuklar);
+            this.pnlKoltuk.Location = new System.Drawing.Point(0, 320);
+            this.pnlKoltuk.Name = "pnlKoltuk";
+            this.pnlKoltuk.Size = new System.Drawing.Size(900, 180);
+            this.pnlKoltuk.TabIndex = 2;
+            // 
+            // lblKoltukSecimi
+            // 
+            this.lblKoltukSecimi.AutoSize = true;
+            this.lblKoltukSecimi.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lblKoltukSecimi.ForeColor = System.Drawing.Color.White;
+            this.lblKoltukSecimi.Location = new System.Drawing.Point(10, 10);
+            this.lblKoltukSecimi.Name = "lblKoltukSecimi";
+            this.lblKoltukSecimi.Size = new System.Drawing.Size(140, 25);
+            this.lblKoltukSecimi.TabIndex = 0;
+            this.lblKoltukSecimi.Text = "Koltuk Seçimi";
+            // 
+            // flpKoltuklar
+            // 
+            this.flpKoltuklar.AutoScroll = true;
+            this.flpKoltuklar.Location = new System.Drawing.Point(10, 40);
+            this.flpKoltuklar.Name = "flpKoltuklar";
+            this.flpKoltuklar.Size = new System.Drawing.Size(880, 130);
+            this.flpKoltuklar.TabIndex = 1;
+            // 
+            // pnlSatinAl
+            // 
+            this.pnlSatinAl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.pnlSatinAl.Controls.Add(this.lblToplamFiyat);
+            this.pnlSatinAl.Controls.Add(this.lblSecilenKoltuk);
+            this.pnlSatinAl.Controls.Add(this.btnSatinAl);
+            this.pnlSatinAl.Location = new System.Drawing.Point(0, 500);
+            this.pnlSatinAl.Name = "pnlSatinAl";
+            this.pnlSatinAl.Size = new System.Drawing.Size(900, 80);
+            this.pnlSatinAl.TabIndex = 3;
+            // 
+            // lblToplamFiyat
+            // 
+            this.lblToplamFiyat.AutoSize = true;
+            this.lblToplamFiyat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblToplamFiyat.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lblToplamFiyat.Location = new System.Drawing.Point(400, 25);
+            this.lblToplamFiyat.Name = "lblToplamFiyat";
+            this.lblToplamFiyat.Size = new System.Drawing.Size(150, 28);
+            this.lblToplamFiyat.TabIndex = 2;
+            this.lblToplamFiyat.Text = "Toplam: 0.00 ₺";
+            // 
+            // lblSecilenKoltuk
+            // 
+            this.lblSecilenKoltuk.AutoSize = true;
+            this.lblSecilenKoltuk.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblSecilenKoltuk.ForeColor = System.Drawing.Color.White;
+            this.lblSecilenKoltuk.Location = new System.Drawing.Point(20, 28);
+            this.lblSecilenKoltuk.Name = "lblSecilenKoltuk";
+            this.lblSecilenKoltuk.Size = new System.Drawing.Size(175, 23);
+            this.lblSecilenKoltuk.TabIndex = 1;
+            this.lblSecilenKoltuk.Text = "Seçilen Koltuk: Yok";
+            // 
+            // btnSatinAl
+            // 
+            this.btnSatinAl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSatinAl.FlatAppearance.BorderSize = 0;
+            this.btnSatinAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSatinAl.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnSatinAl.ForeColor = System.Drawing.Color.White;
+            this.btnSatinAl.Location = new System.Drawing.Point(720, 15);
+            this.btnSatinAl.Name = "btnSatinAl";
+            this.btnSatinAl.Size = new System.Drawing.Size(160, 50);
+            this.btnSatinAl.TabIndex = 0;
+            this.btnSatinAl.Text = "💳 Satın Al";
+            this.btnSatinAl.UseVisualStyleBackColor = false;
+            this.btnSatinAl.Click += new System.EventHandler(this.btnSatinAl_Click);
             // 
             // UcakBileti
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.radioButton2);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.Controls.Add(this.pnlSatinAl);
+            this.Controls.Add(this.pnlKoltuk);
+            this.Controls.Add(this.dgvSeferler);
+            this.Controls.Add(this.pnlArama);
             this.Name = "UcakBileti";
-            this.Size = new System.Drawing.Size(700, 260);
+            this.Size = new System.Drawing.Size(900, 580);
+            this.Load += new System.EventHandler(this.UcakBileti_Load);
+            this.pnlArama.ResumeLayout(false);
+            this.pnlArama.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSeferler)).EndInit();
+            this.pnlKoltuk.ResumeLayout(false);
+            this.pnlKoltuk.PerformLayout();
+            this.pnlSatinAl.ResumeLayout(false);
+            this.pnlSatinAl.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
-
         }
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Panel pnlArama;
+        private System.Windows.Forms.Button btnAra;
+        private System.Windows.Forms.DateTimePicker dtpTarih;
+        private System.Windows.Forms.ComboBox cmbVaris;
+        private System.Windows.Forms.ComboBox cmbKalkis;
+        private System.Windows.Forms.Label lblTarih;
+        private System.Windows.Forms.Label lblVaris;
+        private System.Windows.Forms.Label lblKalkis;
+        private System.Windows.Forms.Label lblBaslik;
+        private System.Windows.Forms.DataGridView dgvSeferler;
+        private System.Windows.Forms.Panel pnlKoltuk;
+        private System.Windows.Forms.Label lblKoltukSecimi;
+        private System.Windows.Forms.FlowLayoutPanel flpKoltuklar;
+        private System.Windows.Forms.Panel pnlSatinAl;
+        private System.Windows.Forms.Label lblToplamFiyat;
+        private System.Windows.Forms.Label lblSecilenKoltuk;
+        private System.Windows.Forms.Button btnSatinAl;
     }
 }

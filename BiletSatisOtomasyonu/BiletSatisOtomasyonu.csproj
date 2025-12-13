@@ -107,6 +107,12 @@
     <Compile Include="SuperAdminEkleme.Designer.cs">
       <DependentUpon>SuperAdminEkleme.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrenBileti.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrenBileti.Designer.cs">
+      <DependentUpon>TrenBileti.cs</DependentUpon>
+    </Compile>
     <Compile Include="UcakBileti.cs">
       <SubType>UserControl</SubType>
     </Compile>
