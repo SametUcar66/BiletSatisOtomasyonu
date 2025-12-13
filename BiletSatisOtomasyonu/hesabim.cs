@@ -30,9 +30,12 @@ namespace BiletSatisOtomasyonu
         private readonly Color inactiveBackColor = Color.FromArgb(45, 45, 60);
         private readonly Color activeBackColor = Color.FromArgb(60, 60, 80);
 
+        // Profil güncellendiğinde tetiklenecek event
+        public event EventHandler ProfileUpdated;
+
         public Hesabim(int userId)
         {
-            InitializeComponent();
+            InitializeComponent();  
             this.userId = userId;
             SetupTextBoxEvents();
         }
@@ -41,12 +44,11 @@ namespace BiletSatisOtomasyonu
 
         private void SetupTextBoxEvents()
         {
-            // Düzenlenebilir alanlar için eventler
             txtFullName.Enter += EditableTextBox_Enter;
             txtFullName.Leave += EditableTextBox_Leave;
 
             txtEmail.Enter += EditableTextBox_Enter;
-            txtEmail.Leave += EditableTextBox_Leave;
+            txtEmail.Leave += EditableTextBox_Leave;                        
 
             txtPhone.Enter += EditableTextBox_Enter;
             txtPhone.Leave += EditableTextBox_Leave;
@@ -89,7 +91,6 @@ namespace BiletSatisOtomasyonu
                 textBox.ForeColor = activeTextColor;
                 textBox.BackColor = activeBackColor;
 
-                // Placeholder temizle
                 if (textBox == txtPassword && textBox.Text == "••••••••")
                 {
                     textBox.Text = "";
@@ -106,7 +107,6 @@ namespace BiletSatisOtomasyonu
                 textBox.ForeColor = inactiveTextColor;
                 textBox.BackColor = inactiveBackColor;
 
-                // Mevcut şifre alanı boşsa placeholder göster
                 if (textBox == txtPassword && string.IsNullOrEmpty(textBox.Text))
                 {
                     textBox.Text = "••••••••";
@@ -134,7 +134,6 @@ namespace BiletSatisOtomasyonu
 
         private void ApplyInitialStyles()
         {
-            // Tüm düzenlenebilir textbox'lara başlangıç stili uygula
             SetTextBoxInactiveStyle(txtFullName);
             SetTextBoxInactiveStyle(txtEmail);
             SetTextBoxInactiveStyle(txtPhone);
@@ -142,11 +141,9 @@ namespace BiletSatisOtomasyonu
             SetTextBoxInactiveStyle(txtNewPassword);
             SetTextBoxInactiveStyle(txtConfirmPassword);
 
-            // Şifre alanına placeholder
             txtPassword.Text = "••••••••";
             txtPassword.PasswordChar = '\0';
 
-            // Salt okunur alanlar farklı renkte
             txtAccountType.ForeColor = Color.Gray;
             txtAgency.ForeColor = Color.Gray;
         }
@@ -174,19 +171,16 @@ namespace BiletSatisOtomasyonu
 
                 if (reader.Read())
                 {
-                    // Verileri TextBox'lara yükle
                     txtFullName.Text = reader["full_name"]?.ToString() ?? "";
                     txtEmail.Text = reader["email"]?.ToString() ?? "";
                     txtPhone.Text = reader["phone"]?.ToString() ?? "";
                     txtAccountType.Text = GetAccountTypeName(reader["role_name"]?.ToString());
                     txtAgency.Text = reader["agency_name"]?.ToString() ?? "";
 
-                    // Orijinal değerleri sakla
                     originalFullName = txtFullName.Text;
                     originalEmail = txtEmail.Text;
                     originalPhone = txtPhone.Text;
 
-                    // Logo Base64
                     if (reader["logo_url"] != DBNull.Value)
                     {
                         profilePhotoBase64 = reader["logo_url"].ToString();
@@ -239,7 +233,6 @@ namespace BiletSatisOtomasyonu
                 byte[] imageBytes = Convert.FromBase64String(base64String);
                 MemoryStream ms = new MemoryStream(imageBytes);
                 Image img = Image.FromStream(ms);
-                // MemoryStream'i kapatmıyoruz çünkü Image ona bağımlı
                 return img;
             }
             catch
@@ -338,7 +331,6 @@ namespace BiletSatisOtomasyonu
                 baglan = new SQLiteConnection("Data Source=BiletSatis.db; Version=3");
                 baglan.Open();
 
-                // E-posta değiştiyse kontrol et
                 if (txtEmail.Text != originalEmail)
                 {
                     if (IsEmailExists(baglan, txtEmail.Text))
@@ -348,27 +340,26 @@ namespace BiletSatisOtomasyonu
                     }
                 }
 
-                // Kullanıcı bilgilerini güncelle
                 UpdateUserInfo(baglan);
 
-                // Şifre değişikliği varsa güncelle
                 if (!string.IsNullOrEmpty(txtNewPassword.Text))
                 {
                     if (!UpdatePassword(baglan))
                         return;
                 }
 
-                // Logo değiştiyse güncelle
                 if (profilePhotoBase64 != originalProfilePhotoBase64)
                 {
                     UpdateLogo(baglan);
                 }
 
-                // Orijinal değerleri güncelle
                 originalFullName = txtFullName.Text;
                 originalEmail = txtEmail.Text;
                 originalPhone = txtPhone.Text;
                 originalProfilePhotoBase64 = profilePhotoBase64;
+
+                // Event'i tetikle - AnaSayfa'yı güncelle
+                ProfileUpdated?.Invoke(this, EventArgs.Empty);
 
                 ShowSuccess("Bilgileriniz başarıyla güncellendi!");
                 ClearPasswordFields();
@@ -401,10 +392,8 @@ namespace BiletSatisOtomasyonu
                 return false;
             }
 
-            // Şifre değişikliği kontrolü
             if (!string.IsNullOrEmpty(txtNewPassword.Text))
             {
-                // Mevcut şifre placeholder mı kontrol et
                 if (string.IsNullOrEmpty(txtPassword.Text) || txtPassword.Text == "••••••••")
                 {
                     ShowWarning("Şifre değiştirmek için mevcut şifrenizi girin!");
@@ -459,7 +448,6 @@ namespace BiletSatisOtomasyonu
 
         private bool UpdatePassword(SQLiteConnection baglan)
         {
-            // Mevcut şifreyi kontrol et
             string checkQuery = "SELECT password FROM users WHERE user_id = @userId";
             using (SQLiteCommand cmd = new SQLiteCommand(checkQuery, baglan))
             {
@@ -474,7 +462,6 @@ namespace BiletSatisOtomasyonu
                 }
             }
 
-            // Yeni şifreyi kaydet
             string updateQuery = "UPDATE users SET password = @password WHERE user_id = @userId";
             using (SQLiteCommand cmd = new SQLiteCommand(updateQuery, baglan))
             {
@@ -491,7 +478,6 @@ namespace BiletSatisOtomasyonu
             if (string.IsNullOrEmpty(profilePhotoBase64))
                 return;
 
-            // Kullanıcının agency_id'sini al
             string getAgencyQuery = "SELECT agency_id FROM users WHERE user_id = @userId";
             using (SQLiteCommand cmd = new SQLiteCommand(getAgencyQuery, baglan))
             {

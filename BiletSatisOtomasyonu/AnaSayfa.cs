@@ -56,50 +56,53 @@ namespace BiletSatisOtomasyonu
 
         #region Profil Fotoğrafı
 
-        private void LoadProfilePhoto()
+        public void LoadProfilePhoto()
         {
             string logoBase64 = GetLogoFromDatabase();
 
             if (!string.IsNullOrEmpty(logoBase64))
             {
-                // Base64'ten resme çevir
                 picProfilePhoto.Image = ConvertBase64ToImage(logoBase64);
             }
             else
             {
-                // Default resmi yükle
                 LoadDefaultImage();
             }
         }
 
         private string GetLogoFromDatabase()
         {
+            SQLiteConnection baglan = null;
+            SQLiteCommand cmd = null;
+
             try
             {
-                using (SQLiteConnection baglan = new SQLiteConnection("Data Source=BiletSatis.db; Version=3"))
+                baglan = new SQLiteConnection("Data Source=BiletSatis.db; Version=3");
+                baglan.Open();
+
+                string query = @"SELECT a.logo_url 
+                                 FROM agencies a 
+                                 INNER JOIN users u ON u.agency_id = a.agency_id 
+                                 WHERE u.user_id = @userId";
+
+                cmd = new SQLiteCommand(query, baglan);
+                cmd.Parameters.AddWithValue("@userId", currentUserId);
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
                 {
-                    baglan.Open();
-
-                    string query = @"SELECT a.logo_url 
-                                     FROM agencies a 
-                                     INNER JOIN users u ON u.agency_id = a.agency_id 
-                                     WHERE u.user_id = @userId";
-
-                    using (SQLiteCommand cmd = new SQLiteCommand(query, baglan))
-                    {
-                        cmd.Parameters.AddWithValue("@userId", currentUserId);
-                        object result = cmd.ExecuteScalar();
-
-                        if (result != null && result != DBNull.Value)
-                        {
-                            return result.ToString();
-                        }
-                    }
+                    return result.ToString();
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Logo yüklenirken hata: " + ex.Message);
+            }
+            finally
+            {
+                cmd?.Dispose();
+                baglan?.Close();
+                baglan?.Dispose();
             }
 
             return null;
@@ -110,10 +113,8 @@ namespace BiletSatisOtomasyonu
             try
             {
                 byte[] imageBytes = Convert.FromBase64String(base64String);
-                using (MemoryStream ms = new MemoryStream(imageBytes))
-                {
-                    return Image.FromStream(ms);
-                }
+                MemoryStream ms = new MemoryStream(imageBytes);
+                return Image.FromStream(ms);
             }
             catch (Exception ex)
             {
@@ -133,14 +134,12 @@ namespace BiletSatisOtomasyonu
             }
             else
             {
-                // images klasörü veya dosya yoksa oluştur
                 string imagesFolder = Path.Combine(Application.StartupPath, "images");
                 if (!Directory.Exists(imagesFolder))
                 {
                     Directory.CreateDirectory(imagesFolder);
                 }
 
-                // Varsayılan bir placeholder göster
                 picProfilePhoto.BackColor = Color.Gray;
             }
         }
@@ -177,6 +176,23 @@ namespace BiletSatisOtomasyonu
 
         #endregion
 
+        #region Hesabım
+
+        private void btnMyAccount_Click(object sender, EventArgs e)
+        {
+            Hesabim hesabimForm = new Hesabim(currentUserId);
+            
+            // Profil güncellendiğinde tetiklenecek event
+            hesabimForm.ProfileUpdated += (s, args) =>
+            {
+                LoadProfilePhoto();
+            };
+            
+            hesabimForm.ShowDialog();
+        }
+
+        #endregion
+
         #region Paint Eventleri
 
         private void picProfilePhoto_Paint(object sender, PaintEventArgs e)
@@ -195,20 +211,12 @@ namespace BiletSatisOtomasyonu
 
         private void pnlTicketContent_Paint(object sender, PaintEventArgs e)
         {
-            // Gerekirse panel için özel çizim
         }
 
         private void pnlHeader_Paint(object sender, PaintEventArgs e)
         {
-            // Gerekirse header için özel çizim
         }
 
         #endregion
-
-        private void btnMyAccount_Click(object sender, EventArgs e)
-        {
-            Hesabim hsb = new Hesabim(currentUserId);
-            hsb.ShowDialog();
-        }
     }
 }
