@@ -69,6 +69,12 @@
     <Compile Include="Giris.Designer.cs">
       <DependentUpon>Giris.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="Helpers\DatabaseHelper.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Helpers\MessageHelper.cs" />
+    <Compile Include="Helpers\ThemeHelper.cs" />
+    <Compile Include="Helpers\ValidationHelper.cs" />
     <Compile Include="hesabim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,8 @@
     <Compile Include="GirisControl.Designer.cs">
       <DependentUpon>GirisControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\TicketService.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="SPManager.cs">
       <SubType>Form</SubType>
     </Compile>

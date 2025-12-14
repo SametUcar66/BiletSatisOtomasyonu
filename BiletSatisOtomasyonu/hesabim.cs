@@ -1,124 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
 
 namespace BiletSatisOtomasyonu
 {
     public partial class Hesabim : Form
     {
-        private int userId;
-        private string profilePhotoBase64 = "";
-        private string originalEmail = "";
-        private string originalProfilePhotoBase64 = "";
+        #region Alanlar
 
-        // Orijinal değerler (veritabanından gelen)
-        private string originalFullName = "";
-        private string originalPhone = "";
+        private readonly int _userId;
+        private string _profilePhotoBase64 = "";
+        private string _originalEmail = "";
+        private string _originalProfilePhotoBase64 = "";
+        private string _originalFullName = "";
+        private string _originalPhone = "";
 
-        // Renk sabitleri
-        private readonly Color inactiveTextColor = Color.FromArgb(180, 180, 180);
-        private readonly Color activeTextColor = Color.White;
-        private readonly Color inactiveBackColor = Color.FromArgb(45, 45, 60);
-        private readonly Color activeBackColor = Color.FromArgb(60, 60, 80);
+        private readonly Color _inactiveTextColor = Color.FromArgb(180, 180, 180);
+        private readonly Color _activeTextColor = Color.White;
+        private readonly Color _inactiveBackColor = Color.FromArgb(45, 45, 60);
+        private readonly Color _activeBackColor = Color.FromArgb(60, 60, 80);
 
-        // Profil güncellendiğinde tetiklenecek event
         public event EventHandler ProfileUpdated;
+
+        #endregion
+
+        #region Constructor
 
         public Hesabim(int userId)
         {
-            InitializeComponent();  
-            this.userId = userId;
+            InitializeComponent();
+            _userId = userId;
             SetupTextBoxEvents();
-        }
-
-        #region TextBox Event Ayarları
-
-        private void SetupTextBoxEvents()
-        {
-            txtFullName.Enter += EditableTextBox_Enter;
-            txtFullName.Leave += EditableTextBox_Leave;
-
-            txtEmail.Enter += EditableTextBox_Enter;
-            txtEmail.Leave += EditableTextBox_Leave;                        
-
-            txtPhone.Enter += EditableTextBox_Enter;
-            txtPhone.Leave += EditableTextBox_Leave;
-
-            txtPassword.Enter += PasswordTextBox_Enter;
-            txtPassword.Leave += PasswordTextBox_Leave;
-
-            txtNewPassword.Enter += PasswordTextBox_Enter;
-            txtNewPassword.Leave += PasswordTextBox_Leave;
-
-            txtConfirmPassword.Enter += PasswordTextBox_Enter;
-            txtConfirmPassword.Leave += PasswordTextBox_Leave;
-        }
-
-        private void EditableTextBox_Enter(object sender, EventArgs e)
-        {
-            TextBox textBox = sender as TextBox;
-            if (textBox != null)
-            {
-                textBox.ForeColor = activeTextColor;
-                textBox.BackColor = activeBackColor;
-            }
-        }
-
-        private void EditableTextBox_Leave(object sender, EventArgs e)
-        {
-            TextBox textBox = sender as TextBox;
-            if (textBox != null)
-            {
-                textBox.ForeColor = inactiveTextColor;
-                textBox.BackColor = inactiveBackColor;
-            }
-        }
-
-        private void PasswordTextBox_Enter(object sender, EventArgs e)
-        {
-            TextBox textBox = sender as TextBox;
-            if (textBox != null)
-            {
-                textBox.ForeColor = activeTextColor;
-                textBox.BackColor = activeBackColor;
-
-                if (textBox == txtPassword && textBox.Text == "••••••••")
-                {
-                    textBox.Text = "";
-                    textBox.PasswordChar = '*';
-                }
-            }
-        }
-
-        private void PasswordTextBox_Leave(object sender, EventArgs e)
-        {
-            TextBox textBox = sender as TextBox;
-            if (textBox != null)
-            {
-                textBox.ForeColor = inactiveTextColor;
-                textBox.BackColor = inactiveBackColor;
-
-                if (textBox == txtPassword && string.IsNullOrEmpty(textBox.Text))
-                {
-                    textBox.Text = "••••••••";
-                    textBox.PasswordChar = '\0';
-                }
-            }
-        }
-
-        private void SetTextBoxInactiveStyle(TextBox textBox)
-        {
-            textBox.ForeColor = inactiveTextColor;
-            textBox.BackColor = inactiveBackColor;
         }
 
         #endregion
@@ -148,16 +63,91 @@ namespace BiletSatisOtomasyonu
             txtAgency.ForeColor = Color.Gray;
         }
 
+        #endregion
+
+        #region TextBox Event Ayarları
+
+        private void SetupTextBoxEvents()
+        {
+            txtFullName.Enter += EditableTextBox_Enter;
+            txtFullName.Leave += EditableTextBox_Leave;
+            txtEmail.Enter += EditableTextBox_Enter;
+            txtEmail.Leave += EditableTextBox_Leave;
+            txtPhone.Enter += EditableTextBox_Enter;
+            txtPhone.Leave += EditableTextBox_Leave;
+
+            txtPassword.Enter += PasswordTextBox_Enter;
+            txtPassword.Leave += PasswordTextBox_Leave;
+            txtNewPassword.Enter += PasswordTextBox_Enter;
+            txtNewPassword.Leave += PasswordTextBox_Leave;
+            txtConfirmPassword.Enter += PasswordTextBox_Enter;
+            txtConfirmPassword.Leave += PasswordTextBox_Leave;
+        }
+
+        private void EditableTextBox_Enter(object sender, EventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                textBox.ForeColor = _activeTextColor;
+                textBox.BackColor = _activeBackColor;
+            }
+        }
+
+        private void EditableTextBox_Leave(object sender, EventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                SetTextBoxInactiveStyle(textBox);
+            }
+        }
+
+        private void PasswordTextBox_Enter(object sender, EventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                textBox.ForeColor = _activeTextColor;
+                textBox.BackColor = _activeBackColor;
+
+                if (textBox == txtPassword && textBox.Text == "••••••••")
+                {
+                    textBox.Text = "";
+                    textBox.PasswordChar = '*';
+                }
+            }
+        }
+
+        private void PasswordTextBox_Leave(object sender, EventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                SetTextBoxInactiveStyle(textBox);
+
+                if (textBox == txtPassword && string.IsNullOrEmpty(textBox.Text))
+                {
+                    textBox.Text = "••••••••";
+                    textBox.PasswordChar = '\0';
+                }
+            }
+        }
+
+        private void SetTextBoxInactiveStyle(TextBox textBox)
+        {
+            textBox.ForeColor = _inactiveTextColor;
+            textBox.BackColor = _inactiveBackColor;
+        }
+
+        #endregion
+
+        #region Veri Yükleme
+
         private void LoadUserData()
         {
-            SQLiteConnection baglan = null;
-            SQLiteCommand cmd = null;
-            SQLiteDataReader reader = null;
+            SQLiteConnection connection = null;
 
             try
             {
-                baglan = new SQLiteConnection("Data Source=BiletSatis.db; Version=3");
-                baglan.Open();
+                connection = new SQLiteConnection("Data Source=BiletSatis.db; Version=3");
+                connection.Open();
 
                 string query = @"SELECT u.*, r.role_name, a.agency_name, a.logo_url
                                  FROM users u
@@ -165,39 +155,42 @@ namespace BiletSatisOtomasyonu
                                  LEFT JOIN agencies a ON u.agency_id = a.agency_id
                                  WHERE u.user_id = @userId";
 
-                cmd = new SQLiteCommand(query, baglan);
-                cmd.Parameters.AddWithValue("@userId", userId);
-                reader = cmd.ExecuteReader();
-
-                if (reader.Read())
+                using (var cmd = new SQLiteCommand(query, connection))
                 {
-                    txtFullName.Text = reader["full_name"]?.ToString() ?? "";
-                    txtEmail.Text = reader["email"]?.ToString() ?? "";
-                    txtPhone.Text = reader["phone"]?.ToString() ?? "";
-                    txtAccountType.Text = GetAccountTypeName(reader["role_name"]?.ToString());
-                    txtAgency.Text = reader["agency_name"]?.ToString() ?? "";
+                    cmd.Parameters.AddWithValue("@userId", _userId);
 
-                    originalFullName = txtFullName.Text;
-                    originalEmail = txtEmail.Text;
-                    originalPhone = txtPhone.Text;
-
-                    if (reader["logo_url"] != DBNull.Value)
+                    using (var reader = cmd.ExecuteReader())
                     {
-                        profilePhotoBase64 = reader["logo_url"].ToString();
-                        originalProfilePhotoBase64 = profilePhotoBase64;
+                        if (reader.Read())
+                        {
+                            txtFullName.Text = reader["full_name"]?.ToString() ?? "";
+                            txtEmail.Text = reader["email"]?.ToString() ?? "";
+                            txtPhone.Text = reader["phone"]?.ToString() ?? "";
+                            txtAccountType.Text = GetAccountTypeName(reader["role_name"]?.ToString());
+                            txtAgency.Text = reader["agency_name"]?.ToString() ?? "";
+
+                            _originalFullName = txtFullName.Text;
+                            _originalEmail = txtEmail.Text;
+                            _originalPhone = txtPhone.Text;
+
+                            if (reader["logo_url"] != DBNull.Value)
+                            {
+                                _profilePhotoBase64 = reader["logo_url"].ToString();
+                                _originalProfilePhotoBase64 = _profilePhotoBase64;
+                            }
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                ShowError("Kullanıcı bilgileri yüklenirken hata: " + ex.Message);
+                MessageBox.Show("Kullanıcı bilgileri yüklenirken hata: " + ex.Message,
+                    "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                reader?.Close();
-                cmd?.Dispose();
-                baglan?.Close();
-                baglan?.Dispose();
+                connection?.Close();
+                connection?.Dispose();
             }
         }
 
@@ -216,9 +209,9 @@ namespace BiletSatisOtomasyonu
 
         private void LoadProfilePhoto()
         {
-            if (!string.IsNullOrEmpty(profilePhotoBase64))
+            if (!string.IsNullOrEmpty(_profilePhotoBase64))
             {
-                picProfilePhoto.Image = ConvertBase64ToImage(profilePhotoBase64);
+                picProfilePhoto.Image = ConvertBase64ToImage(_profilePhotoBase64);
             }
             else
             {
@@ -231,9 +224,10 @@ namespace BiletSatisOtomasyonu
             try
             {
                 byte[] imageBytes = Convert.FromBase64String(base64String);
-                MemoryStream ms = new MemoryStream(imageBytes);
-                Image img = Image.FromStream(ms);
-                return img;
+                using (var ms = new MemoryStream(imageBytes))
+                {
+                    return Image.FromStream(ms);
+                }
             }
             catch
             {
@@ -271,7 +265,7 @@ namespace BiletSatisOtomasyonu
 
         private void SelectPhoto()
         {
-            using (OpenFileDialog dialog = new OpenFileDialog())
+            using (var dialog = new OpenFileDialog())
             {
                 dialog.Title = "Profil Fotoğrafı Seçin";
                 dialog.Filter = "Resim Dosyaları|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
@@ -280,13 +274,14 @@ namespace BiletSatisOtomasyonu
                 {
                     try
                     {
-                        Image image = Image.FromFile(dialog.FileName);
+                        var image = Image.FromFile(dialog.FileName);
                         picProfilePhoto.Image = image;
-                        profilePhotoBase64 = ConvertImageToBase64(image, dialog.FileName);
+                        _profilePhotoBase64 = ConvertImageToBase64(image, dialog.FileName);
                     }
                     catch (Exception ex)
                     {
-                        ShowError("Resim yüklenemedi: " + ex.Message);
+                        MessageBox.Show("Resim yüklenemedi: " + ex.Message,
+                            "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -294,9 +289,9 @@ namespace BiletSatisOtomasyonu
 
         private string ConvertImageToBase64(Image image, string filePath)
         {
-            using (MemoryStream ms = new MemoryStream())
+            using (var ms = new MemoryStream())
             {
-                ImageFormat format = GetImageFormat(filePath);
+                var format = GetImageFormat(filePath);
                 image.Save(ms, format);
                 return Convert.ToBase64String(ms.ToArray());
             }
@@ -324,55 +319,50 @@ namespace BiletSatisOtomasyonu
             if (!ValidateForm())
                 return;
 
-            SQLiteConnection baglan = null;
+            SQLiteConnection connection = null;
 
             try
             {
-                baglan = new SQLiteConnection("Data Source=BiletSatis.db; Version=3");
-                baglan.Open();
+                connection = new SQLiteConnection("Data Source=BiletSatis.db; Version=3");
+                connection.Open();
 
-                if (txtEmail.Text != originalEmail)
+                if (txtEmail.Text != _originalEmail && IsEmailExists(connection, txtEmail.Text))
                 {
-                    if (IsEmailExists(baglan, txtEmail.Text))
-                    {
-                        ShowWarning("Bu e-posta adresi zaten kullanılıyor!");
-                        return;
-                    }
+                    MessageBox.Show("Bu e-posta adresi zaten kullanılıyor!",
+                        "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
 
-                UpdateUserInfo(baglan);
+                UpdateUserInfo(connection);
 
-                if (!string.IsNullOrEmpty(txtNewPassword.Text))
-                {
-                    if (!UpdatePassword(baglan))
-                        return;
-                }
+                if (!string.IsNullOrEmpty(txtNewPassword.Text) && !UpdatePassword(connection))
+                    return;
 
-                if (profilePhotoBase64 != originalProfilePhotoBase64)
-                {
-                    UpdateLogo(baglan);
-                }
+                if (_profilePhotoBase64 != _originalProfilePhotoBase64)
+                    UpdateLogo(connection);
 
-                originalFullName = txtFullName.Text;
-                originalEmail = txtEmail.Text;
-                originalPhone = txtPhone.Text;
-                originalProfilePhotoBase64 = profilePhotoBase64;
+                _originalFullName = txtFullName.Text;
+                _originalEmail = txtEmail.Text;
+                _originalPhone = txtPhone.Text;
+                _originalProfilePhotoBase64 = _profilePhotoBase64;
 
-                // Event'i tetikle - AnaSayfa'yı güncelle
                 ProfileUpdated?.Invoke(this, EventArgs.Empty);
 
-                ShowSuccess("Bilgileriniz başarıyla güncellendi!");
+                MessageBox.Show("Bilgileriniz başarıyla güncellendi!",
+                    "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 ClearPasswordFields();
                 ApplyInitialStyles();
             }
             catch (Exception ex)
             {
-                ShowError("Güncelleme sırasında hata: " + ex.Message);
+                MessageBox.Show("Güncelleme sırasında hata: " + ex.Message,
+                    "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                baglan?.Close();
-                baglan?.Dispose();
+                connection?.Close();
+                connection?.Dispose();
             }
         }
 
@@ -380,14 +370,14 @@ namespace BiletSatisOtomasyonu
         {
             if (string.IsNullOrWhiteSpace(txtFullName.Text))
             {
-                ShowWarning("Ad Soyad boş olamaz!");
+                MessageBox.Show("Ad Soyad boş olamaz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtFullName.Focus();
                 return false;
             }
 
             if (string.IsNullOrWhiteSpace(txtEmail.Text))
             {
-                ShowWarning("E-posta boş olamaz!");
+                MessageBox.Show("E-posta boş olamaz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtEmail.Focus();
                 return false;
             }
@@ -396,21 +386,24 @@ namespace BiletSatisOtomasyonu
             {
                 if (string.IsNullOrEmpty(txtPassword.Text) || txtPassword.Text == "••••••••")
                 {
-                    ShowWarning("Şifre değiştirmek için mevcut şifrenizi girin!");
+                    MessageBox.Show("Şifre değiştirmek için mevcut şifrenizi girin!",
+                        "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtPassword.Focus();
                     return false;
                 }
 
                 if (txtNewPassword.Text != txtConfirmPassword.Text)
                 {
-                    ShowWarning("Yeni şifreler eşleşmiyor!");
+                    MessageBox.Show("Yeni şifreler eşleşmiyor!",
+                        "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtConfirmPassword.Focus();
                     return false;
                 }
 
                 if (txtNewPassword.Text.Length < 6)
                 {
-                    ShowWarning("Yeni şifre en az 6 karakter olmalı!");
+                    MessageBox.Show("Yeni şifre en az 6 karakter olmalı!",
+                        "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtNewPassword.Focus();
                     return false;
                 }
@@ -419,69 +412,70 @@ namespace BiletSatisOtomasyonu
             return true;
         }
 
-        private bool IsEmailExists(SQLiteConnection baglan, string email)
+        private bool IsEmailExists(SQLiteConnection connection, string email)
         {
             string query = "SELECT COUNT(*) FROM users WHERE email = @email AND user_id != @userId";
-            using (SQLiteCommand cmd = new SQLiteCommand(query, baglan))
+            using (var cmd = new SQLiteCommand(query, connection))
             {
                 cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.Parameters.AddWithValue("@userId", _userId);
                 return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
             }
         }
 
-        private void UpdateUserInfo(SQLiteConnection baglan)
+        private void UpdateUserInfo(SQLiteConnection connection)
         {
             string query = @"UPDATE users 
                              SET full_name = @fullName, email = @email, phone = @phone 
                              WHERE user_id = @userId";
 
-            using (SQLiteCommand cmd = new SQLiteCommand(query, baglan))
+            using (var cmd = new SQLiteCommand(query, connection))
             {
                 cmd.Parameters.AddWithValue("@fullName", txtFullName.Text);
                 cmd.Parameters.AddWithValue("@email", txtEmail.Text);
                 cmd.Parameters.AddWithValue("@phone", txtPhone.Text);
-                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.Parameters.AddWithValue("@userId", _userId);
                 cmd.ExecuteNonQuery();
             }
         }
 
-        private bool UpdatePassword(SQLiteConnection baglan)
+        private bool UpdatePassword(SQLiteConnection connection)
         {
             string checkQuery = "SELECT password FROM users WHERE user_id = @userId";
-            using (SQLiteCommand cmd = new SQLiteCommand(checkQuery, baglan))
+            using (var cmd = new SQLiteCommand(checkQuery, connection))
             {
-                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.Parameters.AddWithValue("@userId", _userId);
                 string currentPassword = cmd.ExecuteScalar()?.ToString();
 
                 if (currentPassword != txtPassword.Text)
                 {
-                    ShowWarning("Mevcut şifre yanlış!");
+                    MessageBox.Show("Mevcut şifre yanlış!",
+                        "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtPassword.Focus();
                     return false;
                 }
             }
 
             string updateQuery = "UPDATE users SET password = @password WHERE user_id = @userId";
-            using (SQLiteCommand cmd = new SQLiteCommand(updateQuery, baglan))
+            using (var cmd = new SQLiteCommand(updateQuery, connection))
             {
                 cmd.Parameters.AddWithValue("@password", txtNewPassword.Text);
-                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.Parameters.AddWithValue("@userId", _userId);
                 cmd.ExecuteNonQuery();
             }
 
             return true;
         }
 
-        private void UpdateLogo(SQLiteConnection baglan)
+        private void UpdateLogo(SQLiteConnection connection)
         {
-            if (string.IsNullOrEmpty(profilePhotoBase64))
+            if (string.IsNullOrEmpty(_profilePhotoBase64))
                 return;
 
             string getAgencyQuery = "SELECT agency_id FROM users WHERE user_id = @userId";
-            using (SQLiteCommand cmd = new SQLiteCommand(getAgencyQuery, baglan))
+            using (var cmd = new SQLiteCommand(getAgencyQuery, connection))
             {
-                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.Parameters.AddWithValue("@userId", _userId);
                 object result = cmd.ExecuteScalar();
 
                 if (result != null && result != DBNull.Value)
@@ -489,9 +483,9 @@ namespace BiletSatisOtomasyonu
                     int agencyId = Convert.ToInt32(result);
 
                     string updateQuery = "UPDATE agencies SET logo_url = @logoUrl WHERE agency_id = @agencyId";
-                    using (SQLiteCommand updateCmd = new SQLiteCommand(updateQuery, baglan))
+                    using (var updateCmd = new SQLiteCommand(updateQuery, connection))
                     {
-                        updateCmd.Parameters.AddWithValue("@logoUrl", profilePhotoBase64);
+                        updateCmd.Parameters.AddWithValue("@logoUrl", _profilePhotoBase64);
                         updateCmd.Parameters.AddWithValue("@agencyId", agencyId);
                         updateCmd.ExecuteNonQuery();
                     }
@@ -513,12 +507,12 @@ namespace BiletSatisOtomasyonu
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
+            var result = MessageBox.Show(
                 "Hesabınızı silmek istediğinizden emin misiniz?\n\nBu işlem geri alınamaz!",
                 "Hesap Silme",
                 MessageBoxButtons.YesNo,
@@ -526,55 +520,35 @@ namespace BiletSatisOtomasyonu
 
             if (result == DialogResult.Yes)
             {
-                SQLiteConnection baglan = null;
+                SQLiteConnection connection = null;
 
                 try
                 {
-                    baglan = new SQLiteConnection("Data Source=BiletSatis.db; Version=3");
-                    baglan.Open();
+                    connection = new SQLiteConnection("Data Source=BiletSatis.db; Version=3");
+                    connection.Open();
 
                     string query = "DELETE FROM users WHERE user_id = @userId";
-                    using (SQLiteCommand cmd = new SQLiteCommand(query, baglan))
+                    using (var cmd = new SQLiteCommand(query, connection))
                     {
-                        cmd.Parameters.AddWithValue("@userId", userId);
+                        cmd.Parameters.AddWithValue("@userId", _userId);
                         cmd.ExecuteNonQuery();
                     }
 
-                    baglan.Close();
-                    baglan.Dispose();
-
-                    ShowSuccess("Hesabınız silindi. Uygulama kapatılacak.");
+                    MessageBox.Show("Hesabınız silindi. Uygulama kapatılacak.",
+                        "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Application.Exit();
                 }
                 catch (Exception ex)
                 {
-                    ShowError("Hesap silinirken hata: " + ex.Message);
+                    MessageBox.Show("Hesap silinirken hata: " + ex.Message,
+                        "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
-                    baglan?.Close();
-                    baglan?.Dispose();
+                    connection?.Close();
+                    connection?.Dispose();
                 }
             }
-        }
-
-        #endregion
-
-        #region Yardımcı Metodlar
-
-        private void ShowWarning(string message)
-        {
-            MessageBox.Show(message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-
-        private void ShowError(string message)
-        {
-            MessageBox.Show(message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        private void ShowSuccess(string message)
-        {
-            MessageBox.Show(message, "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         #endregion

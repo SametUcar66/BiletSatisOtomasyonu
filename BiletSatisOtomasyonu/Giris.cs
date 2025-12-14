@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BiletSatisOtomasyonu
@@ -17,22 +10,29 @@ namespace BiletSatisOtomasyonu
         {
             InitializeComponent();
         }
+
         private void Giris_Load(object sender, EventArgs e)
         {
-            ShowControl(new GirisControl());
-        }
-        private void ShowControl(UserControl girisControl)
-        {
-            flowLayoutPanel1.Controls.Clear();
-         
-            flowLayoutPanel1.Controls.Add(girisControl);
+            ShowLoginControl();
         }
 
-        private void ShowControl2(UserControl kayitControl)
+        #region Kontrol Yükleme
+
+        private void ShowLoginControl()
         {
             flowLayoutPanel1.Controls.Clear();
-            flowLayoutPanel1.Controls.Add(kayitControl);
+            flowLayoutPanel1.Controls.Add(new GirisControl());
         }
+
+        private void ShowRegisterControl()
+        {
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel1.Controls.Add(new KayitKontrol());
+        }
+
+        #endregion
+
+        #region Pencere Kontrolleri
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -41,36 +41,54 @@ namespace BiletSatisOtomasyonu
 
         private void btnMin_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+                WindowState = FormWindowState.Minimized;
+        }
+
+        #endregion
+
+        #region Tab Butonları
+
+        private void btnSLogin_Click(object sender, EventArgs e)
+        {
+            ShowLoginControl();
+            SetActiveTab(btnSLogin, txtLine1);
+            SetInactiveTab(btnRegister, txtLine2);
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            ShowControl2(new KayitKontrol());
-            btnSLogin.ForeColor = Color.FromArgb(64,64,64);
-            txtLine1.BackColor = Color.FromArgb(64, 64, 64);
-            btnRegister.ForeColor = Color.White;
-            txtLine2.BackColor = Color.White;
-
-        }   
-
-        private void btnSLogin_Click(object sender, EventArgs e)
-        {
-            ShowControl(new GirisControl());
-            btnSLogin.ForeColor = Color.White;
-            txtLine1.BackColor = Color.White;
-            btnRegister.ForeColor = Color.FromArgb(64, 64, 64);
-            txtLine2.BackColor = Color.FromArgb(64, 64, 64);
+            ShowRegisterControl();
+            SetActiveTab(btnRegister, txtLine2);
+            SetInactiveTab(btnSLogin, txtLine1);
         }
+
+        #endregion
+
+        #region Yardımcı Metodlar
+
+        private void SetActiveTab(Button button, TextBox line)
+        {
+            button.ForeColor = Color.White;
+            line.BackColor = Color.White;
+        }
+
+        private void SetInactiveTab(Button button, TextBox line)
+        {
+            button.ForeColor = Color.FromArgb(64, 64, 64);
+            line.BackColor = Color.FromArgb(64, 64, 64);
+        }
+
+        #endregion
+
+        #region Test Butonu
 
         private void signup_Click(object sender, EventArgs e)
         {
-            //kullaniciKayit kForm= new kullaniciKayit();
-            //kForm.Show();
-            //SPManager spm = new SPManager();
-            //spm.Show();
-            AnaSayfa anaSayfa =new AnaSayfa();
+            // Test butonu - Ana sayfayı aç
+            AnaSayfa anaSayfa = new AnaSayfa();
             anaSayfa.Show();
         }
+
+        #endregion
     }
 }

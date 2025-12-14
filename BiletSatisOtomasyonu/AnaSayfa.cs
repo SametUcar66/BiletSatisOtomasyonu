@@ -1,46 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
+using BiletSatisOtomasyonu.Helpers;
+using BiletSatisOtomasyonu.Services;
 
 namespace BiletSatisOtomasyonu
 {
     public partial class AnaSayfa : Form
     {
-        private int currentUserId;
-        private int currentAgencyId;
+        private readonly int _currentUserId;
+        private readonly int _currentAgencyId;
 
         public AnaSayfa(int userId = 0, int agencyId = 0)
         {
             InitializeComponent();
-            currentUserId = userId;
-            currentAgencyId = agencyId;
+            _currentUserId = userId;
+            _currentAgencyId = agencyId;
         }
 
         #region Pencere Kontrolleri
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        private void btnClose_Click(object sender, EventArgs e) => Application.Exit();
 
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
+        private void btnMinimize_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
 
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        private void btnLogOut_Click(object sender, EventArgs e) => Close();
 
         #endregion
 
@@ -58,11 +43,11 @@ namespace BiletSatisOtomasyonu
 
         public void LoadProfilePhoto()
         {
-            string logoBase64 = GetLogoFromDatabase();
+            string logoBase64 = UserService.GetUserLogo(_currentUserId);
 
             if (!string.IsNullOrEmpty(logoBase64))
             {
-                picProfilePhoto.Image = ConvertBase64ToImage(logoBase64);
+                picProfilePhoto.Image = ImageHelper.ConvertBase64ToImage(logoBase64);
             }
             else
             {
@@ -70,67 +55,14 @@ namespace BiletSatisOtomasyonu
             }
         }
 
-        private string GetLogoFromDatabase()
-        {
-            SQLiteConnection baglan = null;
-            SQLiteCommand cmd = null;
-
-            try
-            {
-                baglan = new SQLiteConnection("Data Source=BiletSatis.db; Version=3");
-                baglan.Open();
-
-                string query = @"SELECT a.logo_url 
-                                 FROM agencies a 
-                                 INNER JOIN users u ON u.agency_id = a.agency_id 
-                                 WHERE u.user_id = @userId";
-
-                cmd = new SQLiteCommand(query, baglan);
-                cmd.Parameters.AddWithValue("@userId", currentUserId);
-                object result = cmd.ExecuteScalar();
-
-                if (result != null && result != DBNull.Value)
-                {
-                    return result.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Logo yüklenirken hata: " + ex.Message);
-            }
-            finally
-            {
-                cmd?.Dispose();
-                baglan?.Close();
-                baglan?.Dispose();
-            }
-
-            return null;
-        }
-
-        private Image ConvertBase64ToImage(string base64String)
-        {
-            try
-            {
-                byte[] imageBytes = Convert.FromBase64String(base64String);
-                MemoryStream ms = new MemoryStream(imageBytes);
-                return Image.FromStream(ms);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Base64 dönüştürme hatası: " + ex.Message);
-                LoadDefaultImage();
-                return null;
-            }
-        }
-
         private void LoadDefaultImage()
         {
             string defaultImagePath = Path.Combine(Application.StartupPath, "images", "default.png");
+            var image = ImageHelper.LoadDefaultImage(defaultImagePath);
 
-            if (File.Exists(defaultImagePath))
+            if (image != null)
             {
-                picProfilePhoto.Image = Image.FromFile(defaultImagePath);
+                picProfilePhoto.Image = image;
             }
             else
             {
@@ -139,7 +71,6 @@ namespace BiletSatisOtomasyonu
                 {
                     Directory.CreateDirectory(imagesFolder);
                 }
-
                 picProfilePhoto.BackColor = Color.Gray;
             }
         }
@@ -165,13 +96,15 @@ namespace BiletSatisOtomasyonu
         private void LoadFlightTicketControl()
         {
             pnlTicketContent.Controls.Clear();
-            pnlTicketContent.Controls.Add(new UcakBileti());
+            var ucakBileti = new UcakBileti { Dock = DockStyle.Fill };
+            pnlTicketContent.Controls.Add(ucakBileti);
         }
 
         private void LoadBusTicketControl()
         {
             pnlTicketContent.Controls.Clear();
-            pnlTicketContent.Controls.Add(new OtobusBileti());
+            var otobusBileti = new OtobusBileti { Dock = DockStyle.Fill };
+            pnlTicketContent.Controls.Add(otobusBileti);
         }
 
         #endregion
@@ -180,14 +113,8 @@ namespace BiletSatisOtomasyonu
 
         private void btnMyAccount_Click(object sender, EventArgs e)
         {
-            Hesabim hesabimForm = new Hesabim(currentUserId);
-            
-            // Profil güncellendiğinde tetiklenecek event
-            hesabimForm.ProfileUpdated += (s, args) =>
-            {
-                LoadProfilePhoto();
-            };
-            
+            var hesabimForm = new Hesabim(_currentUserId);
+            hesabimForm.ProfileUpdated += (s, args) => LoadProfilePhoto();
             hesabimForm.ShowDialog();
         }
 
@@ -202,20 +129,15 @@ namespace BiletSatisOtomasyonu
                 e.Graphics.DrawImage(picProfilePhoto.Image, 0, 0, picProfilePhoto.Width, picProfilePhoto.Height);
             }
 
-            using (Pen pen = new Pen(Color.White, 2))
+            using (var pen = new Pen(Color.White, 2))
             {
                 pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
                 e.Graphics.DrawRectangle(pen, 0, 0, picProfilePhoto.Width - 1, picProfilePhoto.Height - 1);
             }
         }
 
-        private void pnlTicketContent_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void pnlHeader_Paint(object sender, PaintEventArgs e)
-        {
-        }
+        private void pnlTicketContent_Paint(object sender, PaintEventArgs e) { }
+        private void pnlHeader_Paint(object sender, PaintEventArgs e) { }
 
         #endregion
     }
