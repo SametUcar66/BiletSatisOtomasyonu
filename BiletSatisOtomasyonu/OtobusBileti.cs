@@ -14,17 +14,35 @@ namespace BiletSatisOtomasyonu
         private int _selectedSeatNo = -1;
         private decimal _ticketPrice = 0;
         private List<int> _occupiedSeats = new List<int>();
+        private int _userId = 0;
 
         public OtobusBileti()
         {
             InitializeComponent();
         }
 
+        public OtobusBileti(int userId) : this()
+        {
+            _userId = userId;
+        }
+
         private void OtobusBileti_Load(object sender, EventArgs e)
         {
             LoadTerminals();
+            SetupDatePicker();
             ThemeHelper.ApplyDarkTheme(dgvSeferler);
         }
+
+        #region Tarih Ayarları
+
+        private void SetupDatePicker()
+        {
+            dtpTarih.MinDate = new DateTime(2025, 12, 1);
+            dtpTarih.MaxDate = new DateTime(2025, 12, 31);
+            dtpTarih.Value = new DateTime(2025, 12, 15);
+        }
+
+        #endregion
 
         #region Terminal Yükleme
 
@@ -32,7 +50,7 @@ namespace BiletSatisOtomasyonu
         {
             try
             {
-                var dt = TicketService.GetTerminals();
+                var dt = TicketService.GetTerminalsByType(Constants.VEHICLE_TYPE_BUS);
 
                 cmbKalkis.Items.Clear();
                 cmbVaris.Items.Clear();
@@ -52,7 +70,7 @@ namespace BiletSatisOtomasyonu
             }
             catch (Exception ex)
             {
-                MessageHelper.ShowError("Terminal verileri yüklenirken hata: " + ex.Message);
+                MessageHelper.ShowError("Otogar verileri yüklenirken hata: " + ex.Message);
             }
         }
 
@@ -64,13 +82,23 @@ namespace BiletSatisOtomasyonu
         {
             if (cmbKalkis.SelectedIndex <= 0 || cmbVaris.SelectedIndex <= 0)
             {
-                MessageHelper.ShowWarning("Lütfen kalkış ve varış noktalarını seçin.");
+                MessageHelper.ShowWarning("Lütfen kalkış ve varış otogarlarını seçin.");
                 return;
             }
 
-            if (cmbKalkis.SelectedItem.ToString() == cmbVaris.SelectedItem.ToString())
+            string departure = cmbKalkis.SelectedItem.ToString();
+            string arrival = cmbVaris.SelectedItem.ToString();
+
+            if (departure == arrival)
             {
-                MessageHelper.ShowWarning("Kalkış ve varış noktaları aynı olamaz.");
+                MessageHelper.ShowWarning("Kalkış ve varış otogarları aynı olamaz.");
+                return;
+            }
+
+            // Şehir içi yolculuk kontrolü
+            if (TicketService.IsSameCity(departure, arrival))
+            {
+                MessageHelper.ShowWarning("Şehir içi yolculuk yapılamaz. Lütfen farklı şehirler seçin.");
                 return;
             }
 
@@ -81,12 +109,18 @@ namespace BiletSatisOtomasyonu
         {
             try
             {
-                var dt = TicketService.SearchTrips(Constants.VEHICLE_TYPE_BUS);
+                dgvSeferler.DataSource = null;
+                dgvSeferler.Rows.Clear();
+
+                DateTime selectedDate = dtpTarih.Value.Date;
+                string departure = cmbKalkis.SelectedItem.ToString();
+                string arrival = cmbVaris.SelectedItem.ToString();
+                
+                var dt = TicketService.SearchTrips(Constants.VEHICLE_TYPE_BUS, selectedDate, departure, arrival);
 
                 if (dt.Rows.Count == 0)
                 {
-                    MessageHelper.ShowInfo("Aradığınız kriterlere uygun sefer bulunamadı.");
-                    dgvSeferler.DataSource = null;
+                    MessageHelper.ShowInfo($"{selectedDate:dd.MM.yyyy} tarihinde bu güzergahta otobüs seferi bulunamadı.");
                 }
                 else
                 {
@@ -100,7 +134,7 @@ namespace BiletSatisOtomasyonu
             }
             catch (Exception ex)
             {
-                MessageHelper.ShowError("Sefer aranırken hata: " + ex.Message);
+                MessageHelper.ShowError("Otobüs seferi aranırken hata: " + ex.Message);
             }
         }
 
@@ -212,18 +246,21 @@ namespace BiletSatisOtomasyonu
 
         private void PurchaseTicket()
         {
-            string route = $"{cmbKalkis.SelectedItem} - {cmbVaris.SelectedItem}";
+            int startTerminalId = TicketService.GetTerminalIdByName(cmbKalkis.SelectedItem.ToString());
+            int endTerminalId = TicketService.GetTerminalIdByName(cmbVaris.SelectedItem.ToString());
 
             bool success = TicketService.PurchaseTicket(
                 _selectedTripId,
                 _selectedSeatNo,
-                Constants.TICKET_PREFIX_BUS,
-                "Otobüs Bileti",
-                route);
+                startTerminalId,
+                endTerminalId,
+                _ticketPrice,
+                "Yolcu",
+                _userId > 0 ? (int?)_userId : null);
 
             if (success)
             {
-                MessageHelper.ShowSuccess($"🎉 Bilet başarıyla satın alındı!\n\nKoltuk No: {_selectedSeatNo}\nFiyat: {_ticketPrice:N2} ₺");
+                MessageHelper.ShowSuccess($"🎉 Otobüs bileti başarıyla satın alındı!\n\nKoltuk No: {_selectedSeatNo}\nFiyat: {_ticketPrice:N2} ₺");
                 LoadSeats();
             }
             else

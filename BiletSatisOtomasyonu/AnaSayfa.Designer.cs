@@ -44,6 +44,7 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlTicketContent = new System.Windows.Forms.Panel();
+            this.btnTrainTicket = new System.Windows.Forms.Button();
             this.btnBusTicket = new System.Windows.Forms.Button();
             this.btnFlightTicket = new System.Windows.Forms.Button();
             this.lblSlogan = new System.Windows.Forms.Label();
@@ -234,6 +235,7 @@
             // pnlMain
             // 
             this.pnlMain.Controls.Add(this.pnlTicketContent);
+            this.pnlMain.Controls.Add(this.btnTrainTicket);
             this.pnlMain.Controls.Add(this.btnBusTicket);
             this.pnlMain.Controls.Add(this.btnFlightTicket);
             this.pnlMain.Controls.Add(this.lblSlogan);
@@ -253,6 +255,25 @@
             this.pnlTicketContent.Size = new System.Drawing.Size(700, 269);
             this.pnlTicketContent.TabIndex = 1;
             this.pnlTicketContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTicketContent_Paint);
+            // 
+            // btnTrainTicket
+            // 
+            this.btnTrainTicket.BackColor = System.Drawing.Color.DarkGray;
+            this.btnTrainTicket.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTrainTicket.FlatAppearance.BorderSize = 0;
+            this.btnTrainTicket.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnTrainTicket.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnTrainTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrainTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnTrainTicket.Location = new System.Drawing.Point(286, 241);
+            this.btnTrainTicket.Name = "btnTrainTicket";
+            this.btnTrainTicket.Size = new System.Drawing.Size(120, 35);
+            this.btnTrainTicket.TabIndex = 5;
+            this.btnTrainTicket.Text = "Tren Bileti";
+            this.btnTrainTicket.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTrainTicket.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTrainTicket.UseVisualStyleBackColor = false;
+            this.btnTrainTicket.Click += new System.EventHandler(this.btnTrainTicket_Click);
             // 
             // btnBusTicket
             // 
@@ -354,6 +375,7 @@
         private System.Windows.Forms.Label lblSlogan;
         private System.Windows.Forms.Button btnFlightTicket;
         private System.Windows.Forms.Button btnBusTicket;
+        private System.Windows.Forms.Button btnTrainTicket;
         private System.Windows.Forms.Button btnMyAccount;
         private System.Windows.Forms.Button btnMyTravels;
         private System.Windows.Forms.Button btnHelp;

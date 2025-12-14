@@ -33,8 +33,17 @@ namespace BiletSatisOtomasyonu
 
         private void AnaSayfa_Load(object sender, EventArgs e)
         {
-            LoadFlightTicketControl();
+            LoadBiletArama();
             LoadProfilePhoto();
+            HideOldTicketButtons();
+        }
+
+        private void HideOldTicketButtons()
+        {
+            // Eski bilet butonlarını gizle (artık BiletArama içinde RadioButton var)
+            if (btnFlightTicket != null) btnFlightTicket.Visible = false;
+            if (btnBusTicket != null) btnBusTicket.Visible = false;
+            if (btnTrainTicket != null) btnTrainTicket.Visible = false;
         }
 
         #endregion
@@ -77,35 +86,19 @@ namespace BiletSatisOtomasyonu
 
         #endregion
 
-        #region Bilet Kontrolleri
+        #region Bilet Arama
 
-        private void btnFlightTicket_Click(object sender, EventArgs e)
-        {
-            LoadFlightTicketControl();
-            btnBusTicket.BackColor = Color.DarkGray;
-            btnFlightTicket.BackColor = Color.White;
-        }
-
-        private void btnBusTicket_Click(object sender, EventArgs e)
-        {
-            LoadBusTicketControl();
-            btnBusTicket.BackColor = Color.White;
-            btnFlightTicket.BackColor = Color.DarkGray;
-        }
-
-        private void LoadFlightTicketControl()
+        private void LoadBiletArama()
         {
             pnlTicketContent.Controls.Clear();
-            var ucakBileti = new UcakBileti { Dock = DockStyle.Fill };
-            pnlTicketContent.Controls.Add(ucakBileti);
+            var biletArama = new BiletArama(_currentUserId) { Dock = DockStyle.Fill };
+            pnlTicketContent.Controls.Add(biletArama);
         }
 
-        private void LoadBusTicketControl()
-        {
-            pnlTicketContent.Controls.Clear();
-            var otobusBileti = new OtobusBileti { Dock = DockStyle.Fill };
-            pnlTicketContent.Controls.Add(otobusBileti);
-        }
+        // Eski buton eventleri (geriye uyumluluk için)
+        private void btnFlightTicket_Click(object sender, EventArgs e) { }
+        private void btnBusTicket_Click(object sender, EventArgs e) { }
+        private void btnTrainTicket_Click(object sender, EventArgs e) { }
 
         #endregion
 

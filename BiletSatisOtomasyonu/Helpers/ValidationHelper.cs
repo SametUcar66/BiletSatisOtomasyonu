@@ -3,7 +3,7 @@
 namespace BiletSatisOtomasyonu.Helpers
 {
     /// <summary>
-    /// Doğrulama yardımcı sınıfı
+    /// Doğrulama işlemleri
     /// </summary>
     public static class ValidationHelper
     {
@@ -29,21 +29,9 @@ namespace BiletSatisOtomasyonu.Helpers
         /// <summary>
         /// Şifre uzunluğunu doğrular
         /// </summary>
-        public static bool IsValidPassword(string password, int minLength = 6)
+        public static bool IsValidPassword(string password)
         {
-            return !string.IsNullOrWhiteSpace(password) && password.Length >= minLength;
-        }
-
-        /// <summary>
-        /// Telefon numarasını doğrular
-        /// </summary>
-        public static bool IsValidPhone(string phone)
-        {
-            if (string.IsNullOrWhiteSpace(phone))
-                return true; // Telefon opsiyonel
-
-            // Sadece rakam ve bazı karakterlere izin ver
-            return Regex.IsMatch(phone, @"^[\d\s\-\+\(\)]+$");
+            return !string.IsNullOrWhiteSpace(password) && password.Length >= 6;
         }
 
         /// <summary>
@@ -54,10 +42,7 @@ namespace BiletSatisOtomasyonu.Helpers
             if (string.IsNullOrWhiteSpace(text))
                 return false;
 
-            if (placeholder != null && text == placeholder)
-                return false;
-
-            return true;
+            return placeholder == null || text != placeholder;
         }
     }
 }

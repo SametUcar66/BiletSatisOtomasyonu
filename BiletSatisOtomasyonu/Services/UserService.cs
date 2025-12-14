@@ -1,44 +1,47 @@
-using System;
+﻿using System;
 using System.Data.SQLite;
 using BiletSatisOtomasyonu.Helpers;
 
 namespace BiletSatisOtomasyonu.Services
 {
     /// <summary>
-    /// Kullan?c? i?lemleri servisi
+    /// Kullanıcı işlemleri
     /// </summary>
     public static class UserService
     {
         /// <summary>
-        /// Kullan?c?n?n profil foto?raf?n? (logo) getirir
+        /// Kullanıcı girişi
         /// </summary>
-        public static string GetUserLogo(int userId)
+        public static (bool success, int userId, int agencyId, string roleName) Login(string email, string password)
         {
             try
             {
-                string query = @"SELECT a.logo_url 
-                                 FROM agencies a 
-                                 INNER JOIN users u ON u.agency_id = a.agency_id 
-                                 WHERE u.user_id = @userId";
+                string query = @"
+                    SELECT u.user_id, u.agency_id, r.role_name 
+                    FROM users u 
+                    LEFT JOIN roles r ON u.role_id = r.role_id 
+                    WHERE u.email = @email AND u.password = @password";
 
-                var result = DatabaseHelper.ExecuteScalar(query,
-                    new SQLiteParameter("@userId", userId));
+                var dt = DatabaseHelper.ExecuteQuery(query,
+                    new SQLiteParameter("@email", email),
+                    new SQLiteParameter("@password", password));
 
-                if (result != null && result != DBNull.Value)
+                if (dt.Rows.Count > 0)
                 {
-                    return result.ToString();
+                    var row = dt.Rows[0];
+                    int userId = Convert.ToInt32(row["user_id"]);
+                    int agencyId = row["agency_id"] != DBNull.Value ? Convert.ToInt32(row["agency_id"]) : 0;
+                    string roleName = row["role_name"]?.ToString() ?? "";
+                    return (true, userId, agencyId, roleName);
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Logo y�klenirken hata: " + ex.Message);
-            }
+            catch { }
 
-            return null;
+            return (false, 0, 0, "");
         }
 
         /// <summary>
-        /// E-posta adresinin sistemde kay?tl? olup olmad???n? kontrol eder
+        /// E-posta kontrolü
         /// </summary>
         public static bool IsEmailExists(string email, int excludeUserId = 0)
         {
@@ -55,7 +58,54 @@ namespace BiletSatisOtomasyonu.Services
         }
 
         /// <summary>
-        /// Kullan?c? bilgilerini g�nceller
+        /// Kullanıcı kaydı
+        /// </summary>
+        public static bool Register(string email, string password, string fullName, int roleId = 5, int agencyId = 1)
+        {
+            try
+            {
+                string query = @"
+                    INSERT INTO users (role_id, agency_id, email, password, full_name, phone) 
+                    VALUES (@roleId, @agencyId, @email, @password, @fullName, '')";
+
+                DatabaseHelper.ExecuteNonQuery(query,
+                    new SQLiteParameter("@roleId", roleId),
+                    new SQLiteParameter("@agencyId", agencyId),
+                    new SQLiteParameter("@email", email),
+                    new SQLiteParameter("@password", password),
+                    new SQLiteParameter("@fullName", fullName));
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Kullanıcı logosu
+        /// </summary>
+        public static string GetUserLogo(int userId)
+        {
+            try
+            {
+                var result = DatabaseHelper.ExecuteScalar(@"
+                    SELECT a.logo_url FROM agencies a 
+                    INNER JOIN users u ON u.agency_id = a.agency_id 
+                    WHERE u.user_id = @userId",
+                    new SQLiteParameter("@userId", userId));
+
+                if (result != null && result != DBNull.Value)
+                    return result.ToString();
+            }
+            catch { }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Kullanıcı bilgilerini günceller
         /// </summary>
         public static bool UpdateUserInfo(int userId, string fullName, string email, string phone)
         {
@@ -68,7 +118,7 @@ namespace BiletSatisOtomasyonu.Services
                 DatabaseHelper.ExecuteNonQuery(query,
                     new SQLiteParameter("@fullName", fullName),
                     new SQLiteParameter("@email", email),
-                    new SQLiteParameter("@phone", phone),
+                    new SQLiteParameter("@phone", phone ?? ""),
                     new SQLiteParameter("@userId", userId));
 
                 return true;
@@ -80,26 +130,26 @@ namespace BiletSatisOtomasyonu.Services
         }
 
         /// <summary>
-        /// Kullan?c? ?ifresini do?rular
+        /// Şifre doğrulama
         /// </summary>
         public static bool VerifyPassword(int userId, string password)
         {
-            string query = "SELECT password FROM users WHERE user_id = @userId";
-            var result = DatabaseHelper.ExecuteScalar(query,
+            var result = DatabaseHelper.ExecuteScalar(
+                "SELECT password FROM users WHERE user_id = @userId",
                 new SQLiteParameter("@userId", userId));
 
             return result?.ToString() == password;
         }
 
         /// <summary>
-        /// Kullan?c? ?ifresini g�nceller
+        /// Şifre güncelleme
         /// </summary>
         public static bool UpdatePassword(int userId, string newPassword)
         {
             try
             {
-                string query = "UPDATE users SET password = @password WHERE user_id = @userId";
-                DatabaseHelper.ExecuteNonQuery(query,
+                DatabaseHelper.ExecuteNonQuery(
+                    "UPDATE users SET password = @password WHERE user_id = @userId",
                     new SQLiteParameter("@password", newPassword),
                     new SQLiteParameter("@userId", userId));
                 return true;
@@ -111,45 +161,40 @@ namespace BiletSatisOtomasyonu.Services
         }
 
         /// <summary>
-        /// Acenta logosunu g�nceller
+        /// Acenta logosu güncelleme
         /// </summary>
         public static bool UpdateAgencyLogo(int userId, string logoBase64)
         {
             try
             {
-                // �nce agency_id'yi al
-                string getAgencyQuery = "SELECT agency_id FROM users WHERE user_id = @userId";
-                var result = DatabaseHelper.ExecuteScalar(getAgencyQuery,
+                var result = DatabaseHelper.ExecuteScalar(
+                    "SELECT agency_id FROM users WHERE user_id = @userId",
                     new SQLiteParameter("@userId", userId));
 
                 if (result != null && result != DBNull.Value)
                 {
                     int agencyId = Convert.ToInt32(result);
-
-                    string updateQuery = "UPDATE agencies SET logo_url = @logoUrl WHERE agency_id = @agencyId";
-                    DatabaseHelper.ExecuteNonQuery(updateQuery,
-                        new SQLiteParameter("@logoUrl", logoBase64),
+                    DatabaseHelper.ExecuteNonQuery(
+                        "UPDATE agencies SET logo_url = @logoUrl WHERE agency_id = @agencyId",
+                        new SQLiteParameter("@logoUrl", logoBase64 ?? (object)DBNull.Value),
                         new SQLiteParameter("@agencyId", agencyId));
-
                     return true;
                 }
             }
-            catch
-            {
-            }
+            catch { }
 
             return false;
         }
 
         /// <summary>
-        /// Kullan?c? hesab?n? siler
+        /// Kullanıcı silme
         /// </summary>
         public static bool DeleteUser(int userId)
         {
             try
             {
-                string query = "DELETE FROM users WHERE user_id = @userId";
-                DatabaseHelper.ExecuteNonQuery(query,
+                DatabaseHelper.ExecuteNonQuery(
+                    "DELETE FROM users WHERE user_id = @userId",
                     new SQLiteParameter("@userId", userId));
                 return true;
             }
@@ -160,18 +205,18 @@ namespace BiletSatisOtomasyonu.Services
         }
 
         /// <summary>
-        /// Kullan?c? kayd? olu?turur
+        /// Yeni kullanıcı oluşturma
         /// </summary>
         public static long CreateUser(int roleId, long agencyId, string email, string password, string fullName, string phone = "")
         {
             try
             {
-                string query = @"INSERT INTO users (role_id, agency_id, email, password, full_name, phone) 
-                                 VALUES (@roleId, @agencyId, @email, @password, @fullName, @phone)";
-
                 using (var connection = DatabaseHelper.CreateConnection())
                 {
                     connection.Open();
+                    string query = @"INSERT INTO users (role_id, agency_id, email, password, full_name, phone) 
+                                     VALUES (@roleId, @agencyId, @email, @password, @fullName, @phone)";
+
                     using (var cmd = new SQLiteCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@roleId", roleId);
@@ -179,7 +224,7 @@ namespace BiletSatisOtomasyonu.Services
                         cmd.Parameters.AddWithValue("@email", email);
                         cmd.Parameters.AddWithValue("@password", password);
                         cmd.Parameters.AddWithValue("@fullName", fullName);
-                        cmd.Parameters.AddWithValue("@phone", phone);
+                        cmd.Parameters.AddWithValue("@phone", phone ?? "");
                         cmd.ExecuteNonQuery();
                         return connection.LastInsertRowId;
                     }
@@ -192,18 +237,18 @@ namespace BiletSatisOtomasyonu.Services
         }
 
         /// <summary>
-        /// Acenta olu?turur
+        /// Acenta oluşturma
         /// </summary>
         public static long CreateAgency(string agencyName, string logoBase64 = null)
         {
             try
             {
-                string query = @"INSERT INTO agencies (agency_name, is_active, commission_rate, logo_url) 
-                                 VALUES (@agencyName, 1, 10.0, @logoUrl)";
-
                 using (var connection = DatabaseHelper.CreateConnection())
                 {
                     connection.Open();
+                    string query = @"INSERT INTO agencies (agency_name, is_active, commission_rate, logo_url) 
+                                     VALUES (@agencyName, 1, 10.0, @logoUrl)";
+
                     using (var cmd = new SQLiteCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@agencyName", agencyName);
@@ -221,19 +266,19 @@ namespace BiletSatisOtomasyonu.Services
         }
 
         /// <summary>
-        /// Rol ad?n? T�rk�e'ye �evirir
+        /// Rol adını Türkçeleştirir
         /// </summary>
         public static string GetRoleDisplayName(string roleName)
         {
             switch (roleName)
             {
-                case "SuperAdmin": return "S�per Admin";
-                case "AgencyAdmin": return "Acenta Y�neticisi";
+                case "SuperAdmin": return "Süper Admin";
+                case "AgencyAdmin": return "Acenta Yöneticisi";
                 case "Staff": return "Personel";
-                case "Driver": return "?of�r";
+                case "Driver": return "Şoför";
                 case "Passenger": return "Yolcu";
                 default: return roleName ?? "Bilinmiyor";
             }
         }
     }
-}   
+}

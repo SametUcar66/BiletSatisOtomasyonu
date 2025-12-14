@@ -3,33 +3,28 @@
 namespace BiletSatisOtomasyonu.Helpers
 {
     /// <summary>
-    /// Mesaj kutusu yardımcı sınıfı
+    /// Mesaj kutuları
     /// </summary>
     public static class MessageHelper
     {
-        public static void ShowWarning(string message, string title = "Uyarı")
+        public static void ShowWarning(string message)
         {
-            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show(message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        public static void ShowError(string message, string title = "Hata")
+        public static void ShowError(string message)
         {
-            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public static void ShowSuccess(string message, string title = "Başarılı")
+        public static void ShowSuccess(string message)
         {
-            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(message, "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public static void ShowInfo(string message, string title = "Bilgi")
+        public static DialogResult ShowConfirm(string message)
         {
-            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        public static DialogResult ShowConfirm(string message, string title = "Onay")
-        {
-            return MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return MessageBox.Show(message, "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
     }
 }

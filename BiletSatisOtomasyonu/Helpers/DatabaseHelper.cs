@@ -5,11 +5,11 @@ using System.Data.SQLite;
 namespace BiletSatisOtomasyonu.Helpers
 {
     /// <summary>
-    /// Veritabanı bağlantı ve işlem yardımcı sınıfı
+    /// Veritabanı işlemleri
     /// </summary>
     public static class DatabaseHelper
     {
-        private const string CONNECTION_STRING = "Data Source=BiletSatis.db; Version=3";
+        private const string CONNECTION_STRING = "Data Source=BiletSatis.db;Version=3";
 
         public static SQLiteConnection CreateConnection()
         {
@@ -24,9 +24,7 @@ namespace BiletSatisOtomasyonu.Helpers
                 using (var cmd = new SQLiteCommand(query, connection))
                 {
                     if (parameters != null)
-                    {
                         cmd.Parameters.AddRange(parameters);
-                    }
 
                     var adapter = new SQLiteDataAdapter(cmd);
                     var dt = new DataTable();
@@ -44,9 +42,7 @@ namespace BiletSatisOtomasyonu.Helpers
                 using (var cmd = new SQLiteCommand(query, connection))
                 {
                     if (parameters != null)
-                    {
                         cmd.Parameters.AddRange(parameters);
-                    }
                     return cmd.ExecuteNonQuery();
                 }
             }
@@ -60,9 +56,7 @@ namespace BiletSatisOtomasyonu.Helpers
                 using (var cmd = new SQLiteCommand(query, connection))
                 {
                     if (parameters != null)
-                    {
                         cmd.Parameters.AddRange(parameters);
-                    }
                     return cmd.ExecuteScalar();
                 }
             }

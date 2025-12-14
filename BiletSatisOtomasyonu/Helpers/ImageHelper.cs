@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -6,29 +6,31 @@ using System.IO;
 namespace BiletSatisOtomasyonu.Helpers
 {
     /// <summary>
-    /// Resim dönü?türme yard?mc? s?n?f?
+    /// Resim iÅŸlemleri
     /// </summary>
     public static class ImageHelper
     {
-        public static string ConvertImageToBase64(Image image, string filePath)
+        public static string ImageToBase64(Image image, string filePath)
         {
             using (var ms = new MemoryStream())
             {
-                var format = GetImageFormat(filePath);
+                var format = Path.GetExtension(filePath).ToLower() == ".png" 
+                    ? ImageFormat.Png 
+                    : ImageFormat.Jpeg;
                 image.Save(ms, format);
                 return Convert.ToBase64String(ms.ToArray());
             }
         }
 
-        public static Image ConvertBase64ToImage(string base64String)
+        public static Image Base64ToImage(string base64)
         {
-            if (string.IsNullOrEmpty(base64String))
+            if (string.IsNullOrEmpty(base64))
                 return null;
 
             try
             {
-                byte[] imageBytes = Convert.FromBase64String(base64String);
-                using (var ms = new MemoryStream(imageBytes))
+                byte[] bytes = Convert.FromBase64String(base64);
+                using (var ms = new MemoryStream(bytes))
                 {
                     return Image.FromStream(ms);
                 }
@@ -37,28 +39,6 @@ namespace BiletSatisOtomasyonu.Helpers
             {
                 return null;
             }
-        }
-
-        public static ImageFormat GetImageFormat(string filePath)
-        {
-            string extension = Path.GetExtension(filePath).ToLower();
-
-            switch (extension)
-            {
-                case ".png": return ImageFormat.Png;
-                case ".gif": return ImageFormat.Gif;
-                case ".bmp": return ImageFormat.Bmp;
-                default: return ImageFormat.Jpeg;
-            }
-        }
-
-        public static Image LoadDefaultImage(string defaultImagePath)
-        {
-            if (File.Exists(defaultImagePath))
-            {
-                return Image.FromFile(defaultImagePath);
-            }
-            return null;
         }
     }
 }
