@@ -1,31 +1,29 @@
 ﻿using System;
-using System.Data.SQLite;
 using System.IO;
+using System.Data.SQLite;
 using System.Windows.Forms;
 
 namespace BiletSatisOtomasyonu
 {
-    public class DatabaseHelper
+    // Rol İsimleri ve ID'leri (Veritabanındaki UserType ile eşleşmeli)
+    public enum UserRole
     {
-        // BURAYI DEĞİŞTİRDİK: Senin dosya isminle aynı yaptık
-        private static string dbFileName = "VeriTabani.db";
+        Admin = 0,             // Yönetici
+        AjentaAdmin = 1,       // Acente Yöneticisi
+        AjentaCalisan = 2,     // Acente Çalışanı
+        Sofor = 3,             // Şoför
+        KurumsalMusteri = 4,   // Kurumsal (En az 5 bilet)
+        Musteri = 5            // Bireysel
+    }
 
-        // Programın çalıştığı klasörü (Debug klasörü) alıp dosya adını ekliyoruz
-        private static string dbPath = Path.Combine(Application.StartupPath, dbFileName);
-
-        private static string connectionString = $"Data Source={dbPath};Version=3;";
-
+    public static class DatabaseHelper
+    {
         public static SQLiteConnection GetConnection()
         {
-            // Kontrol: Eğer dosya gerçekten orada yoksa hata vermeden önce uyaralım
-            if (!File.Exists(dbPath))
-            {
-                // Dosya yolunu gösteren bir hata mesajı, böylece nereye baktığını anlarsın
-                MessageBox.Show($"Veritabanı dosyası bulunamadı!\nProgramın aradığı yer:\n{dbPath}",
-                                "Dosya Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return new SQLiteConnection(connectionString);
+            string dbYolu = Path.Combine(Application.StartupPath, "VeriTabani.db");
+            // WAL modu ve Timeout ayarı veritabanı kilitlenmelerini önler
+            string baglantiCumlesi = $"Data Source={dbYolu};Version=3;Pooling=False;Journal Mode=WAL;Busy Timeout=5000;";
+            return new SQLiteConnection(baglantiCumlesi);
         }
     }
 }
