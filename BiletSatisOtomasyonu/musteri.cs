@@ -209,6 +209,8 @@ namespace BiletSatisOtomasyonu
             string bilgiMesaji = $"Seçilen: {adet} Adet";
 
             btnSatinAl.Enabled = false;
+            btnSatinAl.BackColor = Color.SlateGray;
+
 
             if (CurrentUserRole == UserRole.KurumsalMusteri)
             {
@@ -218,13 +220,18 @@ namespace BiletSatisOtomasyonu
                     toplamTutar -= indirimMiktari;
                     bilgiMesaji += $" (%20 İndirim: -{indirimMiktari:C2})";
                     btnSatinAl.Enabled = true;
+                    btnSatinAl.BackColor = Color.ForestGreen;
                 }
                 else
                     bilgiMesaji += " (En az 5 adet seçmelisiniz)";
             }
             else
             {
-                if (adet > 0) btnSatinAl.Enabled = true;
+                if (adet > 0)
+                {
+                    btnSatinAl.Enabled = true;
+                    btnSatinAl.BackColor = Color.ForestGreen;
+                }
             }
 
             lblSecilenKoltuk.Text = string.Join(", ", seciliKoltuklar);

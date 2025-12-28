@@ -17,6 +17,7 @@ namespace BiletSatisOtomasyonu
         {
             RolComboboxlariniDoldur();
             KullanicilariListele();
+            
         }
 
         // Rolleri ComboBox'lara (Hem filtre hem düzenleme için) yükler
@@ -203,6 +204,12 @@ namespace BiletSatisOtomasyonu
                     MessageBox.Show("Hata: " + ex.Message);
                 }
             }
+        }
+
+        private void dgvKullanicilar_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvKullanicilar.ClearSelection();
+            dgvKullanicilar.CurrentCell = null;
         }
     }
 }

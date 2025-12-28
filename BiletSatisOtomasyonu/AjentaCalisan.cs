@@ -18,6 +18,7 @@ namespace BiletSatisOtomasyonu
         private void AjentaCalisan_Load(object sender, EventArgs e)
         {
             SeferleriGetir();
+            this.ActiveControl = null;
         }
 
         private void SeferleriGetir()
@@ -104,6 +105,12 @@ namespace BiletSatisOtomasyonu
                 txtYolcuIsim.Clear();
             }
             catch (Exception ex) { MessageBox.Show("Hata: " + ex.Message); }
+        }
+
+        private void dgvSeferler_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvSeferler.ClearSelection();
+            dgvSeferler.CurrentCell = null;
         }
     }
 }

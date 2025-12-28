@@ -43,6 +43,7 @@ namespace BiletSatisOtomasyonu
 
             // Butonların başlangıç durumu
             ButonlariAyarla(false, false);
+            this.ActiveControl = null;
         }
 
         // Sürücü kimliğini ve adını veritabanından çeker
@@ -252,10 +253,22 @@ namespace BiletSatisOtomasyonu
         private void ButonlariAyarla(bool baslatAktif, bool bitirAktif)
         {
             btnSeferBaslat.Enabled = baslatAktif;
-            btnSeferBaslat.BackColor = baslatAktif ? Color.SeaGreen : Color.Gray;
+            btnSeferBaslat.BackColor = baslatAktif ? Color.SlateGray : Color.Gray;
 
             btnSeferBitir.Enabled = bitirAktif;
             btnSeferBitir.BackColor = bitirAktif ? Color.IndianRed : Color.Gray;
+        }
+
+        private void dgvSeferler_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvSeferler.ClearSelection();
+            dgvSeferler.CurrentCell = null;
+        }
+
+        private void dgvYolcular_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvYolcular.ClearSelection();
+            dgvYolcular.CurrentCell = null;
         }
     }
 }

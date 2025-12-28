@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace BiletSatisOtomasyonu
@@ -21,12 +22,12 @@ namespace BiletSatisOtomasyonu
         {
             this.AutoScroll = false;
             pnlMenu.Visible = true;
-            pnlMenu.Dock = DockStyle.Left;
-            pnlMenu.Width = 320;
+            //pnlMenu.Dock = DockStyle.Left;
+            //pnlMenu.Width = 320;
 
             pnlAnaIcerik.Visible = true;
-            pnlAnaIcerik.Dock = DockStyle.Fill;
-            pnlAnaIcerik.BringToFront();
+            //pnlAnaIcerik.Dock = DockStyle.Fill;
+            //pnlAnaIcerik.BringToFront();
 
             SolMenuyuDoldur();
 
@@ -40,7 +41,7 @@ namespace BiletSatisOtomasyonu
             _solMenuProfil = new User();
             _solMenuProfil.CurrentUserId = _currentUserId;
             _solMenuProfil.CurrentUserRole = _currentRole;
-            _solMenuProfil.Dock = DockStyle.Fill;
+            //_solMenuProfil.Dock = DockStyle.Fill;
             pnlMenu.Controls.Add(_solMenuProfil);
         }
 
@@ -106,6 +107,32 @@ namespace BiletSatisOtomasyonu
         {
           
             MessageBox.Show("Ekran yenilendi."); // Temporary test line
+        }
+
+        [DllImport("user32.dll")]
+        public static extern void ReleaseCapture();
+
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnCloseApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void AnaSayfa_Shown(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

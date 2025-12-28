@@ -16,6 +16,7 @@ namespace BiletSatisOtomasyonu
         {
             PersonelListele();
             SatisRaporuGetir();
+            this.ActiveControl = null;
         }
 
         // 1. PERSONEL LİSTELEME (Sadece Acente Çalışanları - RoleID: 2)
@@ -115,6 +116,18 @@ namespace BiletSatisOtomasyonu
                 }
             }
             catch { }
+        }
+
+        private void dgvSatislar_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvSatislar.ClearSelection();
+            dgvSatislar.CurrentCell = null;
+        }
+
+        private void dgvPersonel_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvPersonel.ClearSelection();
+            dgvPersonel.CurrentCell = null;
         }
     }
 }

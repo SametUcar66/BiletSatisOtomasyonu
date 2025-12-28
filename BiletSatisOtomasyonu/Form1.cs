@@ -1,6 +1,9 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BiletSatisOtomasyonu
 {
@@ -72,6 +75,76 @@ namespace BiletSatisOtomasyonu
         {
             Kayit kayitFormu = new Kayit();
             kayitFormu.ShowDialog();
+        }
+
+        private void btnCloseApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        string placeholder = "E-Mail...";
+        string placeholder2 = "Şifre...";
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            if (txtEmail.Text == placeholder)
+            {
+                txtEmail.Text = "";
+                txtEmail.ForeColor = Color.White;
+            }
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                txtEmail.Text = placeholder;
+                txtEmail.ForeColor = Color.White;
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            txtEmail.Text = placeholder;
+            txtEmail.ForeColor = Color.White;
+            txtPsw.Text = placeholder2;
+            txtPsw.ForeColor = Color.White;
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+        }
+
+        private void txtPsw_Enter(object sender, EventArgs e)
+        {
+            if (txtPsw.Text == placeholder2)
+            {
+                txtPsw.Text = "";
+                txtPsw.ForeColor = Color.White;
+            }
+        }
+
+        private void txtPsw_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPsw.Text))
+            {
+                txtPsw.Text = placeholder2;
+                txtPsw.ForeColor = Color.White;
+            }
+        }
+        [DllImport("user32.dll")]
+        public static extern void ReleaseCapture();
+
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

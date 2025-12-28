@@ -32,16 +32,18 @@ namespace BiletSatisOtomasyonu
 
         private void User_Load(object sender, EventArgs e)
         {
-            dgvListe.RowHeadersVisible = false;
-            dgvListe.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvListe.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvListe.ReadOnly = true;
-            dgvListe.AllowUserToAddRows = false;
-            dgvListe.BackgroundColor = Color.WhiteSmoke;
-            dgvListe.BorderStyle = BorderStyle.None;
+            //dgvListe.RowHeadersVisible = false;
+            //dgvListe.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //dgvListe.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //dgvListe.ReadOnly = true;
+            //dgvListe.AllowUserToAddRows = false;
+            //dgvListe.BackgroundColor = Color.WhiteSmoke;
+            //dgvListe.BorderStyle = BorderStyle.None;
             // Başlıkları açıyoruz ki kullanıcı ne olduğunu görsün
-            dgvListe.ColumnHeadersVisible = true;
-            GorunumuAyarla();
+            //dgvListe.ColumnHeadersVisible = true;
+            //GorunumuAyarla();
+            dgvListe.ClearSelection();
+            dgvListe.CurrentCell = null;
         }
 
         private void User_Resize(object sender, EventArgs e) { GorunumuAyarla(); }
@@ -49,21 +51,21 @@ namespace BiletSatisOtomasyonu
         private void GorunumuAyarla()
         {
             // Sol Bilgi Paneli
-            pnlBilgi.Location = new Point(5, 40);
-            pnlBilgi.Width = this.Width - 10;
-            pnlBilgi.Height = 330;
+            //pnlBilgi.Location = new Point(5, 40);
+            //pnlBilgi.Width = this.Width - 10;
+            //pnlBilgi.Height = 330;
 
             // Sağ/Alt Liste Paneli
-            pnlListe.Visible = true;
-            pnlListe.Location = new Point(5, pnlBilgi.Bottom + 10);
-            pnlListe.Width = this.Width - 10;
+            //pnlListe.Visible = true;
+            //pnlListe.Location = new Point(5, pnlBilgi.Bottom + 10);
+            //pnlListe.Width = this.Width - 10;
 
-            int kalan = this.Height - pnlListe.Top - 10;
-            if (kalan > 50) pnlListe.Height = kalan;
+            //int kalan = this.Height - pnlListe.Top - 10;
+            //if (kalan > 50) pnlListe.Height = kalan;
 
             // İptal Butonunu en alta, Tabloyu üste koy
-            btnBiletIptal.Dock = DockStyle.Bottom;
-            dgvListe.Dock = DockStyle.Fill;
+           // btnBiletIptal.Dock = DockStyle.Bottom;
+            //dgvListe.Dock = DockStyle.Fill;
         }
 
         public void BiletleriGetir()
@@ -207,6 +209,12 @@ namespace BiletSatisOtomasyonu
         {
             DialogResult cevap = MessageBox.Show("Çıkış yapmak istiyor musunuz?", "Çıkış", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (cevap == DialogResult.Yes) Application.Restart();
+        }
+
+        private void dgvListe_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvListe.ClearSelection();
+            dgvListe.CurrentCell = null;
         }
     }
 }
