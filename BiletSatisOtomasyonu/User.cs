@@ -44,6 +44,7 @@ namespace BiletSatisOtomasyonu
             //GorunumuAyarla();
             dgvListe.ClearSelection();
             dgvListe.CurrentCell = null;
+            this.ActiveControl = null;
         }
 
         private void User_Resize(object sender, EventArgs e) { GorunumuAyarla(); }

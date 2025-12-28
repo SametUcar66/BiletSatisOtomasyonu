@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SQLite;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BiletSatisOtomasyonu
@@ -17,6 +18,19 @@ namespace BiletSatisOtomasyonu
             PersonelListele();
             SatisRaporuGetir();
             this.ActiveControl = null;
+            dgvSatislar.DefaultCellStyle.ForeColor = Color.Black;
+            dgvSatislar.DefaultCellStyle.Font = new Font("Segoe UI", 8);
+
+            dgvSatislar.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
+            dgvSatislar.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 8);
+            dgvSatislar.Columns["Tutar"].FillWeight = 40;
+            dgvPersonel.Columns["Id"].FillWeight = 40;
+
+            dgvPersonel.DefaultCellStyle.ForeColor = Color.Black;
+            dgvPersonel.DefaultCellStyle.Font = new Font("Segoe UI", 8);
+
+            dgvPersonel.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
+            dgvPersonel.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 8);
         }
 
         // 1. PERSONEL LİSTELEME (Sadece Acente Çalışanları - RoleID: 2)
@@ -64,7 +78,7 @@ namespace BiletSatisOtomasyonu
                     }
                 }
                 MessageBox.Show("Personel eklendi.");
-                txtAd.Clear(); txtEmail.Clear(); txtSifre.Clear();
+                txtAd.Text=""; txtEmail.Text=""; txtSifre.Text="";
                 PersonelListele();
             }
             catch (Exception ex) { MessageBox.Show("Hata: " + ex.Message); }

@@ -34,7 +34,6 @@ namespace BiletSatisOtomasyonu
             }
 
             SehirleriYukle();
-            SeferleriListele();
         }
 
         private void SehirleriYukle()
@@ -108,9 +107,10 @@ namespace BiletSatisOtomasyonu
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     dgvSeferler.DataSource = dt;
-
+                    dgvSeferler.Columns["Güzergah"].FillWeight = 200;
                     if (dgvSeferler.Columns.Contains("Id")) dgvSeferler.Columns["Id"].Visible = false;
                     if (dgvSeferler.Columns.Contains("Kapasite")) dgvSeferler.Columns["Kapasite"].Visible = false;
+                    dgvSeferler.Visible = true;
                 }
             }
             catch (Exception ex)
@@ -119,19 +119,7 @@ namespace BiletSatisOtomasyonu
             }
         }
 
-        private void dgvSeferler_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvSeferler.SelectedRows.Count > 0)
-            {
-                seciliSeferId = Convert.ToInt32(dgvSeferler.SelectedRows[0].Cells["Id"].Value);
-                seferBirimFiyati = Convert.ToDecimal(dgvSeferler.SelectedRows[0].Cells["Fiyat"].Value);
-                int kapasite = Convert.ToInt32(dgvSeferler.SelectedRows[0].Cells["Kapasite"].Value);
-
-                // Burası veritabanına bakıp koltukları çizer
-                KoltuklariCiz(kapasite);
-                FiyatHesapla();
-            }
-        }
+        
 
         // BU METOT HEM KOLTUKLARI OLUŞTURUR HEM DE DOLU OLANLARI KIRMIZI YAPAR
         private void KoltuklariCiz(int kapasite)
@@ -346,6 +334,26 @@ namespace BiletSatisOtomasyonu
             if (anaForm != null)
             {
                 anaForm.ListeyiYenile();
+            }
+        }
+
+        private void dgvSeferler_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvSeferler.ClearSelection();
+            dgvSeferler.CurrentCell = null;
+        }
+
+        private void dgvSeferler_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvSeferler.SelectedRows.Count > 0)
+            {
+                seciliSeferId = Convert.ToInt32(dgvSeferler.SelectedRows[0].Cells["Id"].Value);
+                seferBirimFiyati = Convert.ToDecimal(dgvSeferler.SelectedRows[0].Cells["Fiyat"].Value);
+                int kapasite = Convert.ToInt32(dgvSeferler.SelectedRows[0].Cells["Kapasite"].Value);
+
+                // Burası veritabanına bakıp koltukları çizer
+                KoltuklariCiz(kapasite);
+                FiyatHesapla();
             }
         }
     }

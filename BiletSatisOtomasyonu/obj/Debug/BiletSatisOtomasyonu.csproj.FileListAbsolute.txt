@@ -42,3 +42,5 @@ C:\Users\yilma\OneDrive\Masaüstü\GProje\BiletSatisOtomasyonu\BiletSatisOtomasy
 C:\Users\yilma\OneDrive\Masaüstü\GProje\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSat.2ADB7106.Up2Date
 C:\Users\yilma\OneDrive\Masaüstü\GProje\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.exe
 C:\Users\yilma\OneDrive\Masaüstü\GProje\BiletSatisOtomasyonu\BiletSatisOtomasyonu\obj\Debug\BiletSatisOtomasyonu.pdb
+C:\Users\yilma\OneDrive\Masaüstü\GProje\BiletSatisOtomasyonu\BiletSatisOtomasyonu\bin\Debug\ReaLTaiizor.dll
+C:\Users\yilma\OneDrive\Masaüstü\GProje\BiletSatisOtomasyonu\BiletSatisOtomasyonu\bin\Debug\ReaLTaiizor.xml

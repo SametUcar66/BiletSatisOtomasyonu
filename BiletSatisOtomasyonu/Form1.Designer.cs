@@ -12,55 +12,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.btnKayitOl = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnCloseApp = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.txtPsw = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txtEmail = new ReaLTaiizor.Controls.HopeTextBox();
+            this.txtPsw = new ReaLTaiizor.Controls.HopeTextBox();
+            this.btnLogin = new ReaLTaiizor.Controls.HopeButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
-            this.txtEmail.Location = new System.Drawing.Point(78, 144);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(200, 18);
-            this.txtEmail.TabIndex = 0;
-            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
-            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnLogin.Location = new System.Drawing.Point(68, 243);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(220, 40);
-            this.btnLogin.TabIndex = 2;
-            this.btnLogin.Text = "Giriş Yap";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnKayitOl
             // 
             this.btnKayitOl.BackColor = System.Drawing.Color.Transparent;
             this.btnKayitOl.FlatAppearance.BorderSize = 0;
             this.btnKayitOl.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnKayitOl.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnKayitOl.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnKayitOl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKayitOl.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnKayitOl.ForeColor = System.Drawing.Color.Silver;
-            this.btnKayitOl.Location = new System.Drawing.Point(233, 289);
+            this.btnKayitOl.Location = new System.Drawing.Point(245, 295);
             this.btnKayitOl.Name = "btnKayitOl";
             this.btnKayitOl.Size = new System.Drawing.Size(55, 24);
             this.btnKayitOl.TabIndex = 3;
@@ -123,77 +95,106 @@
             this.btnCloseApp.UseVisualStyleBackColor = true;
             this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
             // 
-            // button2
+            // txtEmail
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Enabled = false;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(68, 133);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(220, 40);
-            this.button2.TabIndex = 8;
-            this.button2.UseVisualStyleBackColor = false;
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtEmail.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtEmail.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.txtEmail.Hint = "E-Mail";
+            this.txtEmail.Location = new System.Drawing.Point(56, 146);
+            this.txtEmail.MaxLength = 32767;
+            this.txtEmail.MinimumSize = new System.Drawing.Size(0, 30);
+            this.txtEmail.Multiline = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.SelectionLength = 0;
+            this.txtEmail.SelectionStart = 0;
+            this.txtEmail.Size = new System.Drawing.Size(244, 38);
+            this.txtEmail.TabIndex = 17;
+            this.txtEmail.TabStop = false;
+            this.txtEmail.UseSystemPasswordChar = false;
             // 
             // txtPsw
             // 
-            this.txtPsw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.txtPsw.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPsw.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtPsw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
-            this.txtPsw.Location = new System.Drawing.Point(78, 196);
+            this.txtPsw.BackColor = System.Drawing.Color.White;
+            this.txtPsw.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtPsw.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtPsw.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtPsw.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtPsw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.txtPsw.Hint = "Şifre";
+            this.txtPsw.Location = new System.Drawing.Point(56, 195);
+            this.txtPsw.MaxLength = 32767;
+            this.txtPsw.MinimumSize = new System.Drawing.Size(0, 30);
+            this.txtPsw.Multiline = false;
             this.txtPsw.Name = "txtPsw";
-            this.txtPsw.Size = new System.Drawing.Size(200, 18);
-            this.txtPsw.TabIndex = 1;
-            this.txtPsw.Enter += new System.EventHandler(this.txtPsw_Enter);
-            this.txtPsw.Leave += new System.EventHandler(this.txtPsw_Leave);
+            this.txtPsw.PasswordChar = '\0';
+            this.txtPsw.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPsw.SelectedText = "";
+            this.txtPsw.SelectionLength = 0;
+            this.txtPsw.SelectionStart = 0;
+            this.txtPsw.Size = new System.Drawing.Size(244, 38);
+            this.txtPsw.TabIndex = 18;
+            this.txtPsw.TabStop = false;
+            this.txtPsw.UseSystemPasswordChar = false;
             // 
-            // button3
+            // btnLogin
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Enabled = false;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(68, 185);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(220, 40);
-            this.button3.TabIndex = 0;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnLogin.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnLogin.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnLogin.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnLogin.ForeColor = System.Drawing.Color.Black;
+            this.btnLogin.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.btnLogin.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.btnLogin.Location = new System.Drawing.Point(56, 250);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.PrimaryColor = System.Drawing.Color.LightSlateGray;
+            this.btnLogin.Size = new System.Drawing.Size(244, 39);
+            this.btnLogin.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
+            this.btnLogin.TabIndex = 19;
+            this.btnLogin.Text = "Giriş Yap";
+            this.btnLogin.TextColor = System.Drawing.Color.White;
+            this.btnLogin.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(356, 416);
+            this.ClientSize = new System.Drawing.Size(356, 440);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPsw);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnKayitOl);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sisteme Giriş";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
+            this.VisibleChanged += new System.EventHandler(this.Form1_VisibleChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnKayitOl; // Değişken tanımı
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCloseApp;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txtPsw;
-        private System.Windows.Forms.Button button3;
+        private ReaLTaiizor.Controls.HopeTextBox txtEmail;
+        private ReaLTaiizor.Controls.HopeTextBox txtPsw;
+        private ReaLTaiizor.Controls.HopeButton btnLogin;
     }
 }

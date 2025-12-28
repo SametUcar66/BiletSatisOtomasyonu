@@ -101,8 +101,8 @@ namespace BiletSatisOtomasyonu
                     }
                 }
                 MessageBox.Show("Bilet Satıldı!");
-                txtKoltukNo.Clear();
-                txtYolcuIsim.Clear();
+                txtKoltukNo.Text="";
+                txtYolcuIsim.Text="";
             }
             catch (Exception ex) { MessageBox.Show("Hata: " + ex.Message); }
         }

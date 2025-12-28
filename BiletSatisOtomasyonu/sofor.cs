@@ -25,7 +25,7 @@ namespace BiletSatisOtomasyonu
 
         // UserControl Yüklendiğinde
         private void sofor_Load(object sender, EventArgs e)
-        {
+        {      
             // 1. Kullanıcı ID'sinden Sürücü ID'sini ve Adını bul
             if (SurucuBilgisiniGetir())
             {
@@ -44,6 +44,19 @@ namespace BiletSatisOtomasyonu
             // Butonların başlangıç durumu
             ButonlariAyarla(false, false);
             this.ActiveControl = null;
+            dgvSeferler.Columns["Durum"].FillWeight = 40;
+
+            dgvSeferler.DefaultCellStyle.ForeColor = Color.Black;
+            dgvSeferler.DefaultCellStyle.Font = new Font("Segoe UI", 8);
+
+            dgvSeferler.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
+            dgvSeferler.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+
+            dgvYolcular.DefaultCellStyle.ForeColor = Color.Black;
+            dgvYolcular.DefaultCellStyle.Font = new Font("Segoe UI", 8);
+
+            dgvYolcular.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
+            dgvYolcular.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 8, FontStyle.Bold);
         }
 
         // Sürücü kimliğini ve adını veritabanından çeker
@@ -193,6 +206,8 @@ namespace BiletSatisOtomasyonu
                         DataTable dt = new DataTable();
                         da.Fill(dt);
                         dgvYolcular.DataSource = dt;
+                        dgvYolcular.Columns["Koltuk"].FillWeight = 40;
+
                     }
                 }
                 catch (Exception ex)

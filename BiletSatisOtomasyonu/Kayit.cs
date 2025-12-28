@@ -94,92 +94,92 @@ namespace BiletSatisOtomasyonu
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        string placeholder = "Ad Soyad...";
-        string placeholder2 = "E-Mail...";
-        string placeholder3 = "Telefon...";
-        string placeholder4 = "Şifre...";
-        private void txtAdSoyad_Enter(object sender, EventArgs e)
-        {
-            if (txtAdSoyad.Text == placeholder)
-            {
-                txtAdSoyad.Text = "";
-                txtAdSoyad.ForeColor = Color.White;
-            }
-        }
+        //string placeholder = "Ad Soyad...";
+        //string placeholder2 = "E-Mail...";
+        //string placeholder3 = "Telefon...";
+        //string placeholder4 = "Şifre...";
+        //private void txtAdSoyad_Enter(object sender, EventArgs e)
+        //{
+        //    if (txtAdSoyad.Text == placeholder)
+        //    {
+        //        txtAdSoyad.Text = "";
+        //        txtAdSoyad.ForeColor = Color.White;
+        //    }
+        //}
 
-        private void txtAdSoyad_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtAdSoyad.Text))
-            {
-                txtAdSoyad.Text = placeholder;
-                txtAdSoyad.ForeColor = Color.White;
-            }
-        }
+        //private void txtAdSoyad_Leave(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(txtAdSoyad.Text))
+        //    {
+        //        txtAdSoyad.Text = placeholder;
+        //        txtAdSoyad.ForeColor = Color.White;
+        //    }
+        //}
 
-        private void txtEmail_Enter(object sender, EventArgs e)
-        {
-            if (txtEmail.Text == placeholder2)
-            {
-                txtEmail.Text = "";
-                txtEmail.ForeColor = Color.White;
-            }
-        }
+        //private void txtEmail_Enter(object sender, EventArgs e)
+        //{
+        //    if (txtEmail.Text == placeholder2)
+        //    {
+        //        txtEmail.Text = "";
+        //        txtEmail.ForeColor = Color.White;
+        //    }
+        //}
 
-        private void txtEmail_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtEmail.Text))
-            {
-                txtEmail.Text = placeholder2;
-                txtEmail.ForeColor = Color.White;
-            }
-        }
+        //private void txtEmail_Leave(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(txtEmail.Text))
+        //    {
+        //        txtEmail.Text = placeholder2;
+        //        txtEmail.ForeColor = Color.White;
+        //    }
+        //}
 
-        private void txtTelefon_Enter(object sender, EventArgs e)
-        {
-            if (txtTelefon.Text == placeholder3)
-            {
-                txtTelefon.Text = "";
-                txtTelefon.ForeColor = Color.White;
-            }
-        }
+        //private void txtTelefon_Enter(object sender, EventArgs e)
+        //{
+        //    if (txtTelefon.Text == placeholder3)
+        //    {
+        //        txtTelefon.Text = "";
+        //        txtTelefon.ForeColor = Color.White;
+        //    }
+        //}
 
-        private void txtTelefon_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtTelefon.Text))
-            {
-                txtTelefon.Text = placeholder3;
-                txtTelefon.ForeColor = Color.White;
-            }
-        }
+        //private void txtTelefon_Leave(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(txtTelefon.Text))
+        //    {
+        //        txtTelefon.Text = placeholder3;
+        //        txtTelefon.ForeColor = Color.White;
+        //    }
+        //}
 
-        private void txtSifre_Enter(object sender, EventArgs e)
-        {
-            if (txtSifre.Text == placeholder4)
-            {
-                txtSifre.Text = "";
-                txtSifre.ForeColor = Color.White;
-            }
-        }
+        //private void txtSifre_Enter(object sender, EventArgs e)
+        //{
+        //    if (txtSifre.Text == placeholder4)
+        //    {
+        //        txtSifre.Text = "";
+        //        txtSifre.ForeColor = Color.White;
+        //    }
+        //}
 
-        private void txtSifre_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtSifre.Text))
-            {
-                txtSifre.Text = placeholder4;
-                txtSifre.ForeColor = Color.White;
-            }
-        }
+        //private void txtSifre_Leave(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(txtSifre.Text))
+        //    {
+        //        txtSifre.Text = placeholder4;
+        //        txtSifre.ForeColor = Color.White;
+        //    }
+        //}
 
         private void Kayit_Load(object sender, EventArgs e)
         {
-            txtAdSoyad.Text = placeholder;
-            txtAdSoyad.ForeColor = Color.White;
-            txtEmail.Text = placeholder2;
-            txtEmail.ForeColor = Color.White;
-            txtTelefon.Text = placeholder3;
-            txtTelefon.ForeColor = Color.White;
-            txtSifre.Text = placeholder4;
-            txtSifre.ForeColor = Color.White;
+            //txtAdSoyad.Text = placeholder;
+            //txtAdSoyad.ForeColor = Color.White;
+            //txtEmail.Text = placeholder2;
+            //txtEmail.ForeColor = Color.White;
+            //txtTelefon.Text = placeholder3;
+            //txtTelefon.ForeColor = Color.White;
+            //txtSifre.Text = placeholder4;
+            //txtSifre.ForeColor = Color.White;
         }
 
         private void Kayit_Shown(object sender, EventArgs e)
@@ -189,6 +189,10 @@ namespace BiletSatisOtomasyonu
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (this.Owner != null)
+            {
+                this.Owner.Show();
+            }
             this.Close();
         }
 

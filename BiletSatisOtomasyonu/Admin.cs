@@ -17,7 +17,6 @@ namespace BiletSatisOtomasyonu
         {
             RolComboboxlariniDoldur();
             KullanicilariListele();
-            
         }
 
         // Rolleri ComboBox'lara (Hem filtre hem düzenleme için) yükler
@@ -113,7 +112,7 @@ namespace BiletSatisOtomasyonu
 
         private void btnTemizle_Click(object sender, EventArgs e)
         {
-            txtArama.Clear();
+            txtArama.Text = "";
             cmbRolFiltre.SelectedIndex = 0; // Tümü
             KullanicilariListele();
         }
@@ -197,7 +196,7 @@ namespace BiletSatisOtomasyonu
                     MessageBox.Show("Silindi.");
                     KullanicilariListele();
                     // Kutuları temizle
-                    lblId.Text = "0"; txtEditAd.Clear(); txtEditEmail.Clear(); txtEditTel.Clear();
+                    lblId.Text = "0"; txtEditAd.Text=""; txtEditEmail.Text=""; txtEditTel.Text="";
                 }
                 catch (Exception ex)
                 {

@@ -15,146 +15,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Kayit));
-            this.btnKayitOl = new System.Windows.Forms.Button();
-            this.cmbRol = new System.Windows.Forms.ComboBox();
-            this.txtAdSoyad = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtTelefon = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.txtSifre = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.btnCloseApp = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.txtAdSoyad = new ReaLTaiizor.Controls.HopeTextBox();
+            this.txtEmail = new ReaLTaiizor.Controls.HopeTextBox();
+            this.txtTelefon = new ReaLTaiizor.Controls.HopeTextBox();
+            this.txtSifre = new ReaLTaiizor.Controls.HopeTextBox();
+            this.btnKayitOl = new ReaLTaiizor.Controls.HopeButton();
+            this.cmbRol = new ReaLTaiizor.Controls.PoisonComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnKayitOl
-            // 
-            this.btnKayitOl.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKayitOl.Location = new System.Drawing.Point(68, 317);
-            this.btnKayitOl.Name = "btnKayitOl";
-            this.btnKayitOl.Size = new System.Drawing.Size(220, 40);
-            this.btnKayitOl.TabIndex = 5;
-            this.btnKayitOl.Text = "Kayıt Ol";
-            this.btnKayitOl.UseVisualStyleBackColor = true;
-            this.btnKayitOl.Click += new System.EventHandler(this.btnKayitOl_Click);
-            // 
-            // cmbRol
-            // 
-            this.cmbRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbRol.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cmbRol.ForeColor = System.Drawing.SystemColors.Window;
-            this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Location = new System.Drawing.Point(68, 274);
-            this.cmbRol.Name = "cmbRol";
-            this.cmbRol.Size = new System.Drawing.Size(220, 24);
-            this.cmbRol.TabIndex = 4;
-            // 
-            // txtAdSoyad
-            // 
-            this.txtAdSoyad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.txtAdSoyad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAdSoyad.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAdSoyad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
-            this.txtAdSoyad.Location = new System.Drawing.Point(78, 101);
-            this.txtAdSoyad.Name = "txtAdSoyad";
-            this.txtAdSoyad.Size = new System.Drawing.Size(200, 18);
-            this.txtAdSoyad.TabIndex = 11;
-            this.txtAdSoyad.Enter += new System.EventHandler(this.txtAdSoyad_Enter);
-            this.txtAdSoyad.Leave += new System.EventHandler(this.txtAdSoyad_Leave);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Enabled = false;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(68, 90);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(220, 40);
-            this.button2.TabIndex = 12;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
-            this.txtEmail.Location = new System.Drawing.Point(78, 147);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(200, 18);
-            this.txtEmail.TabIndex = 13;
-            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
-            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Enabled = false;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(68, 136);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(220, 40);
-            this.button1.TabIndex = 14;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // txtTelefon
-            // 
-            this.txtTelefon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.txtTelefon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTelefon.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtTelefon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
-            this.txtTelefon.Location = new System.Drawing.Point(78, 193);
-            this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(200, 18);
-            this.txtTelefon.TabIndex = 15;
-            this.txtTelefon.Enter += new System.EventHandler(this.txtTelefon_Enter);
-            this.txtTelefon.Leave += new System.EventHandler(this.txtTelefon_Leave);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Enabled = false;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(68, 182);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(220, 40);
-            this.button3.TabIndex = 16;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // txtSifre
-            // 
-            this.txtSifre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.txtSifre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSifre.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtSifre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
-            this.txtSifre.Location = new System.Drawing.Point(78, 239);
-            this.txtSifre.Name = "txtSifre";
-            this.txtSifre.Size = new System.Drawing.Size(200, 18);
-            this.txtSifre.TabIndex = 17;
-            this.txtSifre.Enter += new System.EventHandler(this.txtSifre_Enter);
-            this.txtSifre.Leave += new System.EventHandler(this.txtSifre_Leave);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.Enabled = false;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(68, 228);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(220, 40);
-            this.button4.TabIndex = 18;
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -168,23 +41,6 @@
             this.panel1.Size = new System.Drawing.Size(356, 45);
             this.panel1.TabIndex = 20;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button5.ForeColor = System.Drawing.Color.Silver;
-            this.button5.Location = new System.Drawing.Point(225, 363);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(63, 24);
-            this.button5.TabIndex = 21;
-            this.button5.Text = "Giriş Yap";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label1
             // 
@@ -228,24 +84,165 @@
             this.btnCloseApp.UseVisualStyleBackColor = true;
             this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button5.ForeColor = System.Drawing.Color.Silver;
+            this.button5.Location = new System.Drawing.Point(237, 380);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(63, 24);
+            this.button5.TabIndex = 21;
+            this.button5.Text = "Giriş Yap";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // txtAdSoyad
+            // 
+            this.txtAdSoyad.BackColor = System.Drawing.Color.White;
+            this.txtAdSoyad.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtAdSoyad.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtAdSoyad.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtAdSoyad.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtAdSoyad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.txtAdSoyad.Hint = "Ad Soyad";
+            this.txtAdSoyad.Location = new System.Drawing.Point(56, 92);
+            this.txtAdSoyad.MaxLength = 32767;
+            this.txtAdSoyad.MinimumSize = new System.Drawing.Size(0, 30);
+            this.txtAdSoyad.Multiline = false;
+            this.txtAdSoyad.Name = "txtAdSoyad";
+            this.txtAdSoyad.PasswordChar = '\0';
+            this.txtAdSoyad.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtAdSoyad.SelectedText = "";
+            this.txtAdSoyad.SelectionLength = 0;
+            this.txtAdSoyad.SelectionStart = 0;
+            this.txtAdSoyad.Size = new System.Drawing.Size(244, 38);
+            this.txtAdSoyad.TabIndex = 22;
+            this.txtAdSoyad.TabStop = false;
+            this.txtAdSoyad.UseSystemPasswordChar = false;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtEmail.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtEmail.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.txtEmail.Hint = "E-Mail";
+            this.txtEmail.Location = new System.Drawing.Point(56, 141);
+            this.txtEmail.MaxLength = 32767;
+            this.txtEmail.MinimumSize = new System.Drawing.Size(0, 30);
+            this.txtEmail.Multiline = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.SelectionLength = 0;
+            this.txtEmail.SelectionStart = 0;
+            this.txtEmail.Size = new System.Drawing.Size(244, 38);
+            this.txtEmail.TabIndex = 23;
+            this.txtEmail.TabStop = false;
+            this.txtEmail.UseSystemPasswordChar = false;
+            // 
+            // txtTelefon
+            // 
+            this.txtTelefon.BackColor = System.Drawing.Color.White;
+            this.txtTelefon.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtTelefon.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtTelefon.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtTelefon.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtTelefon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.txtTelefon.Hint = "Telefon";
+            this.txtTelefon.Location = new System.Drawing.Point(56, 190);
+            this.txtTelefon.MaxLength = 32767;
+            this.txtTelefon.MinimumSize = new System.Drawing.Size(0, 30);
+            this.txtTelefon.Multiline = false;
+            this.txtTelefon.Name = "txtTelefon";
+            this.txtTelefon.PasswordChar = '\0';
+            this.txtTelefon.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTelefon.SelectedText = "";
+            this.txtTelefon.SelectionLength = 0;
+            this.txtTelefon.SelectionStart = 0;
+            this.txtTelefon.Size = new System.Drawing.Size(244, 38);
+            this.txtTelefon.TabIndex = 24;
+            this.txtTelefon.TabStop = false;
+            this.txtTelefon.UseSystemPasswordChar = false;
+            // 
+            // txtSifre
+            // 
+            this.txtSifre.BackColor = System.Drawing.Color.White;
+            this.txtSifre.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtSifre.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtSifre.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtSifre.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtSifre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.txtSifre.Hint = "Şifre";
+            this.txtSifre.Location = new System.Drawing.Point(56, 239);
+            this.txtSifre.MaxLength = 32767;
+            this.txtSifre.MinimumSize = new System.Drawing.Size(0, 30);
+            this.txtSifre.Multiline = false;
+            this.txtSifre.Name = "txtSifre";
+            this.txtSifre.PasswordChar = '\0';
+            this.txtSifre.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSifre.SelectedText = "";
+            this.txtSifre.SelectionLength = 0;
+            this.txtSifre.SelectionStart = 0;
+            this.txtSifre.Size = new System.Drawing.Size(244, 38);
+            this.txtSifre.TabIndex = 25;
+            this.txtSifre.TabStop = false;
+            this.txtSifre.UseSystemPasswordChar = false;
+            // 
+            // btnKayitOl
+            // 
+            this.btnKayitOl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnKayitOl.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnKayitOl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKayitOl.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnKayitOl.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnKayitOl.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKayitOl.ForeColor = System.Drawing.Color.Black;
+            this.btnKayitOl.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.btnKayitOl.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.btnKayitOl.Location = new System.Drawing.Point(56, 334);
+            this.btnKayitOl.Name = "btnKayitOl";
+            this.btnKayitOl.PrimaryColor = System.Drawing.Color.LightSlateGray;
+            this.btnKayitOl.Size = new System.Drawing.Size(244, 39);
+            this.btnKayitOl.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
+            this.btnKayitOl.TabIndex = 27;
+            this.btnKayitOl.Text = "Kayıt Ol";
+            this.btnKayitOl.TextColor = System.Drawing.Color.White;
+            this.btnKayitOl.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.btnKayitOl.Click += new System.EventHandler(this.btnKayitOl_Click);
+            // 
+            // cmbRol
+            // 
+            this.cmbRol.FormattingEnabled = true;
+            this.cmbRol.ItemHeight = 23;
+            this.cmbRol.Location = new System.Drawing.Point(56, 288);
+            this.cmbRol.Name = "cmbRol";
+            this.cmbRol.Size = new System.Drawing.Size(244, 29);
+            this.cmbRol.TabIndex = 28;
+            this.cmbRol.UseSelectable = true;
+            // 
             // Kayit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(356, 416);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtSifre);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.txtTelefon);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtAdSoyad);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(356, 440);
             this.Controls.Add(this.cmbRol);
             this.Controls.Add(this.btnKayitOl);
+            this.Controls.Add(this.txtSifre);
+            this.Controls.Add(this.txtTelefon);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtAdSoyad);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Kayit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -255,25 +252,20 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox cmbRol; // YENİ
-        private System.Windows.Forms.Button btnKayitOl;
-        private System.Windows.Forms.TextBox txtAdSoyad;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtTelefon;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox txtSifre;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnCloseApp;
+        private ReaLTaiizor.Controls.HopeTextBox txtAdSoyad;
+        private ReaLTaiizor.Controls.HopeTextBox txtEmail;
+        private ReaLTaiizor.Controls.HopeTextBox txtTelefon;
+        private ReaLTaiizor.Controls.HopeTextBox txtSifre;
+        private ReaLTaiizor.Controls.HopeButton btnKayitOl;
+        private ReaLTaiizor.Controls.PoisonComboBox cmbRol;
     }
 }

@@ -12,7 +12,7 @@ namespace BiletSatisOtomasyonu
         public Form1()
         {
             InitializeComponent();
-            this.AcceptButton = btnLogin; // Enter tuşu ile giriş
+            //this.AcceptButton = btnLogin; // Enter tuşu ile giriş
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -73,8 +73,12 @@ namespace BiletSatisOtomasyonu
 
         private void btnKayitOl_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Kayit kayitFormu = new Kayit();
+            kayitFormu.Owner = this;
+            kayitFormu.StartPosition = FormStartPosition.CenterScreen;
             kayitFormu.ShowDialog();
+            
         }
 
         private void btnCloseApp_Click(object sender, EventArgs e)
@@ -86,56 +90,57 @@ namespace BiletSatisOtomasyonu
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        string placeholder = "E-Mail...";
-        string placeholder2 = "Şifre...";
-        private void txtEmail_Enter(object sender, EventArgs e)
-        {
-            if (txtEmail.Text == placeholder)
-            {
-                txtEmail.Text = "";
-                txtEmail.ForeColor = Color.White;
-            }
-        }
+       // string placeholder = "E-Mail...";
+        // string placeholder2 = "Şifre...";
+        //private void txtEmail_Enter(object sender, EventArgs e)
+        //{
+        //    if (txtEmail.Text == placeholder)
+        //    {
+        //        txtEmail.Text = "";
+        //        txtEmail.ForeColor = Color.White;
+        //    }
+        //}
 
-        private void txtEmail_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtEmail.Text))
-            {
-                txtEmail.Text = placeholder;
-                txtEmail.ForeColor = Color.White;
-            }
-        }
+        //private void txtEmail_Leave(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(txtEmail.Text))
+        //    {
+        //        txtEmail.Text = placeholder;
+        //        txtEmail.ForeColor = Color.White;
+        //    }
+        //}
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            txtEmail.Text = placeholder;
-            txtEmail.ForeColor = Color.White;
-            txtPsw.Text = placeholder2;
-            txtPsw.ForeColor = Color.White;
+            //txtEmail.Text = placeholder;
+            //txtEmail.ForeColor = Color.White;
+            //txtPsw.Text = placeholder2;
+            //txtPsw.ForeColor = Color.White;
         }
 
         private void Form1_Shown(object sender, EventArgs e)
         {
             this.ActiveControl = null;
+            
         }
 
-        private void txtPsw_Enter(object sender, EventArgs e)
-        {
-            if (txtPsw.Text == placeholder2)
-            {
-                txtPsw.Text = "";
-                txtPsw.ForeColor = Color.White;
-            }
-        }
+        //private void txtPsw_Enter(object sender, EventArgs e)
+        //{
+        //    if (txtPsw.Text == placeholder2)
+        //    {
+        //        txtPsw.Text = "";
+        //        txtPsw.ForeColor = Color.White;
+        //    }
+        //}
 
-        private void txtPsw_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtPsw.Text))
-            {
-                txtPsw.Text = placeholder2;
-                txtPsw.ForeColor = Color.White;
-            }
-        }
+        //private void txtPsw_Leave(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(txtPsw.Text))
+        //    {
+        //        txtPsw.Text = placeholder2;
+        //        txtPsw.ForeColor = Color.White;
+        //    }
+        //}
         [DllImport("user32.dll")]
         public static extern void ReleaseCapture();
 
@@ -145,6 +150,14 @@ namespace BiletSatisOtomasyonu
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void Form1_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                this.CenterToScreen();
+            }
         }
     }
 }

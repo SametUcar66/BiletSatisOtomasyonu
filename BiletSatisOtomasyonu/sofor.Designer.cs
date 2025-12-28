@@ -14,10 +14,10 @@
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.grpSeferler = new System.Windows.Forms.GroupBox();
             this.dgvSeferler = new System.Windows.Forms.DataGridView();
@@ -25,9 +25,9 @@
             this.grpYolcular = new System.Windows.Forms.GroupBox();
             this.dgvYolcular = new System.Windows.Forms.DataGridView();
             this.pnlIslemler = new System.Windows.Forms.Panel();
-            this.btnSeferBitir = new System.Windows.Forms.Button();
-            this.btnSeferBaslat = new System.Windows.Forms.Button();
             this.lblSeciliSefer = new System.Windows.Forms.Label();
+            this.btnSeferBaslat = new ReaLTaiizor.Controls.HopeButton();
+            this.btnSeferBitir = new ReaLTaiizor.Controls.HopeButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -67,7 +67,7 @@
             this.grpSeferler.ForeColor = System.Drawing.Color.White;
             this.grpSeferler.Location = new System.Drawing.Point(19, 65);
             this.grpSeferler.Name = "grpSeferler";
-            this.grpSeferler.Size = new System.Drawing.Size(330, 540);
+            this.grpSeferler.Size = new System.Drawing.Size(327, 540);
             this.grpSeferler.TabIndex = 1;
             this.grpSeferler.TabStop = false;
             this.grpSeferler.Text = "Atandığım Seferler";
@@ -81,24 +81,27 @@
             this.dgvSeferler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSeferler.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.dgvSeferler.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.LightSlateGray;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.LightSlateGray;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSeferler.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
-            this.dgvSeferler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSeferler.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvSeferler.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
+            this.dgvSeferler.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSlateGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSlateGray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSeferler.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSeferler.ColumnHeadersHeight = 40;
+            this.dgvSeferler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSeferler.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSeferler.EnableHeadersVisualStyles = false;
             this.dgvSeferler.GridColor = System.Drawing.Color.WhiteSmoke;
             this.dgvSeferler.Location = new System.Drawing.Point(6, 19);
@@ -106,8 +109,9 @@
             this.dgvSeferler.Name = "dgvSeferler";
             this.dgvSeferler.ReadOnly = true;
             this.dgvSeferler.RowHeadersVisible = false;
+            this.dgvSeferler.RowTemplate.Height = 40;
             this.dgvSeferler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSeferler.Size = new System.Drawing.Size(318, 515);
+            this.dgvSeferler.Size = new System.Drawing.Size(315, 515);
             this.dgvSeferler.TabIndex = 0;
             this.dgvSeferler.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSeferler_DataBindingComplete);
             this.dgvSeferler.SelectionChanged += new System.EventHandler(this.dgvSeferler_SelectionChanged);
@@ -144,24 +148,27 @@
             this.dgvYolcular.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvYolcular.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.dgvYolcular.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.LightSlateGray;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.LightSlateGray;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvYolcular.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
-            this.dgvYolcular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvYolcular.DefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvYolcular.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
+            this.dgvYolcular.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSlateGray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSlateGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvYolcular.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvYolcular.ColumnHeadersHeight = 40;
+            this.dgvYolcular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvYolcular.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvYolcular.EnableHeadersVisualStyles = false;
             this.dgvYolcular.GridColor = System.Drawing.Color.WhiteSmoke;
             this.dgvYolcular.Location = new System.Drawing.Point(6, 19);
@@ -169,6 +176,7 @@
             this.dgvYolcular.Name = "dgvYolcular";
             this.dgvYolcular.ReadOnly = true;
             this.dgvYolcular.RowHeadersVisible = false;
+            this.dgvYolcular.RowTemplate.Height = 40;
             this.dgvYolcular.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvYolcular.Size = new System.Drawing.Size(488, 441);
             this.dgvYolcular.TabIndex = 1;
@@ -183,34 +191,6 @@
             this.pnlIslemler.Size = new System.Drawing.Size(526, 63);
             this.pnlIslemler.TabIndex = 2;
             // 
-            // btnSeferBitir
-            // 
-            this.btnSeferBitir.BackColor = System.Drawing.Color.IndianRed;
-            this.btnSeferBitir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeferBitir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSeferBitir.ForeColor = System.Drawing.Color.White;
-            this.btnSeferBitir.Location = new System.Drawing.Point(267, 11);
-            this.btnSeferBitir.Name = "btnSeferBitir";
-            this.btnSeferBitir.Size = new System.Drawing.Size(245, 45);
-            this.btnSeferBitir.TabIndex = 3;
-            this.btnSeferBitir.Text = "Seferi Tamamla";
-            this.btnSeferBitir.UseVisualStyleBackColor = false;
-            this.btnSeferBitir.Click += new System.EventHandler(this.btnSeferBitir_Click);
-            // 
-            // btnSeferBaslat
-            // 
-            this.btnSeferBaslat.BackColor = System.Drawing.Color.SlateGray;
-            this.btnSeferBaslat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeferBaslat.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSeferBaslat.ForeColor = System.Drawing.Color.White;
-            this.btnSeferBaslat.Location = new System.Drawing.Point(12, 11);
-            this.btnSeferBaslat.Name = "btnSeferBaslat";
-            this.btnSeferBaslat.Size = new System.Drawing.Size(245, 45);
-            this.btnSeferBaslat.TabIndex = 2;
-            this.btnSeferBaslat.Text = "Seferi Başlat";
-            this.btnSeferBaslat.UseVisualStyleBackColor = false;
-            this.btnSeferBaslat.Click += new System.EventHandler(this.btnSeferBaslat_Click);
-            // 
             // lblSeciliSefer
             // 
             this.lblSeciliSefer.AutoSize = true;
@@ -221,6 +201,50 @@
             this.lblSeciliSefer.Size = new System.Drawing.Size(177, 19);
             this.lblSeciliSefer.TabIndex = 0;
             this.lblSeciliSefer.Text = "Sefer Detayı ve Listesi";
+            // 
+            // btnSeferBaslat
+            // 
+            this.btnSeferBaslat.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnSeferBaslat.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnSeferBaslat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSeferBaslat.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnSeferBaslat.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSeferBaslat.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSeferBaslat.ForeColor = System.Drawing.Color.Black;
+            this.btnSeferBaslat.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.btnSeferBaslat.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.btnSeferBaslat.Location = new System.Drawing.Point(16, 11);
+            this.btnSeferBaslat.Name = "btnSeferBaslat";
+            this.btnSeferBaslat.PrimaryColor = System.Drawing.Color.LightSlateGray;
+            this.btnSeferBaslat.Size = new System.Drawing.Size(245, 45);
+            this.btnSeferBaslat.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
+            this.btnSeferBaslat.TabIndex = 29;
+            this.btnSeferBaslat.Text = "Seferi Başlat";
+            this.btnSeferBaslat.TextColor = System.Drawing.Color.White;
+            this.btnSeferBaslat.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.btnSeferBaslat.Click += new System.EventHandler(this.btnSeferBaslat_Click);
+            // 
+            // btnSeferBitir
+            // 
+            this.btnSeferBitir.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnSeferBitir.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnSeferBitir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSeferBitir.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnSeferBitir.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSeferBitir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSeferBitir.ForeColor = System.Drawing.Color.Black;
+            this.btnSeferBitir.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.btnSeferBitir.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.btnSeferBitir.Location = new System.Drawing.Point(267, 11);
+            this.btnSeferBitir.Name = "btnSeferBitir";
+            this.btnSeferBitir.PrimaryColor = System.Drawing.Color.ForestGreen;
+            this.btnSeferBitir.Size = new System.Drawing.Size(245, 45);
+            this.btnSeferBitir.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
+            this.btnSeferBitir.TabIndex = 30;
+            this.btnSeferBitir.Text = "Seferi Tamamla";
+            this.btnSeferBitir.TextColor = System.Drawing.Color.White;
+            this.btnSeferBitir.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.btnSeferBitir.Click += new System.EventHandler(this.btnSeferBitir_Click);
             // 
             // Sofor
             // 
@@ -252,10 +276,10 @@
         private System.Windows.Forms.GroupBox grpSeferler;
         private System.Windows.Forms.DataGridView dgvSeferler;
         private System.Windows.Forms.Panel pnlIslemler;
-        private System.Windows.Forms.Button btnSeferBitir;
-        private System.Windows.Forms.Button btnSeferBaslat;
         private System.Windows.Forms.GroupBox grpYolcular;
         private System.Windows.Forms.DataGridView dgvYolcular;
         private System.Windows.Forms.Label lblSeciliSefer;
+        private ReaLTaiizor.Controls.HopeButton btnSeferBaslat;
+        private ReaLTaiizor.Controls.HopeButton btnSeferBitir;
     }
 }
