@@ -26,6 +26,7 @@
             this.txtSifre = new ReaLTaiizor.Controls.HopeTextBox();
             this.btnKayitOl = new ReaLTaiizor.Controls.HopeButton();
             this.cmbRol = new ReaLTaiizor.Controls.PoisonComboBox();
+            this.sifreGoster = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,11 +46,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("LEMON MILK", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 27);
+            this.label1.Size = new System.Drawing.Size(74, 24);
             this.label1.TabIndex = 10;
             this.label1.Text = "ABİLET";
             // 
@@ -93,7 +94,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button5.ForeColor = System.Drawing.Color.Silver;
-            this.button5.Location = new System.Drawing.Point(237, 380);
+            this.button5.Location = new System.Drawing.Point(237, 397);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(63, 24);
             this.button5.TabIndex = 21;
@@ -208,7 +209,7 @@
             this.btnKayitOl.ForeColor = System.Drawing.Color.Black;
             this.btnKayitOl.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
             this.btnKayitOl.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
-            this.btnKayitOl.Location = new System.Drawing.Point(56, 334);
+            this.btnKayitOl.Location = new System.Drawing.Point(56, 351);
             this.btnKayitOl.Name = "btnKayitOl";
             this.btnKayitOl.PrimaryColor = System.Drawing.Color.LightSlateGray;
             this.btnKayitOl.Size = new System.Drawing.Size(244, 39);
@@ -223,11 +224,23 @@
             // 
             this.cmbRol.FormattingEnabled = true;
             this.cmbRol.ItemHeight = 23;
-            this.cmbRol.Location = new System.Drawing.Point(56, 288);
+            this.cmbRol.Location = new System.Drawing.Point(56, 305);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(244, 29);
             this.cmbRol.TabIndex = 28;
             this.cmbRol.UseSelectable = true;
+            // 
+            // sifreGoster
+            // 
+            this.sifreGoster.AutoSize = true;
+            this.sifreGoster.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.sifreGoster.Location = new System.Drawing.Point(56, 283);
+            this.sifreGoster.Name = "sifreGoster";
+            this.sifreGoster.Size = new System.Drawing.Size(81, 17);
+            this.sifreGoster.TabIndex = 29;
+            this.sifreGoster.Text = "Şifre Göster";
+            this.sifreGoster.UseVisualStyleBackColor = true;
+            this.sifreGoster.CheckedChanged += new System.EventHandler(this.sifreGoster_CheckedChanged);
             // 
             // Kayit
             // 
@@ -235,6 +248,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(356, 440);
+            this.Controls.Add(this.sifreGoster);
             this.Controls.Add(this.cmbRol);
             this.Controls.Add(this.btnKayitOl);
             this.Controls.Add(this.txtSifre);
@@ -252,6 +266,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -267,5 +282,6 @@
         private ReaLTaiizor.Controls.HopeTextBox txtSifre;
         private ReaLTaiizor.Controls.HopeButton btnKayitOl;
         private ReaLTaiizor.Controls.PoisonComboBox cmbRol;
+        private System.Windows.Forms.CheckBox sifreGoster;
     }
 }

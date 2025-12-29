@@ -159,5 +159,17 @@ namespace BiletSatisOtomasyonu
                 this.CenterToScreen();
             }
         }
+
+        private void sifreGoster_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sifreGoster.Checked)
+            {
+                txtPsw.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPsw.PasswordChar = '*';
+            }
+        }
     }
 }

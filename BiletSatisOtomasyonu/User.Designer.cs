@@ -14,25 +14,26 @@
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblBaslik = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblSifre = new System.Windows.Forms.Label();
             this.pnlBilgi = new System.Windows.Forms.Panel();
+            this.btnCikis = new ReaLTaiizor.Controls.HopeButton();
+            this.btnGuncelle = new ReaLTaiizor.Controls.HopeButton();
+            this.txtSifre = new ReaLTaiizor.Controls.HopeTextBox();
+            this.txtTelefon = new ReaLTaiizor.Controls.HopeTextBox();
+            this.txtEmail = new ReaLTaiizor.Controls.HopeTextBox();
             this.txtAdSoyad = new ReaLTaiizor.Controls.HopeTextBox();
             this.lblListeBaslik = new System.Windows.Forms.Label();
             this.dgvListe = new System.Windows.Forms.DataGridView();
             this.pnlListe = new System.Windows.Forms.Panel();
-            this.txtEmail = new ReaLTaiizor.Controls.HopeTextBox();
-            this.txtTelefon = new ReaLTaiizor.Controls.HopeTextBox();
-            this.txtSifre = new ReaLTaiizor.Controls.HopeTextBox();
-            this.btnGuncelle = new ReaLTaiizor.Controls.HopeButton();
-            this.btnCikis = new ReaLTaiizor.Controls.HopeButton();
-            this.btnBiletIptal = new ReaLTaiizor.Controls.HopeButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBiletIptal = new ReaLTaiizor.Controls.HopeButton();
+            this.sifreGoster = new System.Windows.Forms.CheckBox();
             this.pnlBilgi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListe)).BeginInit();
             this.pnlListe.SuspendLayout();
@@ -95,6 +96,7 @@
             // 
             // pnlBilgi
             // 
+            this.pnlBilgi.Controls.Add(this.sifreGoster);
             this.pnlBilgi.Controls.Add(this.btnCikis);
             this.pnlBilgi.Controls.Add(this.btnGuncelle);
             this.pnlBilgi.Controls.Add(this.txtSifre);
@@ -110,6 +112,118 @@
             this.pnlBilgi.Name = "pnlBilgi";
             this.pnlBilgi.Size = new System.Drawing.Size(314, 380);
             this.pnlBilgi.TabIndex = 0;
+            // 
+            // btnCikis
+            // 
+            this.btnCikis.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnCikis.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnCikis.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCikis.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnCikis.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnCikis.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCikis.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.btnCikis.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.btnCikis.Location = new System.Drawing.Point(13, 342);
+            this.btnCikis.Name = "btnCikis";
+            this.btnCikis.PrimaryColor = System.Drawing.Color.IndianRed;
+            this.btnCikis.Size = new System.Drawing.Size(287, 30);
+            this.btnCikis.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
+            this.btnCikis.TabIndex = 19;
+            this.btnCikis.Text = "Çıkış Yap";
+            this.btnCikis.TextColor = System.Drawing.Color.White;
+            this.btnCikis.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnGuncelle.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnGuncelle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuncelle.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnGuncelle.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnGuncelle.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGuncelle.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.btnGuncelle.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.btnGuncelle.Location = new System.Drawing.Point(13, 306);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.PrimaryColor = System.Drawing.Color.LightSlateGray;
+            this.btnGuncelle.Size = new System.Drawing.Size(287, 30);
+            this.btnGuncelle.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
+            this.btnGuncelle.TabIndex = 18;
+            this.btnGuncelle.Text = "Bilgileri Güncelle";
+            this.btnGuncelle.TextColor = System.Drawing.Color.White;
+            this.btnGuncelle.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
+            // txtSifre
+            // 
+            this.txtSifre.BackColor = System.Drawing.Color.White;
+            this.txtSifre.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtSifre.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtSifre.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtSifre.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtSifre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.txtSifre.Hint = "";
+            this.txtSifre.Location = new System.Drawing.Point(13, 243);
+            this.txtSifre.MaxLength = 32767;
+            this.txtSifre.Multiline = false;
+            this.txtSifre.Name = "txtSifre";
+            this.txtSifre.PasswordChar = '*';
+            this.txtSifre.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSifre.SelectedText = "";
+            this.txtSifre.SelectionLength = 0;
+            this.txtSifre.SelectionStart = 0;
+            this.txtSifre.Size = new System.Drawing.Size(287, 38);
+            this.txtSifre.TabIndex = 17;
+            this.txtSifre.TabStop = false;
+            this.txtSifre.UseSystemPasswordChar = false;
+            // 
+            // txtTelefon
+            // 
+            this.txtTelefon.BackColor = System.Drawing.Color.White;
+            this.txtTelefon.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtTelefon.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtTelefon.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtTelefon.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtTelefon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.txtTelefon.Hint = "";
+            this.txtTelefon.Location = new System.Drawing.Point(13, 171);
+            this.txtTelefon.MaxLength = 32767;
+            this.txtTelefon.Multiline = false;
+            this.txtTelefon.Name = "txtTelefon";
+            this.txtTelefon.PasswordChar = '\0';
+            this.txtTelefon.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTelefon.SelectedText = "";
+            this.txtTelefon.SelectionLength = 0;
+            this.txtTelefon.SelectionStart = 0;
+            this.txtTelefon.Size = new System.Drawing.Size(287, 38);
+            this.txtTelefon.TabIndex = 16;
+            this.txtTelefon.TabStop = false;
+            this.txtTelefon.UseSystemPasswordChar = false;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtEmail.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtEmail.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtEmail.Enabled = false;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.txtEmail.Hint = "";
+            this.txtEmail.Location = new System.Drawing.Point(13, 99);
+            this.txtEmail.MaxLength = 32767;
+            this.txtEmail.Multiline = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.SelectionLength = 0;
+            this.txtEmail.SelectionStart = 0;
+            this.txtEmail.Size = new System.Drawing.Size(287, 38);
+            this.txtEmail.TabIndex = 15;
+            this.txtEmail.TabStop = false;
+            this.txtEmail.UseSystemPasswordChar = false;
             // 
             // txtAdSoyad
             // 
@@ -156,25 +270,25 @@
             this.dgvListe.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListe.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dgvListe.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSlateGray;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSlateGray;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSlateGray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSlateGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListe.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListe.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvListe.EnableHeadersVisualStyles = false;
             this.dgvListe.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.dgvListe.Location = new System.Drawing.Point(13, 30);
@@ -202,117 +316,12 @@
             this.pnlListe.Size = new System.Drawing.Size(337, 144);
             this.pnlListe.TabIndex = 0;
             // 
-            // txtEmail
+            // panel1
             // 
-            this.txtEmail.BackColor = System.Drawing.Color.White;
-            this.txtEmail.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.txtEmail.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.txtEmail.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.txtEmail.Enabled = false;
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            this.txtEmail.Hint = "";
-            this.txtEmail.Location = new System.Drawing.Point(13, 99);
-            this.txtEmail.MaxLength = 32767;
-            this.txtEmail.Multiline = false;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtEmail.SelectedText = "";
-            this.txtEmail.SelectionLength = 0;
-            this.txtEmail.SelectionStart = 0;
-            this.txtEmail.Size = new System.Drawing.Size(287, 38);
-            this.txtEmail.TabIndex = 15;
-            this.txtEmail.TabStop = false;
-            this.txtEmail.UseSystemPasswordChar = false;
-            // 
-            // txtTelefon
-            // 
-            this.txtTelefon.BackColor = System.Drawing.Color.White;
-            this.txtTelefon.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.txtTelefon.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.txtTelefon.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.txtTelefon.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtTelefon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            this.txtTelefon.Hint = "";
-            this.txtTelefon.Location = new System.Drawing.Point(13, 171);
-            this.txtTelefon.MaxLength = 32767;
-            this.txtTelefon.Multiline = false;
-            this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.PasswordChar = '\0';
-            this.txtTelefon.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtTelefon.SelectedText = "";
-            this.txtTelefon.SelectionLength = 0;
-            this.txtTelefon.SelectionStart = 0;
-            this.txtTelefon.Size = new System.Drawing.Size(287, 38);
-            this.txtTelefon.TabIndex = 16;
-            this.txtTelefon.TabStop = false;
-            this.txtTelefon.UseSystemPasswordChar = false;
-            // 
-            // txtSifre
-            // 
-            this.txtSifre.BackColor = System.Drawing.Color.White;
-            this.txtSifre.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.txtSifre.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.txtSifre.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.txtSifre.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtSifre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            this.txtSifre.Hint = "";
-            this.txtSifre.Location = new System.Drawing.Point(13, 243);
-            this.txtSifre.MaxLength = 32767;
-            this.txtSifre.Multiline = false;
-            this.txtSifre.Name = "txtSifre";
-            this.txtSifre.PasswordChar = '\0';
-            this.txtSifre.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtSifre.SelectedText = "";
-            this.txtSifre.SelectionLength = 0;
-            this.txtSifre.SelectionStart = 0;
-            this.txtSifre.Size = new System.Drawing.Size(287, 38);
-            this.txtSifre.TabIndex = 17;
-            this.txtSifre.TabStop = false;
-            this.txtSifre.UseSystemPasswordChar = false;
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.btnGuncelle.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
-            this.btnGuncelle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuncelle.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.btnGuncelle.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnGuncelle.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGuncelle.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            this.btnGuncelle.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
-            this.btnGuncelle.Location = new System.Drawing.Point(13, 306);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.PrimaryColor = System.Drawing.Color.LightSlateGray;
-            this.btnGuncelle.Size = new System.Drawing.Size(287, 30);
-            this.btnGuncelle.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
-            this.btnGuncelle.TabIndex = 18;
-            this.btnGuncelle.Text = "Bilgileri Güncelle";
-            this.btnGuncelle.TextColor = System.Drawing.Color.White;
-            this.btnGuncelle.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
-            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
-            // 
-            // btnCikis
-            // 
-            this.btnCikis.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.btnCikis.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
-            this.btnCikis.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCikis.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.btnCikis.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnCikis.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCikis.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            this.btnCikis.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
-            this.btnCikis.Location = new System.Drawing.Point(13, 342);
-            this.btnCikis.Name = "btnCikis";
-            this.btnCikis.PrimaryColor = System.Drawing.Color.IndianRed;
-            this.btnCikis.Size = new System.Drawing.Size(287, 30);
-            this.btnCikis.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
-            this.btnCikis.TabIndex = 19;
-            this.btnCikis.Text = "Çıkış Yap";
-            this.btnCikis.TextColor = System.Drawing.Color.White;
-            this.btnCikis.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
-            this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
+            this.panel1.Location = new System.Drawing.Point(301, 30);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(20, 67);
+            this.panel1.TabIndex = 21;
             // 
             // btnBiletIptal
             // 
@@ -335,12 +344,17 @@
             this.btnBiletIptal.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
             this.btnBiletIptal.Click += new System.EventHandler(this.btnBiletIptal_Click);
             // 
-            // panel1
+            // sifreGoster
             // 
-            this.panel1.Location = new System.Drawing.Point(301, 30);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(20, 67);
-            this.panel1.TabIndex = 21;
+            this.sifreGoster.AutoSize = true;
+            this.sifreGoster.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.sifreGoster.Location = new System.Drawing.Point(13, 282);
+            this.sifreGoster.Name = "sifreGoster";
+            this.sifreGoster.Size = new System.Drawing.Size(93, 18);
+            this.sifreGoster.TabIndex = 21;
+            this.sifreGoster.Text = "Şifre Göster";
+            this.sifreGoster.UseVisualStyleBackColor = true;
+            this.sifreGoster.CheckedChanged += new System.EventHandler(this.sifreGoster_CheckedChanged);
             // 
             // User
             // 
@@ -382,5 +396,6 @@
         private ReaLTaiizor.Controls.HopeButton btnCikis;
         private ReaLTaiizor.Controls.HopeButton btnBiletIptal;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox sifreGoster;
     }
 }

@@ -39,7 +39,7 @@
             this.pnlAnaIcerik.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlAnaIcerik.Location = new System.Drawing.Point(320, 44);
             this.pnlAnaIcerik.Name = "pnlAnaIcerik";
-            this.pnlAnaIcerik.Size = new System.Drawing.Size(900, 670);
+            this.pnlAnaIcerik.Size = new System.Drawing.Size(1242, 670);
             this.pnlAnaIcerik.TabIndex = 2;
             // 
             // panel1
@@ -51,7 +51,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1220, 45);
+            this.panel1.Size = new System.Drawing.Size(1562, 45);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -63,7 +63,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.Location = new System.Drawing.Point(1132, 0);
+            this.button1.Location = new System.Drawing.Point(1475, 1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(43, 43);
             this.button1.TabIndex = 11;
@@ -78,7 +78,7 @@
             this.btnCloseApp.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnCloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseApp.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseApp.Image")));
-            this.btnCloseApp.Location = new System.Drawing.Point(1175, 0);
+            this.btnCloseApp.Location = new System.Drawing.Point(1518, 1);
             this.btnCloseApp.Name = "btnCloseApp";
             this.btnCloseApp.Size = new System.Drawing.Size(43, 43);
             this.btnCloseApp.TabIndex = 10;
@@ -89,11 +89,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("LEMON MILK", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 27);
+            this.label1.Size = new System.Drawing.Size(74, 24);
             this.label1.TabIndex = 8;
             this.label1.Text = "ABİLET";
             // 
@@ -102,7 +102,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(1220, 720);
+            this.ClientSize = new System.Drawing.Size(1563, 720);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlAnaIcerik);

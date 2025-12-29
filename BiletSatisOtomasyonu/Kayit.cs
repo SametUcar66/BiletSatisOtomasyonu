@@ -206,5 +206,18 @@ namespace BiletSatisOtomasyonu
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void sifreGoster_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (sifreGoster.Checked)
+            {
+                txtSifre.PasswordChar = '\0';
+            }
+            else
+            {
+                txtSifre.PasswordChar = '*';
+            }
+        }
     }
 }

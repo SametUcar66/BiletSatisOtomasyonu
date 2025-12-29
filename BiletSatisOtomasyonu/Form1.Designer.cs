@@ -20,6 +20,7 @@
             this.txtEmail = new ReaLTaiizor.Controls.HopeTextBox();
             this.txtPsw = new ReaLTaiizor.Controls.HopeTextBox();
             this.btnLogin = new ReaLTaiizor.Controls.HopeButton();
+            this.sifreGoster = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -32,7 +33,7 @@
             this.btnKayitOl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKayitOl.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnKayitOl.ForeColor = System.Drawing.Color.Silver;
-            this.btnKayitOl.Location = new System.Drawing.Point(245, 295);
+            this.btnKayitOl.Location = new System.Drawing.Point(245, 308);
             this.btnKayitOl.Name = "btnKayitOl";
             this.btnKayitOl.Size = new System.Drawing.Size(55, 24);
             this.btnKayitOl.TabIndex = 3;
@@ -56,11 +57,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("LEMON MILK", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 27);
+            this.label1.Size = new System.Drawing.Size(74, 24);
             this.label1.TabIndex = 8;
             this.label1.Text = "ABİLET";
             // 
@@ -133,7 +134,7 @@
             this.txtPsw.MinimumSize = new System.Drawing.Size(0, 30);
             this.txtPsw.Multiline = false;
             this.txtPsw.Name = "txtPsw";
-            this.txtPsw.PasswordChar = '\0';
+            this.txtPsw.PasswordChar = '*';
             this.txtPsw.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPsw.SelectedText = "";
             this.txtPsw.SelectionLength = 0;
@@ -154,7 +155,7 @@
             this.btnLogin.ForeColor = System.Drawing.Color.Black;
             this.btnLogin.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
             this.btnLogin.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
-            this.btnLogin.Location = new System.Drawing.Point(56, 250);
+            this.btnLogin.Location = new System.Drawing.Point(56, 263);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.PrimaryColor = System.Drawing.Color.LightSlateGray;
             this.btnLogin.Size = new System.Drawing.Size(244, 39);
@@ -165,12 +166,25 @@
             this.btnLogin.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // sifreGoster
+            // 
+            this.sifreGoster.AutoSize = true;
+            this.sifreGoster.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.sifreGoster.Location = new System.Drawing.Point(56, 240);
+            this.sifreGoster.Name = "sifreGoster";
+            this.sifreGoster.Size = new System.Drawing.Size(81, 17);
+            this.sifreGoster.TabIndex = 20;
+            this.sifreGoster.Text = "Şifre Göster";
+            this.sifreGoster.UseVisualStyleBackColor = true;
+            this.sifreGoster.CheckedChanged += new System.EventHandler(this.sifreGoster_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(356, 440);
+            this.Controls.Add(this.sifreGoster);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPsw);
             this.Controls.Add(this.txtEmail);
@@ -186,6 +200,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
         private System.Windows.Forms.Button btnKayitOl; // Değişken tanımı
@@ -196,5 +211,6 @@
         private ReaLTaiizor.Controls.HopeTextBox txtEmail;
         private ReaLTaiizor.Controls.HopeTextBox txtPsw;
         private ReaLTaiizor.Controls.HopeButton btnLogin;
+        private System.Windows.Forms.CheckBox sifreGoster;
     }
 }
