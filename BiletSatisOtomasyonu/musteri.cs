@@ -306,9 +306,9 @@ namespace BiletSatisOtomasyonu
                     {
                         string sqlTicket = @"
                 INSERT INTO Tickets
-                (TripId, UserId, SeatNumber, Price, FinalPrice, Status)
+                (TripId, UserId, PassengerName, SeatNumber, Price, FinalPrice, Status)
                 VALUES
-                (@tId, @uId, @seat, @price, @final, 1)";
+                (@tId, @uId, @name, @seat, @price, @final, 1)";
 
                         foreach (var koltuk in seciliKoltuklar)
                         {
@@ -316,6 +316,7 @@ namespace BiletSatisOtomasyonu
                             {
                                 cmd.Parameters.AddWithValue("@tId", seciliSeferId);
                                 cmd.Parameters.AddWithValue("@uId", CurrentUserId);
+                                cmd.Parameters.AddWithValue("@name", "Bireysel Müşteri"); // 🔥 HATA BURADAYDI
                                 cmd.Parameters.AddWithValue("@seat", koltuk);
                                 cmd.Parameters.AddWithValue("@price", seferBirimFiyati);
                                 cmd.Parameters.AddWithValue("@final", seferBirimFiyati);
@@ -325,7 +326,6 @@ namespace BiletSatisOtomasyonu
 
                         trans.Commit();
                         MessageBox.Show("Biletleriniz alındı. İyi yolculuklar!");
-
                         IslemSonrasiTemizlik();
                     }
                     catch (Exception ex)
@@ -336,7 +336,6 @@ namespace BiletSatisOtomasyonu
                 }
             }
         }
-
         private void IslemSonrasiTemizlik()
         {
             // 1. Koltukları temizle
