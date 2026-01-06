@@ -73,53 +73,65 @@ namespace BiletSatisOtomasyonu
 
         private void SeferleriListele()
         {
-            try
+            using (var conn = DatabaseHelper.GetConnection())
             {
-                using (var conn = DatabaseHelper.GetConnection())
+                conn.Open();
+
+                string sql = @"
+        SELECT 
+            t.Id,
+            sDep.Name || ' > ' || sArr.Name AS 'Güzergah',
+            t.DepartureTime AS 'Tarih',
+            v.PlateNumber AS 'Otobüs',
+            t.Price AS 'Fiyat',
+            v.Capacity AS 'Kapasite'
+        FROM Trips t
+        JOIN Routes r ON t.RouteId = r.Id
+        JOIN Vehicles v ON t.VehicleId = v.Id
+        JOIN Stations sDep ON r.DepartureStationId = sDep.Id
+        JOIN Stations sArr ON r.ArrivalStationId = sArr.Id
+        ";
+
+                using (var cmd = new SQLiteCommand(conn))
                 {
-                    conn.Open();
-                    string sql = @"
-                        SELECT 
-                            t.Id,
-                            sDep.Name || ' > ' || sArr.Name AS 'Güzergah',
-                            t.DepartureTime AS 'Tarih',
-                            v.PlateNumber AS 'Otobüs',
-                            t.Price AS 'Fiyat',
-                            v.Capacity AS 'Kapasite'
-                        FROM Trips t
-                        JOIN Routes r ON t.RouteId = r.Id
-                        JOIN Vehicles v ON t.VehicleId = v.Id
-                        JOIN Stations sDep ON r.DepartureStationId = sDep.Id
-                        JOIN Stations sArr ON r.ArrivalStationId = sArr.Id
-                        WHERE t.Status = 1";
+                    if (!string.IsNullOrWhiteSpace(cmbNereden.Text))
+                    {
+                        sql += " AND sDep.City = @from";
+                        cmd.Parameters.AddWithValue("@from", cmbNereden.Text);
+                    }
 
-                    if (cmbNereden.SelectedItem != null && !string.IsNullOrWhiteSpace(cmbNereden.SelectedItem.ToString()))
-                        sql += " AND sDep.City = '" + cmbNereden.SelectedItem.ToString() + "'";
+                    if (!string.IsNullOrWhiteSpace(cmbNereye.Text))
+                    {
+                        sql += " AND sArr.City = @to";
+                        cmd.Parameters.AddWithValue("@to", cmbNereye.Text);
+                    }
 
-                    if (cmbNereye.SelectedItem != null && !string.IsNullOrWhiteSpace(cmbNereye.SelectedItem.ToString()))
-                        sql += " AND sArr.City = '" + cmbNereye.SelectedItem.ToString() + "'";
+                    // 🔴 TARİH FİLTRESİ SADECE VARSA
+                    if (dtpTarih.Checked)
+                    {
+                        sql += " AND t.DepartureTime LIKE @date";
+                        cmd.Parameters.AddWithValue(
+                            "@date",
+                            dtpTarih.Value.ToString("yyyy-MM-dd") + "%"
+                        );
+                    }
 
-                    string secilenTarih = dtpTarih.Value.ToString("yyyy-MM-dd");
-                    sql += $" AND t.DepartureTime LIKE '{secilenTarih}%'";
                     sql += " ORDER BY t.DepartureTime ASC";
+                    cmd.CommandText = sql;
 
-                    SQLiteDataAdapter da = new SQLiteDataAdapter(sql, conn);
+                    SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
+
                     dgvSeferler.DataSource = dt;
+                    dgvSeferler.Columns["Id"].Visible = false;
+                    dgvSeferler.Columns["Kapasite"].Visible = false;
                     dgvSeferler.Columns["Güzergah"].FillWeight = 200;
-                    if (dgvSeferler.Columns.Contains("Id")) dgvSeferler.Columns["Id"].Visible = false;
-                    if (dgvSeferler.Columns.Contains("Kapasite")) dgvSeferler.Columns["Kapasite"].Visible = false;
-                    dgvSeferler.Visible = true;
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Listeleme hatası: " + ex.Message);
             }
         }
 
-        
+
 
         // BU METOT HEM KOLTUKLARI OLUŞTURUR HEM DE DOLU OLANLARI KIRMIZI YAPAR
         private void KoltuklariCiz(int kapasite)
@@ -288,33 +300,39 @@ namespace BiletSatisOtomasyonu
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
-                try
+                using (var trans = conn.BeginTransaction())
                 {
-                    string sqlTicket = @"INSERT INTO Tickets (TicketNo, TripId, UserId, PassengerName, SeatNumber, Price, FinalPrice, Status) 
-                                         VALUES (@pnr, @tId, @uId, @name, @seat, @price, @final, 1)";
-
-                    foreach (var koltuk in seciliKoltuklar)
+                    try
                     {
-                        string pnr = "PNR-" + DateTime.Now.Ticks.ToString().Substring(10) + "-" + koltuk;
-                        using (var cmd = new SQLiteCommand(sqlTicket, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@pnr", pnr);
-                            cmd.Parameters.AddWithValue("@tId", seciliSeferId);
-                            cmd.Parameters.AddWithValue("@uId", CurrentUserId);
-                            cmd.Parameters.AddWithValue("@name", "Bireysel Müşteri");
-                            cmd.Parameters.AddWithValue("@seat", koltuk);
-                            cmd.Parameters.AddWithValue("@price", seferBirimFiyati);
-                            cmd.Parameters.AddWithValue("@final", seferBirimFiyati);
-                            cmd.ExecuteNonQuery();
-                        }
-                    }
-                    MessageBox.Show("Biletleriniz alındı! İyi yolculuklar.");
+                        string sqlTicket = @"
+                INSERT INTO Tickets
+                (TripId, UserId, SeatNumber, Price, FinalPrice, Status)
+                VALUES
+                (@tId, @uId, @seat, @price, @final, 1)";
 
-                    IslemSonrasiTemizlik();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Hata: " + ex.Message);
+                        foreach (var koltuk in seciliKoltuklar)
+                        {
+                            using (var cmd = new SQLiteCommand(sqlTicket, conn, trans))
+                            {
+                                cmd.Parameters.AddWithValue("@tId", seciliSeferId);
+                                cmd.Parameters.AddWithValue("@uId", CurrentUserId);
+                                cmd.Parameters.AddWithValue("@seat", koltuk);
+                                cmd.Parameters.AddWithValue("@price", seferBirimFiyati);
+                                cmd.Parameters.AddWithValue("@final", seferBirimFiyati);
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+
+                        trans.Commit();
+                        MessageBox.Show("Biletleriniz alındı. İyi yolculuklar!");
+
+                        IslemSonrasiTemizlik();
+                    }
+                    catch (Exception ex)
+                    {
+                        trans.Rollback();
+                        MessageBox.Show("Satın alma hatası: " + ex.Message);
+                    }
                 }
             }
         }

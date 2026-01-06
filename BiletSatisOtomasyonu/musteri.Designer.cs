@@ -1,4 +1,6 @@
-﻿namespace BiletSatisOtomasyonu
+﻿using System.Windows.Forms;
+
+namespace BiletSatisOtomasyonu
 {
     partial class musteri
     {
@@ -82,7 +84,7 @@
             this.dgvSeferler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSeferler.Size = new System.Drawing.Size(540, 516);
             this.dgvSeferler.TabIndex = 4;
-            this.dgvSeferler.Visible = false;
+            this.dgvSeferler.Visible = true;
             this.dgvSeferler.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSeferler_CellClick);
             this.dgvSeferler.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSeferler_DataBindingComplete);
             // 
@@ -276,12 +278,14 @@
             // dtpTarih
             // 
             this.dtpTarih.CalendarFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtpTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpTarih.Location = new System.Drawing.Point(547, 33);
             this.dtpTarih.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtpTarih.Name = "dtpTarih";
             this.dtpTarih.Size = new System.Drawing.Size(161, 29);
             this.dtpTarih.TabIndex = 5;
+            dtpTarih.Format = DateTimePickerFormat.Custom;
+            dtpTarih.CustomFormat = "d.MM.yyyy"; // ekranda 9.01.2026
+
             // 
             // musteri
             // 
