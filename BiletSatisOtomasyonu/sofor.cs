@@ -191,14 +191,14 @@ namespace BiletSatisOtomasyonu
                 {
                     conn.Open();
                     string sql = @"
-                        SELECT 
-                            SeatNumber AS 'Koltuk',
-                            PassengerName AS 'Ad Soyad',
-                            PassengerTCNo AS 'TC No',
-                            CASE WHEN PassengerGender = 1 THEN 'Erkek' ELSE 'Kadın' END AS 'Cinsiyet'
-                        FROM Tickets
-                        WHERE TripId = @tripId AND Status = 1 -- Sadece aktif biletler
-                        ORDER BY CAST(SeatNumber AS INTEGER) ASC";
+      SELECT 
+        SeatNumber AS 'Koltuk',
+        PassengerName AS 'Ad Soyad',
+        PassengerPhone AS 'Telefon'
+    FROM Tickets
+    WHERE TripId = @tripId
+    ORDER BY CAST(SeatNumber AS INTEGER) ASC";
+
 
                     using (SQLiteDataAdapter da = new SQLiteDataAdapter(sql, conn))
                     {
@@ -284,6 +284,11 @@ namespace BiletSatisOtomasyonu
         {
             dgvYolcular.ClearSelection();
             dgvYolcular.CurrentCell = null;
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

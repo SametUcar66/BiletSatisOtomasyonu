@@ -25,9 +25,9 @@
             this.grpYolcular = new System.Windows.Forms.GroupBox();
             this.dgvYolcular = new System.Windows.Forms.DataGridView();
             this.pnlIslemler = new System.Windows.Forms.Panel();
-            this.lblSeciliSefer = new System.Windows.Forms.Label();
-            this.btnSeferBaslat = new ReaLTaiizor.Controls.HopeButton();
             this.btnSeferBitir = new ReaLTaiizor.Controls.HopeButton();
+            this.btnSeferBaslat = new ReaLTaiizor.Controls.HopeButton();
+            this.lblSeciliSefer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -56,6 +56,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.grpYolcular);
             this.splitContainer1.Panel2.Controls.Add(this.pnlIslemler);
             this.splitContainer1.Panel2.Controls.Add(this.lblSeciliSefer);
+            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(944, 641);
             this.splitContainer1.SplitterDistance = 367;
             this.splitContainer1.TabIndex = 0;
@@ -96,7 +97,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGray;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
@@ -191,16 +192,27 @@
             this.pnlIslemler.Size = new System.Drawing.Size(526, 63);
             this.pnlIslemler.TabIndex = 2;
             // 
-            // lblSeciliSefer
+            // btnSeferBitir
             // 
-            this.lblSeciliSefer.AutoSize = true;
-            this.lblSeciliSefer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSeciliSefer.ForeColor = System.Drawing.Color.White;
-            this.lblSeciliSefer.Location = new System.Drawing.Point(17, 33);
-            this.lblSeciliSefer.Name = "lblSeciliSefer";
-            this.lblSeciliSefer.Size = new System.Drawing.Size(177, 19);
-            this.lblSeciliSefer.TabIndex = 0;
-            this.lblSeciliSefer.Text = "Sefer Detayı ve Listesi";
+            this.btnSeferBitir.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnSeferBitir.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnSeferBitir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSeferBitir.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnSeferBitir.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSeferBitir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSeferBitir.ForeColor = System.Drawing.Color.Black;
+            this.btnSeferBitir.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.btnSeferBitir.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.btnSeferBitir.Location = new System.Drawing.Point(267, 11);
+            this.btnSeferBitir.Name = "btnSeferBitir";
+            this.btnSeferBitir.PrimaryColor = System.Drawing.Color.ForestGreen;
+            this.btnSeferBitir.Size = new System.Drawing.Size(245, 45);
+            this.btnSeferBitir.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
+            this.btnSeferBitir.TabIndex = 30;
+            this.btnSeferBitir.Text = "Seferi Tamamla";
+            this.btnSeferBitir.TextColor = System.Drawing.Color.White;
+            this.btnSeferBitir.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.btnSeferBitir.Click += new System.EventHandler(this.btnSeferBitir_Click);
             // 
             // btnSeferBaslat
             // 
@@ -224,27 +236,16 @@
             this.btnSeferBaslat.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
             this.btnSeferBaslat.Click += new System.EventHandler(this.btnSeferBaslat_Click);
             // 
-            // btnSeferBitir
+            // lblSeciliSefer
             // 
-            this.btnSeferBitir.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.btnSeferBitir.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
-            this.btnSeferBitir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSeferBitir.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.btnSeferBitir.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnSeferBitir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSeferBitir.ForeColor = System.Drawing.Color.Black;
-            this.btnSeferBitir.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            this.btnSeferBitir.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
-            this.btnSeferBitir.Location = new System.Drawing.Point(267, 11);
-            this.btnSeferBitir.Name = "btnSeferBitir";
-            this.btnSeferBitir.PrimaryColor = System.Drawing.Color.ForestGreen;
-            this.btnSeferBitir.Size = new System.Drawing.Size(245, 45);
-            this.btnSeferBitir.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
-            this.btnSeferBitir.TabIndex = 30;
-            this.btnSeferBitir.Text = "Seferi Tamamla";
-            this.btnSeferBitir.TextColor = System.Drawing.Color.White;
-            this.btnSeferBitir.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
-            this.btnSeferBitir.Click += new System.EventHandler(this.btnSeferBitir_Click);
+            this.lblSeciliSefer.AutoSize = true;
+            this.lblSeciliSefer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSeciliSefer.ForeColor = System.Drawing.Color.White;
+            this.lblSeciliSefer.Location = new System.Drawing.Point(17, 33);
+            this.lblSeciliSefer.Name = "lblSeciliSefer";
+            this.lblSeciliSefer.Size = new System.Drawing.Size(177, 19);
+            this.lblSeciliSefer.TabIndex = 0;
+            this.lblSeciliSefer.Text = "Sefer Detayı ve Listesi";
             // 
             // Sofor
             // 

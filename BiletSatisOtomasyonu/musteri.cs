@@ -259,9 +259,15 @@ namespace BiletSatisOtomasyonu
             }
         }
 
+
         private void KurumsalSatinAl(decimal toplamTutar)
         {
-            // (Senin mevcut kodunla aynı, sadece sonundaki yenileme garanti altına alındı)
+            if (seciliKoltuklar.Count < MIN_KURUMSAL_ADET)
+            {
+                MessageBox.Show("Kurumsal müşteriler en az 5 bilet almalıdır.");
+                return;
+            }
+
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
@@ -269,27 +275,92 @@ namespace BiletSatisOtomasyonu
                 {
                     try
                     {
-                        // ... (Sipariş Kayıt Kodları Aynen Kalacak) ...
-                        // KOD UZAMASIN DİYE KISALTTIM, SENDEKİ MEVCUT INSERT KODLARI BURADA OLACAK
+                        // 1️⃣ Company Order
+                        string sqlOrder = @"
+                INSERT INTO CompanyOrders
+                (
+                    CompanyUserId,
+                    TripId,
+                    TicketCount,
+                    UnitPrice,
+                    DiscountRate,
+                    TotalPrice,
+                    Status
+                )
+                VALUES
+                (
+                    @userId,
+                    @tripId,
+                    @count,
+                    @unit,
+                    @discount,
+                    @total,
+                    1
+                );
+                SELECT last_insert_rowid();";
 
-                        // NOT: Veritabanı Insert işlemi bittikten sonra:
-                        string sqlOrder = @"INSERT INTO CompanyOrders 
-                                            (CompanyUserId, TripId, TicketCount, UnitPrice, DiscountRate, TotalPrice, Status, OrderDate) 
-                                            VALUES (@uId, @tId, @count, @unit, @disc, @total, 1, @date);
-                                            SELECT last_insert_rowid();";
+                        long orderId;
+                        using (var cmd = new SQLiteCommand(sqlOrder, conn, trans))
+                        {
+                            cmd.Parameters.AddWithValue("@userId", CurrentUserId);
+                            cmd.Parameters.AddWithValue("@tripId", seciliSeferId);
+                            cmd.Parameters.AddWithValue("@count", seciliKoltuklar.Count);
+                            cmd.Parameters.AddWithValue("@unit", seferBirimFiyati);
+                            cmd.Parameters.AddWithValue("@discount", KURUMSAL_INDIRIM_ORANI);
+                            cmd.Parameters.AddWithValue("@total", toplamTutar);
 
-                        // ... (Buralar senin kodun) ...
-                        // Sadece en altı önemli:
+                            orderId = (long)cmd.ExecuteScalar();
+                        }
+
+                        // 2️⃣ Biletler
+                        string sqlTicket = @"
+                INSERT INTO Tickets
+                (
+                    TripId,
+                    UserId,
+                    CompanyOrderId,
+                    PassengerName,
+                    SeatNumber,
+                    Price,
+                    FinalPrice,
+                    Status
+                )
+                VALUES
+                (
+                    @tripId,
+                    @userId,
+                    @orderId,
+                    @name,
+                    @seat,
+                    @price,
+                    @final,
+                    1
+                )";
+
+                        foreach (string koltuk in seciliKoltuklar)
+                        {
+                            using (var cmd = new SQLiteCommand(sqlTicket, conn, trans))
+                            {
+                                cmd.Parameters.AddWithValue("@tripId", seciliSeferId);
+                                cmd.Parameters.AddWithValue("@userId", CurrentUserId);
+                                cmd.Parameters.AddWithValue("@orderId", orderId);
+                                cmd.Parameters.AddWithValue("@name", "Kurumsal Yolcu");
+                                cmd.Parameters.AddWithValue("@seat", koltuk);
+                                cmd.Parameters.AddWithValue("@price", seferBirimFiyati);
+                                cmd.Parameters.AddWithValue("@final", seferBirimFiyati * (1 - KURUMSAL_INDIRIM_ORANI));
+
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
 
                         trans.Commit();
-                        MessageBox.Show("Bilet başarıyla alındı.");
-
+                        MessageBox.Show("Kurumsal satın alma tamamlandı.");
                         IslemSonrasiTemizlik();
                     }
                     catch (Exception ex)
                     {
                         trans.Rollback();
-                        MessageBox.Show("Hata: " + ex.Message);
+                        MessageBox.Show("Kurumsal satın alma hatası: " + ex.Message);
                     }
                 }
             }
@@ -297,6 +368,8 @@ namespace BiletSatisOtomasyonu
 
         private void BireyselSatinAl(decimal toplamTutar)
         {
+            if (seciliKoltuklar.Count == 0) return;
+
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
@@ -304,28 +377,67 @@ namespace BiletSatisOtomasyonu
                 {
                     try
                     {
+                        // 1️⃣ Kullanıcının telefonunu al
+                        string phone = "";
+                        string sqlUser = "SELECT Phone FROM Users WHERE Id = @id";
+
+                        using (var cmdUser = new SQLiteCommand(sqlUser, conn, trans))
+                        {
+                            cmdUser.Parameters.AddWithValue("@id", CurrentUserId);
+                            var result = cmdUser.ExecuteScalar();
+                            phone = result?.ToString();
+                        }
+
+                        if (string.IsNullOrWhiteSpace(phone))
+                        {
+                            MessageBox.Show("Kullanıcının telefon bilgisi bulunamadı.");
+                            trans.Rollback();
+                            return;
+                        }
+
+                        // 2️⃣ Bilet ekleme
                         string sqlTicket = @"
                 INSERT INTO Tickets
-                (TripId, UserId, PassengerName, SeatNumber, Price, FinalPrice, Status)
+                (
+                    TripId,
+                    UserId,
+                    PassengerName,
+                    PassengerPhone,
+                    SeatNumber,
+                    Price,
+                    FinalPrice,
+                    Status
+                )
                 VALUES
-                (@tId, @uId, @name, @seat, @price, @final, 1)";
+                (
+                    @tripId,
+                    @userId,
+                    @name,
+                    @phone,
+                    @seat,
+                    @price,
+                    @final,
+                    1
+                )";
 
-                        foreach (var koltuk in seciliKoltuklar)
+                        foreach (string koltuk in seciliKoltuklar)
                         {
                             using (var cmd = new SQLiteCommand(sqlTicket, conn, trans))
                             {
-                                cmd.Parameters.AddWithValue("@tId", seciliSeferId);
-                                cmd.Parameters.AddWithValue("@uId", CurrentUserId);
-                                cmd.Parameters.AddWithValue("@name", "Bireysel Müşteri"); // 🔥 HATA BURADAYDI
+                                cmd.Parameters.AddWithValue("@tripId", seciliSeferId);
+                                cmd.Parameters.AddWithValue("@userId", CurrentUserId);
+                                cmd.Parameters.AddWithValue("@name", "Bireysel Müşteri");
+                                cmd.Parameters.AddWithValue("@phone", phone);
                                 cmd.Parameters.AddWithValue("@seat", koltuk);
                                 cmd.Parameters.AddWithValue("@price", seferBirimFiyati);
                                 cmd.Parameters.AddWithValue("@final", seferBirimFiyati);
+
                                 cmd.ExecuteNonQuery();
                             }
                         }
 
                         trans.Commit();
-                        MessageBox.Show("Biletleriniz alındı. İyi yolculuklar!");
+                        MessageBox.Show("Bilet başarıyla satın alındı.");
                         IslemSonrasiTemizlik();
                     }
                     catch (Exception ex)
@@ -336,6 +448,7 @@ namespace BiletSatisOtomasyonu
                 }
             }
         }
+
         private void IslemSonrasiTemizlik()
         {
             // 1. Koltukları temizle
